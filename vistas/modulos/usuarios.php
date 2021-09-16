@@ -61,7 +61,7 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
            <th>Foto</th>
            <th>Perfil</th>
            <th>Estado</th>
-           <th>Último login</th>
+           
            <th>Acciones</th>
 
          </tr> 
@@ -76,17 +76,18 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
         $valor = null;
 
         $usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+        $perfiles=[' ','Especial','Administrador','Vendedor'];
 
        foreach ($usuarios as $key => $value){
          
           echo ' <tr>
                   <td>'.($key+1).'</td>
-                  <td>'.$value["nombre"].'</td>
-                  <td>'.$value["usuario"].'</td>';
+                  <td>'.$value["NOMBRE"].'</td>
+                  <td>'.$value["USUARIO"].'</td>';
 
-                  if($value["foto"] != ""){
+                  if($value["URL"] != ""){
 
-                    echo '<td><img src="'.$value["foto"].'" class="img-thumbnail" width="40px"></td>';
+                    echo '<td><img src="'.$value["URL"].'" class="img-thumbnail" width="40px"></td>';
 
                   }else{
 
@@ -94,26 +95,27 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
 
                   }
 
-                  echo '<td>'.$value["perfil"].'</td>';
+                  $CODIGO_ROL=$value["CODIGO_ROL"];
+                  echo '<td>'.$perfiles[$CODIGO_ROL].'</td>';
 
-                  if($value["estado"] != 0){
+                  if($value["ESTADO"] != 0){
 
-                    echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="'.$value["id"].'" estadoUsuario="0">Activado</button></td>';
+                    echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="'.$value["CODIGO_USUARIO"].'" estadoUsuario="0">Activado</button></td>';
 
                   }else{
 
-                    echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="'.$value["id"].'" estadoUsuario="1">Desactivado</button></td>';
+                    echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="'.$value["CODIGO_USUARIO"].'" estadoUsuario="1">Desactivado</button></td>';
 
                   }             
 
-                  echo '<td>'.$value["ultimo_login"].'</td>
+                  echo '
                   <td>
 
                     <div class="btn-group">
                         
-                      <button class="btn btn-warning btnEditarUsuario" idUsuario="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fa fa-pencil"></i></button>
+                      <button class="btn btn-warning btnEditarUsuario" idUsuario="'.$value["CODIGO_USUARIO"].'" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fa fa-pencil"></i></button>
 
-                      <button class="btn btn-danger btnEliminarUsuario" idUsuario="'.$value["id"].'" fotoUsuario="'.$value["foto"].'" usuario="'.$value["usuario"].'"><i class="ion-trash-a"></i></button>
+                      <button class="btn btn-danger btnEliminarUsuario" idUsuario="'.$value["CODIGO_USUARIO"].'" fotoUsuario="'.$value["URL"].'" usuario="'.$value["USUARIO"].'"><i class="ion-trash-a"></i></button>
 
                     </div>  
 
@@ -153,7 +155,7 @@ MODAL AGREGAR USUARIO
         CABEZA DEL MODAL
         ======================================-->
 
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#53b5ed; color:white; border:3px solid #fff; border-radius:8px;">
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -223,11 +225,11 @@ MODAL AGREGAR USUARIO
                   
                   <option value="">Selecionar perfil</option>
 
-                  <option value="Administrador">Administrador</option>
+                  <option value=2>Administrador</option>
 
-                  <option value="Especial">Especial</option>
+                  <option value=1>Especial</option>
 
-                  <option value="Vendedor">Vendedor</option>
+                  <option value=3>Vendedor</option>
 
                 </select>
 
@@ -296,7 +298,7 @@ MODAL EDITAR USUARIO
         CABEZA DEL MODAL
         ======================================-->
 
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#f39c12; color:white">
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -368,11 +370,11 @@ MODAL EDITAR USUARIO
                   
                   <option value="" id="editarPerfil"></option>
 
-                  <option value="Administrador">Administrador</option>
+                  <option value=2>Administrador</option>
 
-                  <option value="Especial">Especial</option>
+                  <option value=1>Especial</option>
 
-                  <option value="Vendedor">Vendedor</option>
+                  <option value=3>Vendedor</option>
 
                 </select>
 
@@ -408,7 +410,7 @@ MODAL EDITAR USUARIO
 
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-          <button type="submit" class="btn btn-primary">Modificar usuario</button>
+          <button type="submit" class="btn btn-warning">Modificar usuario</button>
 
         </div>
 

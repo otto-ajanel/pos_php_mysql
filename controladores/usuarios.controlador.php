@@ -14,52 +14,34 @@ class ControladorUsuarios{
 
 			   	$encriptar = crypt($_POST["ingPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
 
-				$tabla = "usuarios";
+				$tabla = "usuario";
 
-				$item = "usuario";
+				$item = "USUARIO";
 				$valor = $_POST["ingUsuario"];
 
 				$respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
 
-				if($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $encriptar){
+				if($respuesta["USUARIO"] == $_POST["ingUsuario"] && $respuesta["CONTRASEÑA"] == $encriptar){
 
-					if($respuesta["estado"] == 1){
-
+					if($respuesta["ESTADO"] == 1){
+						$perfiles=[' ','Especial','Administrador','Vendedor'];
+					
 						$_SESSION["iniciarSesion"] = "ok";
-						$_SESSION["id"] = $respuesta["id"];
-						$_SESSION["nombre"] = $respuesta["nombre"];
-						$_SESSION["usuario"] = $respuesta["usuario"];
-						$_SESSION["foto"] = $respuesta["foto"];
-						$_SESSION["perfil"] = $respuesta["perfil"];
+						$_SESSION["id"] = $respuesta["CODIGO_USUARIO"];
+						$_SESSION["nombre"] = $respuesta["NOMBRE"];
+						$_SESSION["usuario"] = $respuesta["USUARIO"];
+						$_SESSION["foto"] = $respuesta["URL"];
+						$_SESSION["perfil"] = $perfiles[$respuesta["CODIGO_ROL"]];
 
 						/*=============================================
 						REGISTRAR FECHA PARA SABER EL ÚLTIMO LOGIN
 						=============================================*/
+						echo '<script>
 
-						date_default_timezone_set('America/Bogota');
+						window.location = "inicio";
 
-						$fecha = date('Y-m-d');
-						$hora = date('H:i:s');
-
-						$fechaActual = $fecha.' '.$hora;
-
-						$item1 = "ultimo_login";
-						$valor1 = $fechaActual;
-
-						$item2 = "id";
-						$valor2 = $respuesta["id"];
-
-						$ultimoLogin = ModeloUsuarios::mdlActualizarUsuario($tabla, $item1, $valor1, $item2, $valor2);
-
-						if($ultimoLogin == "ok"){
-
-							echo '<script>
-
-								window.location = "inicio";
-
-							</script>';
-
-						}				
+					</script>';
+							
 						
 					}else{
 
@@ -159,15 +141,15 @@ class ControladorUsuarios{
 
 				}
 
-				$tabla = "usuarios";
+				$tabla = "usuario";
 
 				$encriptar = crypt($_POST["nuevoPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
 
-				$datos = array("nombre" => $_POST["nuevoNombre"],
-					           "usuario" => $_POST["nuevoUsuario"],
-					           "password" => $encriptar,
-					           "perfil" => $_POST["nuevoPerfil"],
-					           "foto"=>$ruta);
+				$datos = array("NOMBRE" => $_POST["nuevoNombre"],
+					           "USUARIO" => $_POST["nuevoUsuario"],
+					           "CONTRASEÑA" => $encriptar,
+					           "CODIGO_ROL" => $_POST["nuevoPerfil"],
+					           "URL"=>$ruta);
 
 				$respuesta = ModeloUsuarios::mdlIngresarUsuario($tabla, $datos);
 			
@@ -214,7 +196,7 @@ class ControladorUsuarios{
 
 						if(result.value){
 						
-							window.location = "usuarios";
+							window.location = "usuario";
 
 						}
 
@@ -237,7 +219,7 @@ class ControladorUsuarios{
 
 	static public function ctrMostrarUsuarios($item, $valor){
 
-		$tabla = "usuarios";
+		$tabla = "usuario";
 
 		$respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
 
@@ -333,7 +315,7 @@ class ControladorUsuarios{
 
 				}
 
-				$tabla = "usuarios";
+				$tabla = "usuario";
 
 				if($_POST["editarPassword"] != ""){
 
@@ -370,11 +352,11 @@ class ControladorUsuarios{
 
 				}
 
-				$datos = array("nombre" => $_POST["editarNombre"],
-							   "usuario" => $_POST["editarUsuario"],
-							   "password" => $encriptar,
-							   "perfil" => $_POST["editarPerfil"],
-							   "foto" => $ruta);
+				$datos = array("NOMBRE" => $_POST["editarNombre"],
+							   "USUARIO" => $_POST["editarUsuario"],
+							   "CONTRASEÑA" => $encriptar,
+							   "CODIGO_ROL" => $_POST["editarPerfil"],
+							   "URL" => $ruta);
 
 				$respuesta = ModeloUsuarios::mdlEditarUsuario($tabla, $datos);
 
@@ -433,7 +415,7 @@ class ControladorUsuarios{
 
 		if(isset($_GET["idUsuario"])){
 
-			$tabla ="usuarios";
+			$tabla ="usuario";
 			$datos = $_GET["idUsuario"];
 
 			if($_GET["fotoUsuario"] != ""){

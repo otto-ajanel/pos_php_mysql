@@ -13,7 +13,7 @@ class AjaxUsuarios{
 
 	public function ajaxEditarUsuario(){
 
-		$item = "id";
+		$item = "CODIGO_USUARIO";
 		$valor = $this->idUsuario;
 
 		$respuesta = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
@@ -32,12 +32,12 @@ class AjaxUsuarios{
 
 	public function ajaxActivarUsuario(){
 
-		$tabla = "usuarios";
+		$tabla = "usuario";
 
 		$item1 = "estado";
 		$valor1 = $this->activarUsuario;
 
-		$item2 = "id";
+		$item2 = "CODIGO_USUARIO";
 		$valor2 = $this->activarId;
 
 		$respuesta = ModeloUsuarios::mdlActualizarUsuario($tabla, $item1, $valor1, $item2, $valor2);

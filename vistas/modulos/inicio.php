@@ -36,7 +36,7 @@
                          <a href="#"><i></i>PRESENTACIÓN</a>
                     </li>
                     <li  class="menu-item">
-                         <a href="#"><></i>TIPO DE PRODUCTO</a>
+                         <a href="#"></i>TIPO DE PRODUCTO</a>
                     </li>
                 </ul>
             </li> 
@@ -51,16 +51,8 @@
                    <i class="iconos icon7"></i>OFERTAS</a>  
             </li>
             <li class="menu-item">
-                <a }" href="#"><i class="iconos icon8"></i>USUARIO</a>            
-                <ul class="sub-menu">
-                    <li class="menu-item">
-                        <a  href="usuarios"><i></i>USUARIOS</a>
-                    </li>
-                    <li  class="menu-item">
-                         <a  href="#"><i ></i>ROLES</a>
-                    </li>
-                                      
-                </ul>
+                <a " href="usuarios"><i class="iconos icon8"></i>USUARIO</a>            
+                
             </li> 
             <li class="menu-item">
                 <a  href="#"><i class="iconos icon9"></i>REPORTES</a>  

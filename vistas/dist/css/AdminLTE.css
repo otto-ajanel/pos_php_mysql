@@ -67,6 +67,9 @@ body {
   -o-transition: -o-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
   margin-left: 0px;
+  
+  
+
   z-index: 820;
 }
 .layout-top-nav .content-wrapper,
@@ -577,7 +580,7 @@ a:focus {
   .sidebar-mini.sidebar-collapse .right-side,
   .sidebar-mini.sidebar-collapse .main-footer {
     margin-left: 0px !important;
-    z-index: 840;
+    z-index: 1000;
   }
   .sidebar-mini.sidebar-collapse .main-sidebar {
     -webkit-transform: translate(0, 0);
@@ -1283,7 +1286,7 @@ a:focus {
  */
  .form-group{
    margin-bottom: 25px;
-   width: 300px;
+   width: 100%;
  }
 .form-control {
   border-radius: 0;
@@ -5733,10 +5736,10 @@ align-items: center;
 Menu
 */
 .activeMenu{
-  margin:  6% 2%;
+  margin:  1% 1% 8% ;
   background: none;
   width: 100%;
-  height: 35rem;
+  height: 45rem;
   padding: 45px;
   border-radius: 15px;
   color: #4a7bcf;

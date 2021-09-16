@@ -69,18 +69,19 @@ $(".tablas").on("click", ".btnEditarUsuario", function(){
 		processData: false,
 		dataType: "json",
 		success: function(respuesta){
-			
-			$("#editarNombre").val(respuesta["nombre"]);
-			$("#editarUsuario").val(respuesta["usuario"]);
-			$("#editarPerfil").html(respuesta["perfil"]);
-			$("#editarPerfil").val(respuesta["perfil"]);
-			$("#fotoActual").val(respuesta["foto"]);
+			var perfiles=[" ","Especial","Administrador","Vendedor"]
 
-			$("#passwordActual").val(respuesta["password"]);
+			$("#editarNombre").val(respuesta["NOMBRE"]);
+			$("#editarUsuario").val(respuesta["USUARIO"]);
+			$("#editarPerfil").html(perfiles[respuesta["CODIGO_ROL"]]);
+			$("#editarPerfil").val(respuesta["CODIGO_ROL"]);
+			$("#fotoActual").val(respuesta["URL"]);
 
-			if(respuesta["foto"] != ""){
+			$("#passwordActual").val(respuesta["CONTRASEÑA"]);
 
-				$(".previsualizarEditar").attr("src", respuesta["foto"]);
+			if(respuesta["URL"] != ""){
+
+				$(".previsualizarEditar").attr("src", respuesta["URL"]);
 
 			}else{
 

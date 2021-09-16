@@ -43,13 +43,13 @@ class ModeloUsuarios{
 
 	static public function mdlIngresarUsuario($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, usuario, password, perfil, foto) VALUES (:nombre, :usuario, :password, :perfil, :foto)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(NOMBRE, USUARIO, CONTRASEÑA, CODIGO_ROL, URL) VALUES (:nombre, :usuario, :password, :perfil, :foto)");
 
-		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-		$stmt->bindParam(":usuario", $datos["usuario"], PDO::PARAM_STR);
-		$stmt->bindParam(":password", $datos["password"], PDO::PARAM_STR);
-		$stmt->bindParam(":perfil", $datos["perfil"], PDO::PARAM_STR);
-		$stmt->bindParam(":foto", $datos["foto"], PDO::PARAM_STR);
+		$stmt->bindParam(":nombre", $datos["NOMBRE"], PDO::PARAM_STR);
+		$stmt->bindParam(":usuario", $datos["USUARIO"], PDO::PARAM_STR);
+		$stmt->bindParam(":password", $datos["CONTRASEÑA"], PDO::PARAM_STR);
+		$stmt->bindParam(":perfil", $datos["CODIGO_ROL"], PDO::PARAM_STR);
+		$stmt->bindParam(":foto", $datos["URL"], PDO::PARAM_STR);
 
 		if($stmt->execute()){
 
@@ -73,13 +73,13 @@ class ModeloUsuarios{
 
 	static public function mdlEditarUsuario($tabla, $datos){
 	
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, password = :password, perfil = :perfil, foto = :foto WHERE usuario = :usuario");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET NOMBRE = :nombre, CONTRASEÑA = :password, CODIGO_ROL = :perfil, URL = :foto WHERE usuario = :usuario");
 
-		$stmt -> bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-		$stmt -> bindParam(":password", $datos["password"], PDO::PARAM_STR);
-		$stmt -> bindParam(":perfil", $datos["perfil"], PDO::PARAM_STR);
-		$stmt -> bindParam(":foto", $datos["foto"], PDO::PARAM_STR);
-		$stmt -> bindParam(":usuario", $datos["usuario"], PDO::PARAM_STR);
+		$stmt -> bindParam(":nombre", $datos["NOMBRE"], PDO::PARAM_STR);
+		$stmt -> bindParam(":password", $datos["CONTRASEÑA"], PDO::PARAM_STR);
+		$stmt -> bindParam(":perfil", $datos["CODIGO_ROL"], PDO::PARAM_STR);
+		$stmt -> bindParam(":foto", $datos["URL"], PDO::PARAM_STR);
+		$stmt -> bindParam(":usuario", $datos["USUARIO"], PDO::PARAM_STR);
 
 		if($stmt -> execute()){
 
@@ -130,7 +130,7 @@ class ModeloUsuarios{
 
 	static public function mdlBorrarUsuario($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE CODIGO_USUARIO = :id");
 
 		$stmt -> bindParam(":id", $datos, PDO::PARAM_INT);
 
