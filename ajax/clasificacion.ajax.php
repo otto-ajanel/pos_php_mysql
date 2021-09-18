@@ -1,7 +1,7 @@
 <?php
 
-require_once "../controladores/categorias.controlador.php";
-require_once "../modelos/categorias.modelo.php";
+require_once "../controladores/clasificacion.controlador.php";
+require_once "../modelos/clasificacion.modelo.php";
 
 class AjaxCategorias{
 
@@ -13,10 +13,10 @@ class AjaxCategorias{
 
 	public function ajaxEditarCategoria(){
 
-		$item = "id";
+		$item = "CODIGO_CLASIFICACION";
 		$valor = $this->idCategoria;
 
-		$respuesta = ControladorCategorias::ctrMostrarCategorias($item, $valor);
+		$respuesta = ControladorClasificacion::ctrMostrarClasificacion($item, $valor);
 
 		echo json_encode($respuesta);
 

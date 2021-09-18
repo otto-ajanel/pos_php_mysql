@@ -9,7 +9,7 @@ $(".tablas").on("click", ".btnEditarCategoria", function(){
 	datos.append("idCategoria", idCategoria);
 
 	$.ajax({
-		url: "ajax/categorias.ajax.php",
+		url: "ajax/clasificacion.ajax.php",
 		method: "POST",
       	data: datos,
       	cache: false,
@@ -18,8 +18,8 @@ $(".tablas").on("click", ".btnEditarCategoria", function(){
      	dataType:"json",
      	success: function(respuesta){
 
-     		$("#editarCategoria").val(respuesta["categoria"]);
-     		$("#idCategoria").val(respuesta["id"]);
+     		$("#editarCategoria").val(respuesta["CLASIFICACION"]);
+     		$("#idCategoria").val(respuesta["CODIGO_CLASIFICACION"]);
 
      	}
 

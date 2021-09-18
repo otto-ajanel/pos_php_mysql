@@ -30,7 +30,7 @@
                         <a " href="i#"><i></i>VER PRODUCTOS</a>
                     </li>
                     <li class="menu-item">
-                         <a href="#"><i></i>CLASIFICACIÓN</a>
+                         <a href="clasificacion"><i></i>CLASIFICACIÓN</a>
                     </li>
                     <li  class="menu-item">
                          <a href="#"><i></i>PRESENTACIÓN</a>

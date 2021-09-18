@@ -2,17 +2,17 @@
 
 require_once "conexion.php";
 
-class ModeloCategorias{
+class ModeloClasificacion{
 
 	/*=============================================
 	CREAR CATEGORIA
 	=============================================*/
 
-	static public function mdlIngresarCategoria($tabla, $datos){
+	static public function mdlIngresarClasificacion($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(categoria) VALUES (:categoria)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(CLASIFICACION) VALUES (:clasificacion)");
 
-		$stmt->bindParam(":categoria", $datos, PDO::PARAM_STR);
+		$stmt->bindParam(":clasificacion", $datos, PDO::PARAM_STR);
 
 		if($stmt->execute()){
 
@@ -33,7 +33,7 @@ class ModeloCategorias{
 	MOSTRAR CATEGORIAS
 	=============================================*/
 
-	static public function mdlMostrarCategorias($tabla, $item, $valor){
+	static public function mdlMostrarClasificacion($tabla, $item, $valor){
 
 		if($item != null){
 
@@ -65,12 +65,12 @@ class ModeloCategorias{
 	EDITAR CATEGORIA
 	=============================================*/
 
-	static public function mdlEditarCategoria($tabla, $datos){
+	static public function mdlEditarclasificacion($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET categoria = :categoria WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET CLASIFICACION= :categoria WHERE CODIGO_CLASIFICACION = :id");
 
-		$stmt -> bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
-		$stmt -> bindParam(":id", $datos["id"], PDO::PARAM_INT);
+		$stmt -> bindParam(":categoria", $datos["CLASIFICACION"], PDO::PARAM_STR);
+		$stmt -> bindParam(":id", $datos["CODIGO_CLASIFICACION"], PDO::PARAM_INT);
 
 		if($stmt->execute()){
 

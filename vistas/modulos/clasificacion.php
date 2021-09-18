@@ -20,7 +20,7 @@ if($_SESSION["perfil"] == "Vendedor"){
     
     <h1>
       
-      Administrar categorías
+      Administrar Clasificacionde Prodcutos
     
     </h1>
 
@@ -28,7 +28,7 @@ if($_SESSION["perfil"] == "Vendedor"){
       
       <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
       
-      <li class="active">Administrar categorías</li>
+      <li class="active">Administrar Clasificaciones</li>
     
     </ol>
 
@@ -57,7 +57,7 @@ if($_SESSION["perfil"] == "Vendedor"){
          <tr>
            
            <th style="width:10px">#</th>
-           <th>Categoria</th>
+           <th>CLASIFICACIÓN</th>
            <th>Acciones</th>
 
          </tr> 
@@ -71,25 +71,25 @@ if($_SESSION["perfil"] == "Vendedor"){
           $item = null;
           $valor = null;
 
-          $categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
+          $clasificacion = ControladorClasificacion::ctrMostrarClasificacion($item, $valor);
 
-          foreach ($categorias as $key => $value) {
+          foreach ($clasificacion as $key => $value) {
            
             echo ' <tr>
 
                     <td>'.($key+1).'</td>
 
-                    <td class="text-uppercase">'.$value["categoria"].'</td>
+                    <td class="text-uppercase">'.$value["CLASIFICACION"].'</td>
 
                     <td>
 
                       <div class="btn-group">
                           
-                        <button class="btn btn-warning btnEditarCategoria" idCategoria="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarCategoria"><i class="fa fa-pencil"></i></button>';
+                        <button class="btn btn-warning btnEditarCategoria" idCategoria="'.$value["CODIGO_CLASIFICACION"].'" data-toggle="modal" data-target="#modalEditarCategoria"><i class="fa fa-pencil"></i></button>';
 
                         if($_SESSION["perfil"] == "Administrador"){
 
-                          echo '<button class="btn btn-danger btnEliminarCategoria" idCategoria="'.$value["id"].'"><i class="fa fa-times"></i></button>';
+                          echo '<button class="btn btn-danger btnEliminarCategoria" idCategoria="'.$value["CODIGO_CLASIFICACION"].'"><i class="fa fa-times"></i></button>';
 
                         }
 
@@ -178,8 +178,8 @@ MODAL AGREGAR CATEGORÍA
 
         <?php
 
-          $crearCategoria = new ControladorCategorias();
-          $crearCategoria -> ctrCrearCategoria();
+          $crearClasificacion = new ControladorClasificacion();
+          $crearClasificacion -> ctrCrearClasificacion();
 
         ?>
 
@@ -211,7 +211,7 @@ MODAL EDITAR CATEGORÍA
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Editar categoría</h4>
+          <h4 class="modal-title">Editar CLASIFICACION</h4>
 
         </div>
 
@@ -257,8 +257,8 @@ MODAL EDITAR CATEGORÍA
 
       <?php
 
-          $editarCategoria = new ControladorCategorias();
-          $editarCategoria -> ctrEditarCategoria();
+          $editarClasificacion = new ControladorClasificacion();
+          $editarClasificacion -> ctrEditarClasificacion();
 
         ?> 
 
@@ -272,8 +272,8 @@ MODAL EDITAR CATEGORÍA
 
 <?php
 
-  $borrarCategoria = new ControladorCategorias();
-  $borrarCategoria -> ctrBorrarCategoria();
+  $borrarClasificacion = new ControladorClasificacion();
+  $borrarClasificacion -> ctrBorrarClasificacion();
 
 ?>
 

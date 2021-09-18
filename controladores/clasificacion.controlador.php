@@ -1,22 +1,22 @@
 <?php
 
-class ControladorCategorias{
+class ControladorClasificacion{
 
 	/*=============================================
 	CREAR CATEGORIAS
 	=============================================*/
 
-	static public function ctrCrearCategoria(){
+	static public function ctrCrearClasificacion(){
 
 		if(isset($_POST["nuevaCategoria"])){
 
 			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaCategoria"])){
 
-				$tabla = "categorias";
+				$tabla = "clasificacion";
 
 				$datos = $_POST["nuevaCategoria"];
 
-				$respuesta = ModeloCategorias::mdlIngresarCategoria($tabla, $datos);
+				$respuesta = ModeloClasificacion::mdlIngresarClasificacion($tabla, $datos);
 
 				if($respuesta == "ok"){
 
@@ -24,13 +24,13 @@ class ControladorCategorias{
 
 					swal({
 						  type: "success",
-						  title: "La categoría ha sido guardada correctamente",
+						  title: "La clasificacion ha sido guardada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 									if (result.value) {
 
-									window.location = "categorias";
+									window.location = "clasificacion";
 
 									}
 								})
@@ -52,7 +52,7 @@ class ControladorCategorias{
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "categorias";
+							window.location = "clasificacion";
 
 							}
 						})
@@ -66,35 +66,35 @@ class ControladorCategorias{
 	}
 
 	/*=============================================
-	MOSTRAR CATEGORIAS
+	MOSTRAR clasificacion
 	=============================================*/
 
-	static public function ctrMostrarCategorias($item, $valor){
+	static public function ctrMostrarClasificacion($item, $valor){
 
-		$tabla = "categorias";
+		$tabla = "clasificacion";
 
-		$respuesta = ModeloCategorias::mdlMostrarCategorias($tabla, $item, $valor);
+		$respuesta = ModeloClasificacion::mdlMostrarClasificacion($tabla, $item, $valor);
 
 		return $respuesta;
 	
 	}
 
 	/*=============================================
-	EDITAR CATEGORIA
+	EDITAR Clasificacion
 	=============================================*/
 
-	static public function ctrEditarCategoria(){
+	static public function ctrEditarClasificacion(){
 
 		if(isset($_POST["editarCategoria"])){
 
 			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarCategoria"])){
 
-				$tabla = "categorias";
+				$tabla = "clasificacion";
 
-				$datos = array("categoria"=>$_POST["editarCategoria"],
-							   "id"=>$_POST["idCategoria"]);
+				$datos = array("CLASIFICACION"=>$_POST["editarCategoria"],
+							   "CODIGO_CLASIFICACION"=>$_POST["idCategoria"]);
 
-				$respuesta = ModeloCategorias::mdlEditarCategoria($tabla, $datos);
+				$respuesta = ModeloClasificacion::mdlEditarClasificacion($tabla, $datos);
 
 				if($respuesta == "ok"){
 
@@ -102,13 +102,13 @@ class ControladorCategorias{
 
 					swal({
 						  type: "success",
-						  title: "La categoría ha sido cambiada correctamente",
+						  title: "La clasificaion ha sido cambiada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 									if (result.value) {
 
-									window.location = "categorias";
+									window.location = "clasificacion";
 
 									}
 								})
@@ -147,14 +147,14 @@ class ControladorCategorias{
 	BORRAR CATEGORIA
 	=============================================*/
 
-	static public function ctrBorrarCategoria(){
+	static public function ctrBorrarClasificacion(){
 
 		if(isset($_GET["idCategoria"])){
 
-			$tabla ="Categorias";
+			$tabla ="CLASIFICACION";
 			$datos = $_GET["idCategoria"];
 
-			$respuesta = ModeloCategorias::mdlBorrarCategoria($tabla, $datos);
+			$respuesta = ModeloClasificacion::mdlBorrarClasificacion($tabla, $datos);
 
 			if($respuesta == "ok"){
 
@@ -162,13 +162,13 @@ class ControladorCategorias{
 
 					swal({
 						  type: "success",
-						  title: "La categoría ha sido borrada correctamente",
+						  title: "La clasificacion ha sido borrada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 									if (result.value) {
 
-									window.location = "categorias";
+									window.location = "clasificacion";
 
 									}
 								})

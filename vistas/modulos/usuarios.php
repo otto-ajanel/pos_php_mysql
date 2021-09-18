@@ -25,9 +25,9 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
 
     <ol class="breadcrumb">
       
-      <li><a href="inicio"><i class="ion-navicon-round"></i> INICIO</a></li>
+      <li><a href="inicio"><i class="ion-navicon-round" style="width: 45px; height:35px;"></i> INICIO</a></li>
       
-      <li class="active">Administrar usuarios</li>
+      <li class="active"> Usuarios</li>
     
     </ol>
 
