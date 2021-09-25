@@ -15,12 +15,12 @@
                         <a  href="i#"><i "></i>INVENTARIO</a>
                     </li>
                     <li class="menu-item">
-                         <a  href="#"><i "></i> PROVEEDORES</a>
+                         <a  href="proveedores"><i "></i> PROVEEDORES</a>
                     </li>
                 </ul>
             </li> 
             <li  class="menu-item">
-               <a  href="#">
+               <a  href="clientes">
                    <i class="iconos icon4"></i>CLIENTES</a>  
             </li>
             <li class="menu-item">
@@ -33,7 +33,7 @@
                          <a href="clasificacion"><i></i>CLASIFICACIÓN</a>
                     </li>
                     <li  class="menu-item">
-                         <a href="#"><i></i>PRESENTACIÓN</a>
+                         <a href="presentacion"><i></i>PRESENTACIÓN</a>
                     </li>
                     <li  class="menu-item">
                          <a href="#"></i>TIPO DE PRODUCTO</a>

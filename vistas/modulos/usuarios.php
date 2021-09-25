@@ -25,9 +25,9 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
 
     <ol class="breadcrumb">
       
-      <li><a href="inicio"><i class="ion-navicon-round" style="width: 45px; height:35px;"></i> INICIO</a></li>
+      <li><a href="inicio"><i class="ion-navicon-round" ></i> INICIO</a></li>
       
-      <li class="active"> Usuarios</li>
+      
     
     </ol>
 
@@ -167,7 +167,7 @@ MODAL AGREGAR USUARIO
         CUERPO DEL MODAL
         ======================================-->
 
-        <div class="modal-body">
+        <div class="modal-body ">
 
           <div class="box-body">
 
@@ -184,6 +184,7 @@ MODAL AGREGAR USUARIO
               </div>
 
             </div>
+            
 
             <!-- ENTRADA PARA EL USUARIO -->
 

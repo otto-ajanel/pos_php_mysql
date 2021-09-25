@@ -52,6 +52,7 @@ session_start();
   <!-- Morris chart -->
   <link rel="stylesheet" href="vistas/bower_components/morris.js/morris.css">
 
+  
   <!--=====================================
   PLUGINS DE JAVASCRIPT
   ======================================-->
@@ -139,8 +140,10 @@ CUERPO DOCUMENTO
       if($_GET["ruta"] == "inicio" ||
          $_GET["ruta"] == "usuarios" ||
          $_GET["ruta"] == "clasificacion" ||
+         $_GET["ruta"] == "presentacion" ||
          $_GET["ruta"] == "productos" ||
          $_GET["ruta"] == "clientes" ||
+         $_GET["ruta"] == "proveedores" ||
          $_GET["ruta"] == "ventas" ||
          $_GET["ruta"] == "crear-venta" ||
          $_GET["ruta"] == "editar-venta" ||
@@ -181,6 +184,8 @@ CUERPO DOCUMENTO
 <script src="vistas/js/plantilla.js"></script>
 <script src="vistas/js/usuarios.js"></script>
 <script src="vistas/js/clasificacion.js"></script>
+<script src="vistas/js/presentacion.js"></script>
+<script src="vistas/js/proveedores.js"></script>
 <script src="vistas/js/productos.js"></script>
 <script src="vistas/js/clientes.js"></script>
 <script src="vistas/js/ventas.js"></script>

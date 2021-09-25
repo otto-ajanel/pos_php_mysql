@@ -5906,3 +5906,13 @@ height: 80px;
 .grow2{
   flex-grow: 18;
 }
+.breadcrumb li a{
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #147dd9 !important;
+}
+
+.modalagregarcliente{
+  background: #005384 !important;
+}

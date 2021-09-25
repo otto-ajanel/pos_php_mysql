@@ -214,6 +214,7 @@ $(".tablas").on("click", ".btnEliminarUsuario", function(){
   }).then(function(result){
 
     if(result.value){
+		
 
       window.location = "index.php?ruta=usuarios&idUsuario="+idUsuario+"&usuario="+usuario+"&fotoUsuario="+fotoUsuario;
 
