@@ -19,4 +19,5 @@ $plantilla -> ctrPlantilla();
 
 /* <prueba></prueba>
     COMENTARIO DE PRUEBA
+    comentario 
 */
