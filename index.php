@@ -18,3 +18,5 @@ $plantilla = new ControladorPlantilla();
 $plantilla -> ctrPlantilla();
 
 /* <prueba></prueba>
+    COMENTARIO DE PRUEBA
+*/
