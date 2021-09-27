@@ -2,17 +2,17 @@
 
 require_once "conexion.php";
 
-class ModeloClasificacion{
+class ModeloPresentacion{
 
 	/*=============================================
-	CREAR CATEGORIA
+	CREAR Presentacion
 	=============================================*/
 
-	static public function mdlIngresarClasificacion($tabla, $datos){
+	static public function mdlIngresarPresentacion($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(CLASIFICACION) VALUES (:clasificacion)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(PRESENTACION) VALUES (:presentacion)");
 
-		$stmt->bindParam(":clasificacion", $datos, PDO::PARAM_STR);
+		$stmt->bindParam(":presentacion", $datos, PDO::PARAM_STR);
 
 		if($stmt->execute()){
 
@@ -30,10 +30,10 @@ class ModeloClasificacion{
 	}
 
 	/*=============================================
-	MOSTRAR CATEGORIAS
+	MOSTRAR Presentacion
 	=============================================*/
 
-	static public function mdlMostrarClasificacion($tabla, $item, $valor){
+	static public function mdlMostrarPresentacion($tabla, $item, $valor){
 
 		if($item != null){
 
@@ -62,15 +62,15 @@ class ModeloClasificacion{
 	}
 
 	/*=============================================
-	EDITAR CATEGORIA
+	EDITAR Presentación
 	=============================================*/
 
-	static public function mdlEditarclasificacion($tabla, $datos){
+	static public function mdlEditarPresentacion($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET CLASIFICACION= :categoria WHERE CODIGO_CLASIFICACION = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET PRESENTACION= :Presentacion WHERE CODIGO_PRESENTACION = :id");
 
-		$stmt -> bindParam(":categoria", $datos["CLASIFICACION"], PDO::PARAM_STR);
-		$stmt -> bindParam(":id", $datos["CODIGO_CLASIFICACION"], PDO::PARAM_INT);
+		$stmt -> bindParam(":Presentacion", $datos["PRESENTACION"], PDO::PARAM_STR);
+		$stmt -> bindParam(":id", $datos["CODIGO_PRESENTACION"], PDO::PARAM_INT);
 
 		if($stmt->execute()){
 
@@ -88,12 +88,12 @@ class ModeloClasificacion{
 	}
 
 	/*=============================================
-	BORRAR CATEGORIA
+	BORRAR Presentacion
 	=============================================*/
 
-	static public function mdlBorrarClasificacion($tabla, $datos){
+	static public function mdlBorrarPresentacion($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE CODIGO_CLASIFICACION= :id");
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE CODIGO_PRESENTACION= :id");
 
 		$stmt -> bindParam(":id", $datos, PDO::PARAM_INT);
 

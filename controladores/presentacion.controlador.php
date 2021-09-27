@@ -1,22 +1,22 @@
 <?php
 
-class ControladorClasificacion{
+class ControladorPresentacion{
 
 	/*=============================================
-	CREAR CATEGORIAS
+	CREAR Presentacion
 	=============================================*/
 
-	static public function ctrCrearClasificacion(){
+	static public function ctrCrearPresentacion(){
 
-		if(isset($_POST["nuevaCategoria"])){
+		if(isset($_POST["nuevaPresentacion"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaCategoria"])){
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaPresentacion"])){
 
-				$tabla = "clasificacion";
+				$tabla = "presentacion";
 
-				$datos = $_POST["nuevaCategoria"];
+				$datos = $_POST["nuevaPresentacion"];
 
-				$respuesta = ModeloClasificacion::mdlIngresarClasificacion($tabla, $datos);
+				$respuesta = ModeloPresentacion::mdlIngresarPresentacion($tabla, $datos);
 
 				if($respuesta == "ok"){
 
@@ -24,13 +24,13 @@ class ControladorClasificacion{
 
 					swal({
 						  type: "success",
-						  title: "La clasificacion ha sido guardada correctamente",
+						  title: "La Presentacion ha sido guardada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 									if (result.value) {
 
-									window.location = "clasificacion";
+									window.location = "presentacion";
 
 									}
 								})
@@ -52,7 +52,7 @@ class ControladorClasificacion{
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "clasificacion";
+							window.location = "presentacion";
 
 							}
 						})
@@ -66,35 +66,35 @@ class ControladorClasificacion{
 	}
 
 	/*=============================================
-	MOSTRAR clasificacion
+	MOSTRAR Presentacion
 	=============================================*/
 
-	static public function ctrMostrarClasificacion($item, $valor){
+	static public function ctrMostrarPresentacion($item, $valor){
 
-		$tabla = "clasificacion";
+		$tabla = "presentacion";
 
-		$respuesta = ModeloClasificacion::mdlMostrarClasificacion($tabla, $item, $valor);
+		$respuesta = ModeloPresentacion::mdlMostrarPresentacion($tabla, $item, $valor);
 
 		return $respuesta;
 	
 	}
 
 	/*=============================================
-	EDITAR Clasificacion
+	EDITAR Presentacion
 	=============================================*/
 
-	static public function ctrEditarClasificacion(){
+	static public function ctrEditarPresentacion(){
 
-		if(isset($_POST["editarCategoria"])){
+		if(isset($_POST["editarPresentacion"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarCategoria"])){
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarPresentacion"])){
 
-				$tabla = "clasificacion";
+				$tabla = "presentacion";
 
-				$datos = array("CLASIFICACION"=>$_POST["editarCategoria"],
-							   "CODIGO_CLASIFICACION"=>$_POST["idCategoria"]);
+				$datos = array("PRESENTACION"=>$_POST["editarPresentacion"],
+							   "CODIGO_PRESENTACION"=>$_POST["idPresentacion"]);
 
-				$respuesta = ModeloClasificacion::mdlEditarClasificacion($tabla, $datos);
+				$respuesta = ModeloPresentacion::mdlEditarPresentacion($tabla, $datos);
 
 				if($respuesta == "ok"){
 
@@ -108,7 +108,7 @@ class ControladorClasificacion{
 						  }).then(function(result){
 									if (result.value) {
 
-									window.location = "clasificacion";
+									window.location = "presentacion";
 
 									}
 								})
@@ -130,7 +130,7 @@ class ControladorClasificacion{
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "clasificacion";
+							window.location = "presentacion";
 
 							}
 						})
@@ -144,17 +144,17 @@ class ControladorClasificacion{
 	}
 
 	/*=============================================
-	BORRAR CATEGORIA
+	BORRAR Presentacion
 	=============================================*/
 
-	static public function ctrBorrarClasificacion(){
+	static public function ctrBorrarPresentacion(){
 
-		if(isset($_GET["idClasificacion"])){
+		if(isset($_GET["idPresentacion"])){
 
-			$tabla ="clasificacion";
-			$datos = $_GET["idClasificacion"];
+			$tabla ="presentacion";
+			$datos = $_GET["idPresentacion"];
 
-			$respuesta = ModeloClasificacion::mdlBorrarClasificacion($tabla, $datos);
+			$respuesta = ModeloPresentacion::mdlBorrarPresentacion($tabla, $datos);
 
 
 			if($respuesta == "ok"){
@@ -163,13 +163,13 @@ class ControladorClasificacion{
 
 					swal({
 						  type: "success",
-						  title: "La clasificacion ha sido borrada correctamente",
+						  title: "La Presentacion ha sido borrada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 									if (result.value) {
 
-									window.location = "clasificacion";
+									window.location = "presentacion";
 
 									}
 								})

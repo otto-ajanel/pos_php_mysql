@@ -20,15 +20,15 @@ if($_SESSION["perfil"] == "Vendedor"){
     
     <h1>
       
-      Administrar Clasificacionde Prodcutos
+      ADMINISTRAR CLASIFICACIONES
     
     </h1>
 
     <ol class="breadcrumb">
       
-      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
+      <li><a href="inicio"><i class="ion-navicon-round" ></i> Inicio</a></li>
       
-      <li class="active">Administrar Clasificaciones</li>
+      
     
     </ol>
 
@@ -42,7 +42,7 @@ if($_SESSION["perfil"] == "Vendedor"){
   
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCategoria">
           
-          Agregar categoría
+          Agregar Clasificacion
 
         </button>
 
@@ -134,7 +134,7 @@ MODAL AGREGAR CATEGORÍA
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Agregar categoría</h4>
+          <h4 class="modal-title">Agregar Clasificacion</h4>
 
         </div>
 
@@ -172,7 +172,7 @@ MODAL AGREGAR CATEGORÍA
 
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-          <button type="submit" class="btn btn-primary">Guardar categoría</button>
+          <button type="submit" class="btn btn-primary">Guardar Clasificación</button>
 
         </div>
 
