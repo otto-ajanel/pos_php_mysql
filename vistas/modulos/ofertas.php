@@ -19,7 +19,7 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
     
     <h1>
       
-       usuarios
+       ofertas
     
     </h1>
 
@@ -77,10 +77,10 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
         $item = null;
         $valor = null;
 
-        $usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+        $ofertas = ControladorOfertas::ctrMostrarOfertas($item, $valor);
         $perfiles=[' ','Especial','Administrador','Vendedor'];
 
-       foreach ($usuarios as $key => $value){
+       foreach ($ofertas as $key => $value){
          
           echo ' <tr>
                   <td>'.($key+1).'</td>
@@ -102,7 +102,7 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
 
                   }else{
 
-                    echo '<td><img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail" width="40px"></td>';
+                    echo '<td><img src="vistas/img/productos/default/anonymous.png" class="img-thumbnail" width="40px"></td>';
 
                   }
          
@@ -111,9 +111,9 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
 
                     <div class="btn-group">
                         
-                      <button class="btn btn-warning btnEditarUsuario" idoFERTA="'.$value["CODIGO_OFERTA"].'" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fa fa-pencil"></i></button>
+                      <button class="btn btn-warning btnEditarOferta" idOferta="'.$value["CODIGO_OFERTA"].'" data-toggle="modal" data-target="#modalEditarOferta"><i class="fa fa-pencil"></i></button>
 
-                      <button class="btn btn-danger btnEliminarUsuario" idOferta="'.$value["CODIGO_OFERTA"].'"><i class="ion-trash-a"></i></button>
+                      <button class="btn btn-danger btnEliminarOferta" idOferta="'.$value["CODIGO_OFERTA"].'"><i class="ion-trash-a"></i></button>
 
                     </div>  
 
@@ -138,10 +138,10 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
 </div>
 
 <!--=====================================
-MODAL AGREGAR USUARIO
+MODAL AGREGAR OFERTA
 ======================================-->
 
-<div id="modalAgregarUsuario" class="modal fade" role="dialog">
+<div id="modalAgregarOferta" class="modal fade" role="dialog">
   
   <div class="modal-dialog">
 
@@ -157,7 +157,7 @@ MODAL AGREGAR USUARIO
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Agregar usuario</h4>
+          <h4 class="modal-title">Agregar oferta</h4>
 
         </div>
 
@@ -173,18 +173,31 @@ MODAL AGREGAR USUARIO
             
             <div class="form-group">
               
-              <div class="input-group">
+            <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+              <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar nombre" required>
+              <select class="form-control input-lg" id="nuevaCategoria" name="nuevaCategoria" required>
+                
+                <option value="">Selecionar busqueda</option>
 
-              </div>
+                
+                  
+                <option value="Barra">Barra</option>
+                <option value="Producto">Producto</option>
+                <option value="Codigo">Codigo de producto</option>
+
+
+              </select>
+
+            </div>
+
+          </div>
 
             </div>
             
 
-            <!-- ENTRADA PARA EL USUARIO -->
+           <!-- ENTRADA PARA OFERTAS -->
 
              <div class="form-group">
               
@@ -192,68 +205,56 @@ MODAL AGREGAR USUARIO
               
                 <span class="input-group-addon"><i class="fa fa-key"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoUsuario" placeholder="Ingresar usuario" id="nuevoUsuario" required>
+                <input type="text" class="form-control input-lg" name="nuevaOferta" placeholder="Ingresar oferta" id="nuevaOferta" required>
 
               </div>
-
+ 
             </div>
 
-            <!-- ENTRADA PARA LA CONTRASEÑA -->
+             <!-- ENTRADA PARA PORCENTAJE -->
 
              <div class="form-group">
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-lock"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
 
-                <input type="password" class="form-control input-lg" name="nuevoPassword" placeholder="Ingresar contraseña" required>
+                <input type="text" class="form-control input-lg" name="nuevoPorcetaje" placeholder="Ingresar porcentaje" id="nuevoPorcentaje" min="0" max="100" required>
 
               </div>
-
+ 
             </div>
 
-            <!-- ENTRADA PARA SELECCIONAR SU PERFIL -->
+             <!-- ENTRADA PARA FECHA DE INICIO -->
+
+             <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+
+                <input type="date" class="form-control input-lg" name="nuevaFechaInicio" placeholder="Ingresar fecha inicio" id="nuevaFechaInicio"  required>
+
+              </div>
+ 
+            </div>
+
+            <!-- ENTRADA PARA FECHA DE INICIO -->
 
             <div class="form-group">
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-users"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
 
-                <select class="form-control input-lg" name="nuevoPerfil">
-                  
-                  <option value="">Selecionar perfil</option>
-
-                  <option value=2>Administrador</option>
-
-                  <option value=1>Especial</option>
-
-                  <option value=3>Vendedor</option>
-
-                </select>
+                <input type="date" class="form-control input-lg" name="nuevaFechaFin" placeholder="Ingresar fecha fin" id="nuevaFechaFin"  required>
 
               </div>
-
+ 
             </div>
 
-            <!-- ENTRADA PARA SUBIR FOTO -->
-
-             <div class="form-group">
-              
-              <div class="panel">SUBIR FOTO</div>
-
-              <input type="file" class="nuevaFoto" name="nuevaFoto">
-
-              <p class="help-block">Peso máximo de la foto 2MB</p>
-
-              <img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail previsualizar" width="100px">
-
-            </div>
-
-          </div>
-
-        </div>
-
+            
+          
         <!--=====================================
         PIE DEL MODAL
         ======================================-->
@@ -262,14 +263,14 @@ MODAL AGREGAR USUARIO
 
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-          <button type="submit" class="btn btn-primary">Guardar usuario</button>
+          <button type="submit" class="btn btn-primary">Guardar oferta</button>
 
         </div>
 
         <?php
 
-          $crearUsuario = new ControladorUsuarios();
-          $crearUsuario -> ctrCrearUsuario();
+          $crearOferta = new ControladorOfertas();
+          $crearOferta -> ctrCrearOferta();
 
         ?>
 
@@ -282,10 +283,10 @@ MODAL AGREGAR USUARIO
 </div>
 
 <!--=====================================
-MODAL EDITAR USUARIO
+MODAL EDITAR OFERTA
 ======================================-->
 
-<div id="modalEditarUsuario" class="modal fade" role="dialog">
+<div id="modalEditarOferta" class="modal fade" role="dialog">
   
   <div class="modal-dialog">
 
@@ -297,11 +298,11 @@ MODAL EDITAR USUARIO
         CABEZA DEL MODAL
         ======================================-->
 
-        <div class="modal-header" style="background:#f39c12; color:white">
+        <div class="modal-header" style="background:#53b5ed; color:white; border:3px solid #fff; border-radius:8px;">
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Editar usuario</h4>
+          <h4 class="modal-title">Editar oferta</h4>
 
         </div>
 
@@ -309,7 +310,7 @@ MODAL EDITAR USUARIO
         CUERPO DEL MODAL
         ======================================-->
 
-        <div class="modal-body">
+        <div class="modal-body ">
 
           <div class="box-body">
 
@@ -317,17 +318,31 @@ MODAL EDITAR USUARIO
             
             <div class="form-group">
               
-              <div class="input-group">
+            <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+              <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
-                <input type="text" class="form-control input-lg" id="editarNombre" name="editarNombre" value="" required>
+              <select class="form-control input-lg" id="editarOferta" name="editarOferta" required>
+                
+                <option value="">Selecionar oferta</option>
 
-              </div>
+                
+                  
+                <option value="Barra">Barra</option>
+                <option value="Producto">Producto</option>
+                <option value="Codigo">Codigo de producto</option>
+
+
+              </select>
 
             </div>
 
-            <!-- ENTRADA PARA EL USUARIO -->
+          </div>
+
+            </div>
+            
+
+           <!-- ENTRADA PARA OFERTAS -->
 
              <div class="form-group">
               
@@ -335,72 +350,56 @@ MODAL EDITAR USUARIO
               
                 <span class="input-group-addon"><i class="fa fa-key"></i></span> 
 
-                <input type="text" class="form-control input-lg" id="editarUsuario" name="editarUsuario" value="" readonly>
+                <input type="text" class="form-control input-lg" name="editarOfertaProducto" placeholder="Ingresar oferta" id="editarOfertaProducto" required>
 
               </div>
-
+ 
             </div>
 
-            <!-- ENTRADA PARA LA CONTRASEÑA -->
+             <!-- ENTRADA PARA PORCENTAJE -->
 
              <div class="form-group">
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-lock"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
 
-                <input type="password" class="form-control input-lg" name="editarPassword" placeholder="Escriba la nueva contraseña">
-
-                <input type="hidden" id="passwordActual" name="passwordActual">
+                <input type="text" class="form-control input-lg" name="editarPorcetaje" placeholder="Ingresar porcentaje" id="editarPorcentaje" min="0" max="100" required>
 
               </div>
-
+ 
             </div>
 
-            <!-- ENTRADA PARA SELECCIONAR SU PERFIL -->
+             <!-- ENTRADA PARA FECHA DE INICIO -->
+
+             <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+
+                <input type="date" class="form-control input-lg" name="editarFechaInicio" placeholder="Ingresar fecha inicio" id="editarFechaInicio"  required>
+
+              </div>
+ 
+            </div>
+
+            <!-- ENTRADA PARA FECHA DE INICIO -->
 
             <div class="form-group">
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-users"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
 
-                <select class="form-control input-lg" name="editarPerfil">
-                  
-                  <option value="" id="editarPerfil"></option>
-
-                  <option value=2>Administrador</option>
-
-                  <option value=1>Especial</option>
-
-                  <option value=3>Vendedor</option>
-
-                </select>
+                <input type="date" class="form-control input-lg" name="editarFechaFin" placeholder="Ingresar fecha fin" id="editarFechaFin"  required>
 
               </div>
-
+ 
             </div>
 
-            <!-- ENTRADA PARA SUBIR FOTO -->
-
-             <div class="form-group">
-              
-              <div class="panel">SUBIR FOTO</div>
-
-              <input type="file" class="nuevaFoto" name="editarFoto">
-
-              <p class="help-block">Peso máximo de la foto 2MB</p>
-
-              <img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail previsualizarEditar" width="100px">
-
-              <input type="hidden" name="fotoActual" id="fotoActual">
-
-            </div>
-
-          </div>
-
-        </div>
-
+            
+          
         <!--=====================================
         PIE DEL MODAL
         ======================================-->
@@ -409,16 +408,16 @@ MODAL EDITAR USUARIO
 
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-          <button type="submit" class="btn btn-warning">Modificar usuario</button>
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
 
         </div>
 
-     <?php
+        <?php
 
-          $editarUsuario = new ControladorUsuarios();
-          $editarUsuario -> ctrEditarUsuario();
+          $editarOferta = new ControladorOfertas();
+          $editarOferta -> ctrEditarOferta();
 
-        ?> 
+        ?>
 
       </form>
 
@@ -430,8 +429,8 @@ MODAL EDITAR USUARIO
 
 <?php
 
-  $borrarUsuario = new ControladorUsuarios();
-  $borrarUsuario -> ctrBorrarUsuario();
+  $borrarOfertas = new ControladorOfertas();
+  $borrarOfertas -> ctrBorrarOferta();
 
 ?> 
 
