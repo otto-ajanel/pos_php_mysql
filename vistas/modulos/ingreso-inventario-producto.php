@@ -49,6 +49,52 @@
                 <button>Buscar</button>
 
             </h4>
+
+            <table class="table table-bordered table-striped dt-responsive tablas">
+         
+        <thead>
+         
+         <tr>
+           
+           <th style="width:10px">#</th>
+           <th>Codigo de barras</th>
+           <th>producto</th>
+           <th>tipo</th>
+           <th>presentacion</th>
+           <th>clasificacion</th>
+           <th>Fecha Vencimento</th>
+           <th>Opciones</th>
+
+         </tr> 
+
+        </thead>
+
+        <tbody>
+          
+          <tr>
+            <td>1</td>
+            <td>D01</td>
+            <td>Diclofenaco</td>
+            <td>20</td>
+            <td>1.50</td>
+            <td>2</td>
+            <td>22/10/2022</td>
+            <th>
+                <div class="btn-group">
+                  
+                  <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+  
+                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+  
+                </div> 
+            </th>
+            
+
+          </tr>
+
+        </tbody>
+
+       </table>
           
                 
               
