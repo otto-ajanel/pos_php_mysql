@@ -47,7 +47,7 @@
         
             
             <li class="menu-item">
-               <a " href="#">
+               <a " href="ofertas">
                    <i class="iconos icon7"></i>OFERTAS</a>  
             </li>
             <li class="menu-item">
