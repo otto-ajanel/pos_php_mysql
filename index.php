@@ -21,7 +21,4 @@ require_once "extensiones/vendor/autoload.php";
 $plantilla = new ControladorPlantilla();
 $plantilla -> ctrPlantilla();
 
-/* <prueba></prueba>
-    COMENTARIO DE PRUEBA
-    comentario 
-*/
+/* Otro comentario */
