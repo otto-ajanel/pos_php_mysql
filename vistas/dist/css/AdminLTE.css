@@ -5917,6 +5917,6 @@ height: 80px;
   background: #005384 !important;
 }
 
-.btn-primary1{
- color: #ff851b !important;
+.btn-primary a{
+  color: #fff !important; 
 }

@@ -41,9 +41,9 @@
 
         <div class="box-header with-border">
   
-        <button class="btn btn-primary1">
+        <button class="btn btn-primary">
           
-          <a  href="ingreso-inventario-producto"> Agregar Stock
+          <a  href="ingreso-inventario-producto"> Agregar Stock </a>
           
         </button>
 
@@ -182,7 +182,7 @@ MODAL AGREGAR INVENTARIO
 
           <div class="box-body">
 
-            <!-- ENTRADA PARA EL CODIGO DEL PRODUCTO -->
+            <!-- MOSTRAR EL CODIGO DEL PRODUCTO -->
             
             <div class="form-group">
               

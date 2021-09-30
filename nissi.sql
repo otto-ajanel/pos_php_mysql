@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-09-2021 a las 01:38:39
+-- Tiempo de generación: 30-09-2021 a las 11:41:14
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.9
 
@@ -45,6 +45,13 @@ CREATE TABLE `clasificacion` (
   `CODIGO_CLASIFICACION` int(11) NOT NULL,
   `CLASIFICACION` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `clasificacion`
+--
+
+INSERT INTO `clasificacion` (`CODIGO_CLASIFICACION`, `CLASIFICACION`) VALUES
+(1, 'apastillas');
 
 -- --------------------------------------------------------
 
@@ -188,6 +195,13 @@ CREATE TABLE `presentacion` (
   `PRESENTACION` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `presentacion`
+--
+
+INSERT INTO `presentacion` (`CODIGO_PRESENTACION`, `PRESENTACION`) VALUES
+(2, 'pastilla');
+
 -- --------------------------------------------------------
 
 --
@@ -212,19 +226,45 @@ CREATE TABLE `proveedor` (
   `CODIGO_PROVEEDOR` int(11) NOT NULL,
   `NIT` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `NOMBRE_PROVEEDOR` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
-  `DIRECCION` varchar(100) COLLATE utf8_spanish_ci NOT NULL
+  `DIRECCION` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `CORREO` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `TELEFONO` varchar(15) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `proveedor`
 --
 
-INSERT INTO `proveedor` (`CODIGO_PROVEEDOR`, `NIT`, `NOMBRE_PROVEEDOR`, `DIRECCION`) VALUES
-(1, '43463482', 'Batres', '5ta. Av. Zona 12'),
-(2, '75324321', 'Suiva', '19-30 Zona 10'),
-(3, '98949823', 'Drogrería Merced', '14, 6 - 38 Zona 2'),
-(4, '21024132', 'Farmacia de la Comunidad', '12 avenida 12-54 zona 1'),
-(5, '34939201', 'Farmacia Galeno', '1 Cl 18-92 Z 1');
+INSERT INTO `proveedor` (`CODIGO_PROVEEDOR`, `NIT`, `NOMBRE_PROVEEDOR`, `DIRECCION`, `CORREO`, `TELEFONO`) VALUES
+(1, '43463482', 'Batres', '5ta. Av. Zona 12', 'osa@miumg.com', '(502) 5465-4654'),
+(2, '75324321', 'Suiva', '19-30 Zona 10', '', '0'),
+(3, '98949823', 'Drogrería Merced', '14, 6 - 38 Zona 2', '', '0'),
+(4, '21024132', 'Farmacia de la Comunidad', '12 avenida 12-54 zona 1', '', '0'),
+(5, '34939201', 'Farmacia Galeno', '1 Cl 18-92 Z 1', '', '0'),
+(12, '10', 'Otto René', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', 'ottonielajanel@gamil.com', '2147483647'),
+(13, '10', 'Otto René', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', 'ottonielajanel@gamil.com', '2147483647'),
+(14, '10', 'Otto René', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', 'ottonielajanel@gamil.com', '2147483647'),
+(15, '10', 'Otto René', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', 'ottonielajanel@gamil.com', '2147483647'),
+(19, '4', 'wer', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', 'ottonielajanel@gamil.com', '0'),
+(20, '4', 'oyyo Akaamsl', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', 'ottonielajanel@gamil.com', '49720012'),
+(21, '35458778', 'Otto René', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', 'oajanelm@miumg.edu.gt', '0'),
+(22, '35458778', 'Otto René', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', 'oajanelm@miumg.edu.gt', '0'),
+(23, '35458778', 'Otto René', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', 'oajanelm@miumg.edu.gt', '0'),
+(24, '46787987987', 'Juan Villegas', 'sector Molino Z 1', 'jua@gmail.com', '0'),
+(25, '46787987987', 'Juan Villegas', 'sector Molino Z 1', 'jua@gmail.com', '0'),
+(26, '46787987987', 'Juan Villegas', 'sector Molino Z 1', 'jua@gmail.com', '0'),
+(27, '4654654', 'Ajanel', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', 'ajanal@gmail.com', '0'),
+(28, '4654654', 'Ajanel', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', 'ajanal@gmail.com', '0'),
+(29, '4654654', 'Ajanel', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', 'ajanal@gmail.com', '0'),
+(30, '1234564546', 'oscar', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', '45ajana@gmail.com', '0'),
+(31, '1234564546', 'oscar', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', '45ajana@gmail.com', '0'),
+(32, '1234564546', 'oscar', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', '45ajana@gmail.com', '0'),
+(33, '1234564546', 'oscar', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', '45ajana@gmail.com', '(502) 7894-5612'),
+(34, '165465423121', 'otto', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', 'ajaanl@gmail', '(502) 1456-5445'),
+(35, '165465423121', 'otto', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', 'ajaanl@gmail', '(502) 1456-5445'),
+(36, '454654', 'Otto René', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', 'oahjao@mig.gt', '(502) 6549-8732'),
+(37, '454654', 'Otto René', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', 'oahjao@mig.gt', '(502) 6549-8732'),
+(38, '4654654', 'tuti', '1c 14-1- zona 1, chicua 1, chichicastenango, Quiche', 'ajanal@iumg', '(502) 4654-6546');
 
 -- --------------------------------------------------------
 
@@ -291,7 +331,7 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`CODIGO_USUARIO`, `CODIGO_ROL`, `NOMBRE`, `USUARIO`, `CONTRASEÑA`, `URL`, `ESTADO`) VALUES
 (2, 2, 'admin', 'admin', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', '', 1),
-(5, 1, 'AJANEL', 'OTTO', '$2a$07$asxx54ahjppf45sd87a5auVODg.uIPbQ5WGDLMcBmmxyGgh4PRboy', 'vistas/img/usuarios/OTTO/462.png', 1);
+(6, 2, 'otto', 'otto', '$2a$07$asxx54ahjppf45sd87a5aukged6bq6SOMVtuR6oiIdyQPrK0NzEUy', 'vistas/img/usuarios/otto/929.png', 1);
 
 -- --------------------------------------------------------
 
@@ -441,7 +481,7 @@ ALTER TABLE `asignacion_producto`
 -- AUTO_INCREMENT de la tabla `clasificacion`
 --
 ALTER TABLE `clasificacion`
-  MODIFY `CODIGO_CLASIFICACION` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `CODIGO_CLASIFICACION` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `cliente`
@@ -489,7 +529,7 @@ ALTER TABLE `permiso`
 -- AUTO_INCREMENT de la tabla `presentacion`
 --
 ALTER TABLE `presentacion`
-  MODIFY `CODIGO_PRESENTACION` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `CODIGO_PRESENTACION` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
@@ -501,7 +541,7 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT de la tabla `proveedor`
 --
 ALTER TABLE `proveedor`
-  MODIFY `CODIGO_PROVEEDOR` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `CODIGO_PROVEEDOR` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
@@ -525,7 +565,7 @@ ALTER TABLE `tipo_producto`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `CODIGO_USUARIO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `CODIGO_USUARIO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `venta`
