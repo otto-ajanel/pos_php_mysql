@@ -12,7 +12,7 @@
       
       <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
       
-      <li class="active">Administrar stock</li>
+      <li class="active" >Administrar stock</li>
     
     </ol>
 
@@ -38,15 +38,17 @@
 
         </div>
 
+
         <div class="box-header with-border">
   
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarinventario">
+        <button class="btn btn-primary">
           
-          Agregar Stock
-
+          <a " href="ingreso-inventario-producto"> Agregar Stock
+          
         </button>
 
       </div>
+      
 
 
       <div class="box-body">
