@@ -31,6 +31,11 @@ $plantilla -> ctrPlantilla();
 /* <prueba></prueba>
     COMENTARIO DE PRUEBA
     comentario 
+<<<<<<< HEAD
 */
 =======
 >>>>>>> origin/Rocio
+=======
+    oscar
+*/
+>>>>>>> origin/oscar

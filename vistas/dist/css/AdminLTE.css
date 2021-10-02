@@ -5916,6 +5916,7 @@ height: 80px;
 .modalagregarcliente{
   background: #005384 !important;
 }
+<<<<<<< HEAD
 .carrito{
   height: 300px;
   margin: 0;
@@ -5948,3 +5949,9 @@ height: 80px;
   margin: 0 !important;
   padding: 0 !important;
 }
+=======
+
+.btn-primary a{
+  color: #fff !important; 
+}
+>>>>>>> origin/oscar
