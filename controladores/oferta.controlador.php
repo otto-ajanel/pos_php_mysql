@@ -8,13 +8,13 @@ class ControladorOferta{
 
 	static public function ctrCrearOferta(){
 
-		if(isset($_POST["nuevaOferta"])){
+		if(isset($_POST["ingresoOferta"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaOferta"])){
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["ingresoOferta"])){
 
 				$tabla = "OFERTA";
 
-				$datos = $_POST["nuevaOferta"];
+				$datos = $_POST["ingresoOferta"];
 
 				$respuesta = ModeloOferta::mdlIngresarOferta($tabla, $datos);
 
@@ -70,13 +70,9 @@ class ControladorOferta{
 	=============================================*/
 
 	static public function ctrMostrarOferta($item, $valor){
-
 		$tabla = "OFERTA";
-
 		$respuesta = ModeloOferta::mdlMostrarOferta($tabla, $item, $valor);
-
 		return $respuesta;
-
 	}
 
 	/*=============================================
@@ -85,19 +81,16 @@ class ControladorOferta{
 
 	static public function ctrEditarOferta(){
 
-		if(isset($_POST["editarOferta"])){
-
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarOferta"])){
+		if(isset($_POST["editarCodigoOferta"])){
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarCodigoOferta"])){
 
 				$tabla = "OFERTA";
 
-				$datos = array("DESCUENTO"=>$_POST["editarOferta"],
-							   "CODIGO_OFERTA"=>$_POST["idOferta"]);
-
-
-			 $datos = array("DESCUENTO" => $_POST["nuevoDescuento"],
-										"FECHA_INICIO" => $_POST["nuevaFechaInicio"],
-										"FECHA_FIN" => $_POST["nuevoPerfil"]);
+			 $datos = array(
+				 						"CODIGO_ASIGNACION" => $_POST["nuevoCodigoAsignacion"],
+										"DESCUENTO" => $_POST["nuevoDescuento"],
+										"FECHA_INICIO" => $_POST["nuevoFechaInicio"],
+										"FECHA_FIN" => $_POST["nuevoFechaFin"]);
 
 				$respuesta = ModeloOferta::mdlEditarOferta($tabla, $datos);
 
@@ -156,7 +149,7 @@ class ControladorOferta{
 
 		if(isset($_GET["idOferta"])){
 
-			$tabla ="Oferta";
+			$tabla ="OFERTA";
 			$datos = $_GET["idOferta"];
 
 			$respuesta = ModeloOferta::mdlBorrarOferta($tabla, $datos);

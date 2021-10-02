@@ -27,10 +27,12 @@ class ModeloOferta{
 	REGISTRO DE USUARIO
 	=============================================*/
 	static public function mdlIngresarOferta($tabla, $datos){
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(DESCUENTO, FECHA_INICIO, FECHA_FIN) VALUES (:descuento, :fecha_inicio, :fecha_fin)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(CODIGO_ASIGNACION, DESCUENTO, FECHA_INICIO, FECHA_FIN) VALUES (:codigoAsignacion :descuento, :fechaIncio, :fechaFin)");
+
+		$stmt->bindParam(":codigoAsignacion", $datos["CODIGO_ASIGNACION"], PDO::PARAM_STR);
 		$stmt->bindParam(":descuento", $datos["DESCUENTO"], PDO::PARAM_STR);
-		$stmt->bindParam(":fecha_inicio", $datos["FECHA_INICIO"], PDO::PARAM_STR);
-		$stmt->bindParam(":fecha_fin", $datos["FECHA_FIN"], PDO::PARAM_STR);
+		$stmt->bindParam(":fechaIncio", $datos["FECHA_INICIO"], PDO::PARAM_STR);
+		$stmt->bindParam(":fechaFin", $datos["FECHA_FIN"], PDO::PARAM_STR);
 
 		if($stmt->execute()){
 			return "ok";
@@ -46,10 +48,12 @@ class ModeloOferta{
 	=============================================*/
 
 	static public function mdlEditarOferta($tabla, $datos){
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET DESCUENTO = :descuento, FECHA_INICIO = :fecha_inicio, FECHA_FIN = :fecha_fin");
-    $stmt->bindParam(":descuento", $datos["DESCUENTO"], PDO::PARAM_STR);
-    $stmt->bindParam(":fecha_inicio", $datos["FECHA_INICIO"], PDO::PARAM_STR);
-    $stmt->bindParam(":fecha_fin", $datos["FECHA_FIN"], PDO::PARAM_STR);
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET CODIGO_ASIGNACION = :codigoAsignacion, DESCUENTO = :descuento, FECHA_INICIO = :fechaIncio, FECHA_FIN = :fechaFin");
+
+		$stmt->bindParam(":codigoAsignacion", $datos["CODIGO_ASIGNACION"], PDO::PARAM_STR);
+		$stmt->bindParam(":descuento", $datos["DESCUENTO"], PDO::PARAM_STR);
+		$stmt->bindParam(":fechaIncio", $datos["FECHA_INICIO"], PDO::PARAM_STR);
+		$stmt->bindParam(":fechaFin", $datos["FECHA_FIN"], PDO::PARAM_STR);
 
 		if($stmt -> execute()){
 			return "ok";

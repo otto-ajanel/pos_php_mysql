@@ -53,7 +53,7 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
 
           echo ' <tr>
                   <td>'.($key+1).'</td>
-                  <td>'.$value["PRODUCTO"].'</td>
+                  <td>'.$value["CODIGO_ASIGNACION"].'</td>
                   <td>'.$value["DESCUENTO"].'</td>
                   <td>'.$value["FECHA_INICIO"].'</td>
                   <td>'.$value["FECHA_FIN"].'</td>';
@@ -112,7 +112,7 @@ MODAL AGREGAR OFERTA
             <div class="form-group">
              <div class="input-group">
                <span class="input-group-addon"><i class="fa fa-key"></i></span>
-               <select>
+               <select type="text" class="form-control input-lg" name="nuevoCodigoOferta" id="nuevoCodigoOferta" required>
                  <?php
                    $item = null;
                    $valor = null;
@@ -123,7 +123,7 @@ MODAL AGREGAR OFERTA
                  ?>
                </select>
              </div>
-           </div>
+            </div>
 
             <!-- ENTRADA PARA EL DESCUENTO -->
              <div class="form-group">
@@ -137,7 +137,7 @@ MODAL AGREGAR OFERTA
              <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                <input type="date" class="form-control input-lg" name="nuevaFechaInicio" placeholder="Ingresar fecha de inicio" required>
+                <input type="date" class="form-control input-lg" name="nuevoFechaInicio" id="nuevoFechaInicio" placeholder="Ingresar fecha de inicio" required>
               </div>
             </div>
 
@@ -145,7 +145,7 @@ MODAL AGREGAR OFERTA
             <div class="form-group">
              <div class="input-group">
                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-               <input type="date" class="form-control input-lg" name="nuevaFechaFin" placeholder="Ingresar fecha fin" required>
+               <input type="date" class="form-control input-lg" name="nuevoFechaFin" id="nuevoFechaFin" placeholder="Ingresar fecha fin" required>
              </div>
            </div>
 
@@ -199,7 +199,7 @@ MODAL EDITAR OFERTA
             <div class="form-group">
              <div class="input-group">
                <span class="input-group-addon"><i class="fa fa-key"></i></span>
-               <select>
+               <select type="text" class="form-control input-lg" name="editarCodigoOferta" id="editarCodigoOferta" required>
                  <?php
                    $item = null;
                    $valor = null;
@@ -210,13 +210,13 @@ MODAL EDITAR OFERTA
                  ?>
                </select>
              </div>
-           </div>
+            </div>
 
             <!-- ENTRADA PARA EL DESCUENTO -->
              <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                <input type="number" class="form-control input-lg" name="nuevoDescuento" placeholder="Ingresar porcentaje de descuento" id="nuevoDescuento" required>
+                <input type="number" class="form-control input-lg" name="editarDescuento" id="editarDescuento" placeholder="Ingresar porcentaje de descuento" required>
               </div>
             </div>
 
@@ -224,7 +224,7 @@ MODAL EDITAR OFERTA
              <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                <input type="date" class="form-control input-lg" name="nuevaFechaInicio" placeholder="Ingresar fecha de inicio" required>
+                <input type="date" class="form-control input-lg" name="editarFechaInicio" id="editarFechaInicio" placeholder="Ingresar fecha de inicio" required>
               </div>
             </div>
 
@@ -232,7 +232,7 @@ MODAL EDITAR OFERTA
             <div class="form-group">
              <div class="input-group">
                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-               <input type="date" class="form-control input-lg" name="nuevaFechaFin" placeholder="Ingresar fecha fin" required>
+               <input type="date" class="form-control input-lg" name="editarFechaFin" id="editarFechaFin" placeholder="Ingresar fecha fin" required>
              </div>
            </div>
 
