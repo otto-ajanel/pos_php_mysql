@@ -32,7 +32,7 @@ session_start();
 
   <!-- Theme style -->
   <link rel="stylesheet" href="vistas/dist/css/AdminLTE.css">
-  
+
   <!-- AdminLTE Skins -->
   <link rel="stylesheet" href="vistas/dist/css/skins/_all-skins.min.css">
 
@@ -52,20 +52,20 @@ session_start();
   <!-- Morris chart -->
   <link rel="stylesheet" href="vistas/bower_components/morris.js/morris.css">
 
-  
+
   <!--=====================================
   PLUGINS DE JAVASCRIPT
   ======================================-->
 
   <!-- jQuery 3 -->
   <script src="vistas/bower_components/jquery/dist/jquery.min.js"></script>
-  
+
   <!-- Bootstrap 3.3.7 -->
   <script src="vistas/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
   <!-- FastClick -->
   <script src="vistas/bower_components/fastclick/lib/fastclick.js"></script>
-  
+
   <!-- AdminLTE App -->
   <script src="vistas/dist/js/adminlte.min.js"></script>
 
@@ -112,7 +112,7 @@ CUERPO DOCUMENTO
 ======================================-->
 
 <body class="hold-transition skin-blue login-page">
- 
+
   <?php
 
   if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok"){
@@ -129,7 +129,7 @@ CUERPO DOCUMENTO
     MENU
     =============================================*/
 
-    
+
 
     /*=============================================
     CONTENIDO
@@ -141,6 +141,9 @@ CUERPO DOCUMENTO
          $_GET["ruta"] == "usuarios" ||
          $_GET["ruta"] == "clasificacion" ||
          $_GET["ruta"] == "presentacion" ||
+         $_GET["ruta"] == "tipoproducto" ||
+         $_GET["ruta"] == "productosofertas" ||
+         $_GET["ruta"] == "oferta" ||
          $_GET["ruta"] == "productos" ||
          $_GET["ruta"] == "clientes" ||
          $_GET["ruta"] == "proveedores" ||
@@ -186,11 +189,13 @@ CUERPO DOCUMENTO
 <script src="vistas/js/usuarios.js"></script>
 <script src="vistas/js/clasificacion.js"></script>
 <script src="vistas/js/presentacion.js"></script>
+<script src="vistas/js/tipoproducto.js"></script>
 <script src="vistas/js/proveedores.js"></script>
 <script src="vistas/js/productos.js"></script>
 <script src="vistas/js/clientes.js"></script>
 <script src="vistas/js/ventas.js"></script>
 <script src="vistas/js/reportes.js"></script>
+<script src="vistas/js/oferta.js"></script>
 
 </body>
 </html>
