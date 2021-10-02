@@ -2,7 +2,7 @@
     <nav class="menuShow">
         <ul>
             <li  class="menu-item">
-               <a  href="#">
+               <a  href="crear-ventas">
                    <i class="iconos icon1"></i>VENTAS</a>  
             </li>
             <li  class="menu-item">

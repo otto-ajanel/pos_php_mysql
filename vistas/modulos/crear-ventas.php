@@ -49,26 +49,19 @@
                     <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
                     <input type="text" class="form-control" id="nuevoVendedor" name="nuevoVendedor" value="Usuario Administrador" readonly>
-
+                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                    
+                    <input type="text" class="form-control" id="nuevaVenta" name="nuevaVenta" value="10002343" readonly>
+                  </div>
+                  <div class="input-group">
+                    
+                    
+                  
                   </div>
 
                 </div> 
 
-                <!--=====================================
-                ENTRADA DEL VENDEDOR
-                ======================================--> 
 
-                <div class="form-group">
-                  
-                  <div class="input-group">
-                    
-                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                    
-                    <input type="text" class="form-control" id="nuevaVenta" name="nuevaVenta" value="10002343" readonly>
-                  
-                  </div>
-                
-                </div>
 
                 <!--=====================================
                 ENTRADA DEL CLIENTE
@@ -80,7 +73,7 @@
                     
                     <span class="input-group-addon"><i class="fa fa-users"></i></span>
                     
-                    <select class="form-control" id="seleccionarCliente" name="seleccionarCliente" required>
+                    <select class="form-control" id="seleccionarCliente" name="seleccionarCliente">
 
                     <option value="">Seleccionar cliente</option>
 
@@ -95,7 +88,7 @@
                 <!--=====================================
                 ENTRADA PARA AGREGAR PRODUCTO
                 ======================================--> 
-
+                <div class="carrito">                  
                 <div class="form-group row nuevoProducto">
 
                   <!-- Descripción del producto -->
@@ -111,6 +104,7 @@
                     </div>
 
                   </div>
+                  
 
                   <!-- Cantidad del producto -->
 
@@ -133,7 +127,460 @@
                     </div>
                      
                   </div> 
+                  
 
+                </div>
+                <div class="form-group row nuevoProducto">
+
+                  <!-- Descripción del producto -->
+                  
+                  <div class="col-xs-6" style="padding-right:0px">
+                  
+                    <div class="input-group">
+                      
+                      <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></span>
+
+                      <input type="text" class="form-control" id="agregarProducto" name="agregarProducto" placeholder="Descripción del producto" required>
+
+                    </div>
+
+                  </div>
+                  
+
+                  <!-- Cantidad del producto -->
+
+                  <div class="col-xs-3">
+                    
+                     <input type="number" class="form-control" id="nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" placeholder="0" required>
+
+                  </div> 
+
+                  <!-- Precio del producto -->
+
+                  <div class="col-xs-3" style="padding-left:0px">
+
+                    <div class="input-group">
+
+                      <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+                         
+                      <input type="number" min="1" class="form-control" id="nuevoPrecioProducto" name="nuevoPrecioProducto" placeholder="000000" readonly required>
+         
+                    </div>
+                     
+                  </div> 
+                  
+
+                </div>
+                <div class="form-group row nuevoProducto">
+
+<!-- Descripción del producto -->
+
+<div class="col-xs-6" style="padding-right:0px">
+
+  <div class="input-group">
+    
+    <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></span>
+
+    <input type="text" class="form-control" id="agregarProducto" name="agregarProducto" placeholder="Descripción del producto" required>
+
+  </div>
+
+</div>
+
+
+<!-- Cantidad del producto -->
+
+<div class="col-xs-3">
+  
+   <input type="number" class="form-control" id="nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" placeholder="0" required>
+
+</div> 
+
+<!-- Precio del producto -->
+
+<div class="col-xs-3" style="padding-left:0px">
+
+  <div class="input-group">
+
+    <span class="input-group-addon"><i>Q</i></span>
+       
+    <input type="number" min="1" class="form-control" id="nuevoPrecioProducto" name="nuevoPrecioProducto" placeholder="000000" readonly required>
+
+  </div>
+   
+</div> 
+
+
+</div>
+<div class="form-group row nuevoProducto">
+
+<!-- Descripción del producto -->
+
+<div class="col-xs-6" style="padding-right:0px">
+
+  <div class="input-group">
+    
+    <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></span>
+
+    <input type="text" class="form-control" id="agregarProducto" name="agregarProducto" placeholder="Descripción del producto" required>
+
+  </div>
+
+</div>
+
+
+<!-- Cantidad del producto -->
+
+<div class="col-xs-3">
+  
+   <input type="number" class="form-control" id="nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" placeholder="0" required>
+
+</div> 
+
+<!-- Precio del producto -->
+
+<div class="col-xs-3" style="padding-left:0px">
+
+  <div class="input-group">
+
+    <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+       
+    <input type="number" min="1" class="form-control" id="nuevoPrecioProducto" name="nuevoPrecioProducto" placeholder="000000" readonly required>
+
+  </div>
+   
+</div> 
+
+
+</div>
+<div class="form-group row nuevoProducto">
+
+<!-- Descripción del producto -->
+
+<div class="col-xs-6" style="padding-right:0px">
+
+  <div class="input-group">
+    
+    <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></span>
+
+    <input type="text" class="form-control" id="agregarProducto" name="agregarProducto" placeholder="Descripción del producto" required>
+
+  </div>
+
+</div>
+
+
+<!-- Cantidad del producto -->
+
+<div class="col-xs-3">
+  
+   <input type="number" class="form-control" id="nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" placeholder="0" required>
+
+</div> 
+
+<!-- Precio del producto -->
+
+<div class="col-xs-3" style="padding-left:0px">
+
+  <div class="input-group">
+
+    <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+       
+    <input type="number" min="1" class="form-control" id="nuevoPrecioProducto" name="nuevoPrecioProducto" placeholder="000000" readonly required>
+
+  </div>
+   
+</div> 
+
+
+</div>
+<div class="form-group row nuevoProducto">
+
+<!-- Descripción del producto -->
+
+<div class="col-xs-6" style="padding-right:0px">
+
+  <div class="input-group">
+    
+    <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></span>
+
+    <input type="text" class="form-control" id="agregarProducto" name="agregarProducto" placeholder="Descripción del producto" required>
+
+  </div>
+
+</div>
+
+
+<!-- Cantidad del producto -->
+
+<div class="col-xs-3">
+  
+   <input type="number" class="form-control" id="nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" placeholder="0" required>
+
+</div> 
+
+<!-- Precio del producto -->
+
+<div class="col-xs-3" style="padding-left:0px">
+
+  <div class="input-group">
+
+    <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+       
+    <input type="number" min="1" class="form-control" id="nuevoPrecioProducto" name="nuevoPrecioProducto" placeholder="000000" readonly required>
+
+  </div>
+   
+</div> 
+
+
+</div>
+<div class="form-group row nuevoProducto">
+
+<!-- Descripción del producto -->
+
+<div class="col-xs-6" style="padding-right:0px">
+
+  <div class="input-group">
+    
+    <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></span>
+
+    <input type="text" class="form-control" id="agregarProducto" name="agregarProducto" placeholder="Descripción del producto" required>
+
+  </div>
+
+</div>
+
+
+<!-- Cantidad del producto -->
+
+<div class="col-xs-3">
+  
+   <input type="number" class="form-control" id="nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" placeholder="0" required>
+
+</div> 
+
+<!-- Precio del producto -->
+
+<div class="col-xs-3" style="padding-left:0px">
+
+  <div class="input-group">
+
+    <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+       
+    <input type="number" min="1" class="form-control" id="nuevoPrecioProducto" name="nuevoPrecioProducto" placeholder="000000" readonly required>
+
+  </div>
+   
+</div> 
+
+
+</div>
+<div class="form-group row nuevoProducto">
+
+<!-- Descripción del producto -->
+
+<div class="col-xs-6" style="padding-right:0px">
+
+  <div class="input-group">
+    
+    <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></span>
+
+    <input type="text" class="form-control" id="agregarProducto" name="agregarProducto" placeholder="Descripción del producto" required>
+
+  </div>
+
+</div>
+
+
+<!-- Cantidad del producto -->
+
+<div class="col-xs-3">
+  
+   <input type="number" class="form-control" id="nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" placeholder="0" required>
+
+</div> 
+
+<!-- Precio del producto -->
+
+<div class="col-xs-3" style="padding-left:0px">
+
+  <div class="input-group">
+
+    <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+       
+    <input type="number" min="1" class="form-control" id="nuevoPrecioProducto" name="nuevoPrecioProducto" placeholder="000000" readonly required>
+
+  </div>
+   
+</div> 
+
+
+</div>
+<div class="form-group row nuevoProducto">
+
+<!-- Descripción del producto -->
+
+<div class="col-xs-6" style="padding-right:0px">
+
+  <div class="input-group">
+    
+    <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></span>
+
+    <input type="text" class="form-control" id="agregarProducto" name="agregarProducto" placeholder="Descripción del producto" required>
+
+  </div>
+
+</div>
+
+
+<!-- Cantidad del producto -->
+
+<div class="col-xs-3">
+  
+   <input type="number" class="form-control" id="nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" placeholder="0" required>
+
+</div> 
+
+<!-- Precio del producto -->
+
+<div class="col-xs-3" style="padding-left:0px">
+
+  <div class="input-group">
+
+    <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+       
+    <input type="number" min="1" class="form-control" id="nuevoPrecioProducto" name="nuevoPrecioProducto" placeholder="000000" readonly required>
+
+  </div>
+   
+</div> 
+
+
+</div>
+<div class="form-group row nuevoProducto">
+
+<!-- Descripción del producto -->
+
+<div class="col-xs-6" style="padding-right:0px">
+
+  <div class="input-group">
+    
+    <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></span>
+
+    <input type="text" class="form-control" id="agregarProducto" name="agregarProducto" placeholder="Descripción del producto" required>
+
+  </div>
+
+</div>
+
+
+<!-- Cantidad del producto -->
+
+<div class="col-xs-3">
+  
+   <input type="number" class="form-control" id="nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" placeholder="0" required>
+
+</div> 
+
+<!-- Precio del producto -->
+
+<div class="col-xs-3" style="padding-left:0px">
+
+  <div class="input-group">
+
+    <span class="input-group-addon"><i>subTotal Q</i></span>
+       
+    <input type="number" min="1" class="form-control" id="nuevoPrecioProducto" name="nuevoPrecioProducto" placeholder="000000" readonly required>
+
+  </div>
+   
+</div> 
+
+
+</div>
+<div class="form-group row nuevoProducto">
+
+<!-- Descripción del producto -->
+
+<div class="col-xs-6" style="padding-right:0px">
+
+  <div class="input-group">
+    
+    <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></span>
+
+    <input type="text" class="form-control" id="agregarProducto" name="agregarProducto" placeholder="Descripción del producto" required>
+
+  </div>
+
+</div>
+
+
+<!-- Cantidad del producto -->
+
+<div class="col-xs-3">
+  
+   <input type="number" class="form-control" id="nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" placeholder="0" required>
+
+</div> 
+
+<!-- Precio del producto -->
+
+<div class="col-xs-3" style="padding-left:0px">
+
+  <div class="input-group">
+
+    <span class="input-group-addon"><i>subTotal en Q</i></span>
+       
+    <input type="number" min="1" class="form-control" id="nuevoPrecioProducto" name="nuevoPrecioProducto" placeholder="000000" readonly required>
+
+  </div>
+   
+</div> 
+
+
+</div>
+<div class="form-group row nuevoProducto">
+
+<!-- Descripción del producto -->
+
+<div class="col-xs-6" style="padding-right:0px">
+
+  <div class="input-group">
+    
+    <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></span>
+
+    <input type="text" class="form-control" id="agregarProducto" name="agregarProducto" placeholder="Descripción del producto" required>
+
+  </div>
+
+</div>
+
+
+<!-- Cantidad del producto -->
+
+<div class="col-xs-3">
+  
+   <input type="number" class="form-control" id="nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" placeholder="0" required>
+
+</div> 
+
+<!-- Precio del producto -->
+
+<div class="col-xs-3" style="padding-left:0px">
+
+  <div class="input-group">
+
+    <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+       
+    <input type="number" min="1" class="form-control" id="nuevoPrecioProducto" name="nuevoPrecioProducto" placeholder="000000" readonly required>
+
+  </div>
+   
+</div> 
+
+
+</div>
                 </div>
 
                 <!--=====================================
@@ -144,7 +591,7 @@
 
                 <hr>
 
-                <div class="row">
+                <div class="row impuesto">
 
                   <!--=====================================
                   ENTRADA IMPUESTOS Y TOTAL
@@ -158,16 +605,7 @@
 
                         <tr>
                           <th>Impuesto</th>
-                          <th>Total</th>      
-                        </tr>
-
-                      </thead>
-
-                      <tbody>
-                      
-                        <tr>
-                          
-                          <td style="width: 50%">
+                          <th style="width: 50%">
                             
                             <div class="input-group">
                            
@@ -176,24 +614,24 @@
                         
                             </div>
 
-                          </td>
-
-                           <td style="width: 50%">
+                          </th>
+                          <th>Total</th>   
+                          <th style="width: 50%">
                             
                             <div class="input-group">
                            
-                              <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+                              <span class="input-group-addon"><i class="">Q</i></span>
 
                               <input type="number" min="1" class="form-control" id="nuevoTotalVenta" name="nuevoTotalVenta" placeholder="00000" readonly required>
                               
                         
-                            </div>
-
-                          </td>
-
+                            </div>   
+                            </th>
                         </tr>
 
-                      </tbody>
+                      </thead>
+
+                      
 
                     </table>
 
@@ -212,7 +650,6 @@
                   <div class="col-xs-6" style="padding-right:0px">
                     
                      <div class="input-group">
-                  
                       <select class="form-control" id="nuevoMetodoPago" name="nuevoMetodoPago" required>
                         <option value="">Seleccione método de pago</option>
                         <option value="efectivo">Efectivo</option>

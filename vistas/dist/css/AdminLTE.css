@@ -1285,7 +1285,7 @@ a:focus {
  * ---------------
  */
  .form-group{
-   margin-bottom: 25px;
+   margin-bottom: 15px;
    width: 100%;
  }
 .form-control {
@@ -1617,7 +1617,7 @@ a:focus {
   border-radius: 3px;
   background: #ffffff;
   border-top: 3px solid #d2d6de;
-  margin-bottom: 20px;
+  margin-bottom: 2px;
   width: 100%;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
@@ -5736,7 +5736,7 @@ align-items: center;
 Menu
 */
 .activeMenu{
-  margin:  1% 1% 8% ;
+  margin:  4% 1% 7% ;
   background: none;
   width: 100%;
   height: 45rem;
@@ -5915,4 +5915,36 @@ height: 80px;
 
 .modalagregarcliente{
   background: #005384 !important;
+}
+.carrito{
+  height: 300px;
+  margin: 0;
+  padding: 0px 0 1px 0;
+  max-height: 450px; 
+  overflow: auto ;
+  scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+  scrollbar-width: thin;
+  
+}
+.carrito::-webkit-scrollbar{
+  width: 8px;     /* Tamaño del scroll en vertical */
+  height: 8px;    /* Tamaño del scroll en horizontal */
+}
+.carrito::-webkit-scrollbar-thumb{
+  background: #ccc;
+  border-radius: 4px;
+}
+.carrito::-webkit-scrollbar-thumb:active {
+  background-color: hsl(157, 66%, 60%);
+}
+.nuevoProducto{
+  margin: 3px 0 !important;
+}
+.impuesto{
+  margin: 0;
+  padding: 0;
+}
+.table{
+  margin: 0 !important;
+  padding: 0 !important;
 }
