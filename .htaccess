@@ -1,4 +1,7 @@
+DirectoryIndex index.php
+
 Options All -Indexes
+
 
 RewriteEngine On
 
