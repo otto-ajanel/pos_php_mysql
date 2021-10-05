@@ -2,5 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/ottodevc/public_html/
-    - /bin/cp -R  $DEPLOYPATH   
+    - /bin/cp  index.php $DEPLOYPATH   
+    - /bin/cp -R vistas/ $DEPLOYPATH   
+    - /bin/cp -R modelos $DEPLOYPATH   
       
