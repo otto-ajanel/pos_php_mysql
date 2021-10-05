@@ -26,16 +26,3 @@ require_once "extensiones/vendor/autoload.php";
 
 $plantilla = new ControladorPlantilla();
 $plantilla -> ctrPlantilla();
-<<<<<<< HEAD
-
-/* <prueba></prueba>
-    COMENTARIO DE PRUEBA
-    comentario 
-<<<<<<< HEAD
-*/
-=======
->>>>>>> origin/Rocio
-=======
-    oscar
-*/
->>>>>>> origin/oscar

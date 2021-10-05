@@ -32,7 +32,7 @@
           
           <div class="box-header with-border"></div>
 
-          <form role="form" metohd="post">
+          <form role="form" metohd="post" class="formularioVenta">
 
             <div class="box-body">
   
@@ -47,12 +47,42 @@
                   <div class="input-group">
                     
                     <span class="input-group-addon"><i class="fa fa-user"></i></span> 
-
-                    <input type="text" class="form-control" id="nuevoVendedor" name="nuevoVendedor" value="Usuario Administrador" readonly>
-                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                    <input type="text" class="form-control" id="nuevoVendedor" value="<?php echo $_SESSION["nombre"]; ?>" readonly>
+                    <input type="hidden" name="idVendedor" value="<?php echo $_SESSION["id"]; ?>">
                     
-                    <input type="text" class="form-control" id="nuevaVenta" name="nuevaVenta" value="10002343" readonly>
-                  </div>
+
+                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                    <?php
+
+                    $item = null;
+                    $valor = null;
+
+                    $ventas = ControladorVentas::ctrMostrarVentas($item, $valor);
+
+                    if(!$ventas){
+
+                      echo '<input type="text" class="form-control" id="nuevaVenta" name="nuevaVenta" value="10001" readonly>';
+                  
+
+                    }else{
+
+                      foreach ($ventas as $key => $value) {
+                        
+                        
+                      
+                      }
+
+                      $codigo = $value["codigo"] + 1;
+
+
+
+                      echo '<input type="text" class="form-control" id="nuevaVenta" name="nuevaVenta" value="'.$codigo.'" readonly>';
+                  
+
+                    }
+
+                    ?>
+                    </div>
                   <div class="input-group">
                     
                     
