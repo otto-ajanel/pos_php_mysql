@@ -2,11 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/ottodevc/public_html/
-    - /bin/cp index.php $DEPLOYPATH
-    - /bin/cp .htacces $DEPLOYPATH
-    - /bin/rsync -av vistas/ $DEPLOYPATH   
-    - /bin/cp -R modelos $DEPLOYPATH   
-    - /bin/cp -R ajax $DEPLOYPATH   
-    - /bin/cp -R controladores $DEPLOYPATH   
-    - /bin/cp -R extra $DEPLOYPATH   
-    - /bin/cp -R xml $DEPLOYPATH   
+    - /bin/rsync -av ./pos_php_mysql/ $DEPLOYPATH   
+      
