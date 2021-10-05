@@ -2,5 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/ottodevc/public_html/
-    - /bin/cp -R ../pos_php_mysql/ $DEPLOYPATH   
+    - /bin/cp -R pos_php_mysq/ $DEPLOYPATH   
       
