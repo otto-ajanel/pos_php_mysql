@@ -4,7 +4,7 @@ deployment:
     - export DEPLOYPATH=/home2/ottodevc/public_html/
     - /bin/cp index.php $DEPLOYPATH
     - /bin/cp .htacces $DEPLOYPATH
-    - /bin/cp -R vistas $DEPLOYPATH   
+    - /bin/rsync -av vistas/ $DEPLOYPATH   
     - /bin/cp -R modelos $DEPLOYPATH   
     - /bin/cp -R ajax $DEPLOYPATH   
     - /bin/cp -R controladores $DEPLOYPATH   
