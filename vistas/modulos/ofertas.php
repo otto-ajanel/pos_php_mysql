@@ -432,6 +432,4 @@ MODAL EDITAR OFERTA
   $borrarOfertas = new ControladorOfertas();
   $borrarOfertas -> ctrBorrarOferta();
 
-?> 
-
-
+?>
