@@ -1,0 +1,11 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home2/ottodevc/public_html/
+    
+    - /bin/cp -R ajax $DEPLOYPATH   
+    - /bin/cp -R controladores $DEPLOYPATH   
+    - /bin/cp -R extensiones $DEPLOYPATH   
+    - /bin/cp -R extra $DEPLOYPATH   
+    - /bin/cp -R xml $DEPLOYPATH   
+    
