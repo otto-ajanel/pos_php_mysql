@@ -16,19 +16,19 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
 <div class="content-wrapper">
 
   <section class="content-header">
-    
+
     <h1>
-      
+
        ofertas
-    
+
     </h1>
 
     <ol class="breadcrumb">
-      
+
       <li><a href="inicio"><i class="ion-navicon-round" ></i> INICIO</a></li>
-      
-      
-    
+
+
+
     </ol>
 
   </section>
@@ -38,9 +38,9 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
     <div class="box">
 
       <div class="box-header with-border">
-  
+
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarOferta">
-          
+
           Agregar Oferta
 
         </button>
@@ -48,13 +48,13 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
       </div>
 
       <div class="box-body">
-        
+
        <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
-         
+
         <thead>
-         
+
          <tr>
-           
+
            <th style="width:10px">#</th>
            <th>Codigo de Barra</th>
            <th>Producto</th>
@@ -66,7 +66,7 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
 
            <th>Acciones</th>
 
-         </tr> 
+         </tr>
 
         </thead>
 
@@ -77,11 +77,11 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
         $item = null;
         $valor = null;
 
-        $ofertas = ControladorOfertas::ctrMostrarOfertas($item, $valor);
+        $oferta = ControladorOferta::ctrMostrarOferta($item, $valor);
         $perfiles=[' ','Especial','Administrador','Vendedor'];
 
-       foreach ($ofertas as $key => $value){
-         
+       foreach ($oferta as $key => $value){
+
           echo ' <tr>
                   <td>'.($key+1).'</td>
                   <td>'.$value["CODIGO_BARRAS"].'</td>
@@ -105,17 +105,17 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
                     echo '<td><img src="vistas/img/productos/default/anonymous.png" class="img-thumbnail" width="40px"></td>';
 
                   }
-         
+
                   echo '
                   <td>
 
                     <div class="btn-group">
-                        
+
                       <button class="btn btn-warning btnEditarOferta" idOferta="'.$value["CODIGO_OFERTA"].'" data-toggle="modal" data-target="#modalEditarOferta"><i class="fa fa-pencil"></i></button>
 
                       <button class="btn btn-danger btnEliminarOferta" idOferta="'.$value["CODIGO_OFERTA"].'"><i class="ion-trash-a"></i></button>
 
-                    </div>  
+                    </div>
 
                   </td>
 
@@ -123,7 +123,7 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
         }
 
 
-        ?> 
+        ?>
 
         </tbody>
 
@@ -142,7 +142,7 @@ MODAL AGREGAR OFERTA
 ======================================-->
 
 <div id="modalAgregarOferta" class="modal fade" role="dialog">
-  
+
   <div class="modal-dialog">
 
     <div class="modal-content">
@@ -170,19 +170,19 @@ MODAL AGREGAR OFERTA
           <div class="box-body">
 
             <!-- ENTRADA PARA EL NOMBRE -->
-            
+
             <div class="form-group">
-              
+
             <div class="input-group">
-              
-              <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+              <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
               <select class="form-control input-lg" id="nuevaCategoria" name="nuevaCategoria" required>
-                
+
                 <option value="">Selecionar busqueda</option>
 
-                
-                  
+
+
                 <option value="Barra">Barra</option>
                 <option value="Producto">Producto</option>
                 <option value="Codigo">Codigo de producto</option>
@@ -195,66 +195,66 @@ MODAL AGREGAR OFERTA
           </div>
 
             </div>
-            
+
 
            <!-- ENTRADA PARA OFERTAS -->
 
              <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
                 <input type="text" class="form-control input-lg" name="nuevaOferta" placeholder="Ingresar oferta" id="nuevaOferta" required>
 
               </div>
- 
+
             </div>
 
              <!-- ENTRADA PARA PORCENTAJE -->
 
              <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
                 <input type="text" class="form-control input-lg" name="nuevoPorcetaje" placeholder="Ingresar porcentaje" id="nuevoPorcentaje" min="0" max="100" required>
 
               </div>
- 
+
             </div>
 
              <!-- ENTRADA PARA FECHA DE INICIO -->
 
              <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
                 <input type="date" class="form-control input-lg" name="nuevaFechaInicio" placeholder="Ingresar fecha inicio" id="nuevaFechaInicio"  required>
 
               </div>
- 
+
             </div>
 
             <!-- ENTRADA PARA FECHA DE INICIO -->
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
                 <input type="date" class="form-control input-lg" name="nuevaFechaFin" placeholder="Ingresar fecha fin" id="nuevaFechaFin"  required>
 
               </div>
- 
+
             </div>
 
-            
-          
+
+
         <!--=====================================
         PIE DEL MODAL
         ======================================-->
@@ -269,7 +269,7 @@ MODAL AGREGAR OFERTA
 
         <?php
 
-          $crearOferta = new ControladorOfertas();
+          $crearOferta = new ControladorOferta();
           $crearOferta -> ctrCrearOferta();
 
         ?>
@@ -287,7 +287,7 @@ MODAL EDITAR OFERTA
 ======================================-->
 
 <div id="modalEditarOferta" class="modal fade" role="dialog">
-  
+
   <div class="modal-dialog">
 
     <div class="modal-content">
@@ -315,19 +315,19 @@ MODAL EDITAR OFERTA
           <div class="box-body">
 
             <!-- ENTRADA PARA EL NOMBRE -->
-            
+
             <div class="form-group">
-              
+
             <div class="input-group">
-              
-              <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+              <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
               <select class="form-control input-lg" id="editarOferta" name="editarOferta" required>
-                
+
                 <option value="">Selecionar oferta</option>
 
-                
-                  
+
+
                 <option value="Barra">Barra</option>
                 <option value="Producto">Producto</option>
                 <option value="Codigo">Codigo de producto</option>
@@ -340,66 +340,66 @@ MODAL EDITAR OFERTA
           </div>
 
             </div>
-            
+
 
            <!-- ENTRADA PARA OFERTAS -->
 
              <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
                 <input type="text" class="form-control input-lg" name="editarOfertaProducto" placeholder="Ingresar oferta" id="editarOfertaProducto" required>
 
               </div>
- 
+
             </div>
 
              <!-- ENTRADA PARA PORCENTAJE -->
 
              <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
                 <input type="text" class="form-control input-lg" name="editarPorcetaje" placeholder="Ingresar porcentaje" id="editarPorcentaje" min="0" max="100" required>
 
               </div>
- 
+
             </div>
 
              <!-- ENTRADA PARA FECHA DE INICIO -->
 
              <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
                 <input type="date" class="form-control input-lg" name="editarFechaInicio" placeholder="Ingresar fecha inicio" id="editarFechaInicio"  required>
 
               </div>
- 
+
             </div>
 
             <!-- ENTRADA PARA FECHA DE INICIO -->
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
                 <input type="date" class="form-control input-lg" name="editarFechaFin" placeholder="Ingresar fecha fin" id="editarFechaFin"  required>
 
               </div>
- 
+
             </div>
 
-            
-          
+
+
         <!--=====================================
         PIE DEL MODAL
         ======================================-->
@@ -414,7 +414,7 @@ MODAL EDITAR OFERTA
 
         <?php
 
-          $editarOferta = new ControladorOfertas();
+          $editarOferta = new ControladorOferta();
           $editarOferta -> ctrEditarOferta();
 
         ?>
@@ -429,9 +429,7 @@ MODAL EDITAR OFERTA
 
 <?php
 
-  $borrarOfertas = new ControladorOfertas();
-  $borrarOfertas -> ctrBorrarOferta();
+  $borrarOferta = new ControladorOferta();
+  $borrarOferta -> ctrBorrarOferta();
 
-?> 
-
-
+?>

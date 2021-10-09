@@ -2,6 +2,7 @@
     <nav class="menuShow">
         <ul>
             <li  class="menu-item">
+
                <a  href="crear-ventas">
 
               
@@ -23,19 +24,22 @@
                     </li>
                      <li class="menu-item">
                          <a  href="proveedores"><i ></i> PROVEEDORES</a>
+
                     </li>
                 </ul>
             </li>
             <li  class="menu-item">
-               <a  href="clientes">
+               <a  href="cliente">
                    <i class="iconos icon4"></i>CLIENTES</a>
             </li>
             <li class="menu-item">
-                <a  href="#"><i class="iconos icon5"></i>PRODUCTO</a>
+                <a  href="producto"><i class="iconos icon5"></i>PRODUCTO</a>
                 <ul  class="sub-menu">
-                    <li class="menu-item">
-                        <a  href="productos"><i></i>VER PRODUCTOS</a>
-                    </li>
+                    <!--<li class="menu-item">
+                        <a href="producto"><i></i>VER PRODUCTOS</a>
+                    </li>-->
+
+
                     <li class="menu-item">
                          <a href="clasificacion"><i></i>CLASIFICACIÓN</a>
                     </li>
@@ -54,13 +58,14 @@
 
             <li class="menu-item">
 
-               <a  href="ofertas">
+               <a  href="oferta">
+                   <i class="iconos icon7"></i>OFERTAS</a>
 
-                   <i class="iconos icon7"></i>OFERTAS</a>  
-               
             </li>
   
             <li class="menu-item">
+
+
 
                 <a href="usuarios"><i class="iconos icon8"></i>USUARIO</a>            
                 

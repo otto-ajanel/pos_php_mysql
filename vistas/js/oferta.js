@@ -17,11 +17,11 @@ $(".tablas").on("click", ".btnEditarOferta", function () {
 		dataType: "json",
 		success: function (respuesta) {
 
-			$("#editarCodigoAsignacion").val(respuesta["CODIGO_ASIGNACION"]);
+			$('#editarCodigoOferta option[value="' + respuesta["CODIGO_ASIGNACION"] + '"]').prop('selected', true);
 			$("#editarDescuento").val(respuesta["DESCUENTO"]);
 			$("#editarFechaInicio").val(respuesta["FECHA_INICIO"]);
 			$("#editarFechaFin").val(respuesta["FECHA_FIN"]);
-
+			$("#idOferta").val(respuesta["CODIGO_OFERTA"]);
 		}
 	})
 })
