@@ -35,6 +35,23 @@ CREATE TABLE `asignacion_producto` (
   `CODIGO_CLASIFICACION` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+
+INSERT INTO `asignacion_producto` (`CODIGO_ASIGNACION`, `CODIGO_PRODUCTO`, `CODIGO_PRESENTACION`, `CODIGO_TIPO`, `CODIGO_CLASIFICACION`) VALUES
+(1, 1, 1, 1, 1);
+(2, 2, 2, 1, 2);
+(3, 3, 3, 1, 3);
+(4, 4, 1, 1, 1);
+(5, 5, 2, 1, 2);
+(6, 6, 3, 1, 3);
+(7, 7, 1, 1, 4);
+(8, 8, 2, 1, 1);
+(9, 9, 3, 1, 1);
+(10, 10, 1, 1, 2);
+(11, 11, 2, 1, 3);
+(12, 12, 3, 1, 4);
+(13, 13, 1, 1, 2);
+(14, 14, 2, 1, 3);
+(15, 15, 2, 1, 1);
 -- --------------------------------------------------------
 
 --
@@ -43,7 +60,8 @@ CREATE TABLE `asignacion_producto` (
 
 CREATE TABLE `clasificacion` (
   `CODIGO_CLASIFICACION` int(11) NOT NULL,
-  `CLASIFICACION` varchar(25) COLLATE utf8_spanish_ci NOT NULL
+  `CLASIFICACION` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
+  `VISIBLE` int(1) COLLATE utf8_spanish_ci NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -51,7 +69,12 @@ CREATE TABLE `clasificacion` (
 --
 
 INSERT INTO `clasificacion` (`CODIGO_CLASIFICACION`, `CLASIFICACION`) VALUES
-(1, 'apastillas');
+(1, 'Antialergico'),
+(2, 'Anticonceptivo'),
+(3, 'Analgésico'),
+(4, 'Antidiarreico'),
+(5, 'Antibiótico'),
+
 
 -- --------------------------------------------------------
 
@@ -63,7 +86,8 @@ CREATE TABLE `cliente` (
   `CODIGO_CLIENTE` int(11) NOT NULL,
   `NIT` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `NOMBRE_CLIENTE` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `DIRECCION` varchar(50) COLLATE utf8_spanish_ci NOT NULL
+  `DIRECCION` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `VISIBLE` int(1) COLLATE utf8_spanish_ci NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -71,16 +95,21 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`CODIGO_CLIENTE`, `NIT`, `NOMBRE_CLIENTE`, `DIRECCION`) VALUES
-(1, '62463482', 'Santiago', '7 AV 27-22 Z-8'),
+(1, '62463482', 'Santiago', 'Ciudad'),
 (2, '98324321', 'Maria', '7 Av 34 - 12 Zona 8'),
 (3, '23949823', 'Juan', 'Calzada Roosevelt Kilómetro 14'),
 (4, '79024132', 'Andrea', '19 Avenida 8 - 10 Zona 11'),
 (5, '84939201', 'Rodrigo', 'Boulevar Proceres 18-41 Zona 10'),
-(6, '34534584', 'Vera', '1 Cl 18-92 Z 1'),
+(6, '34534584', 'Alexander', 'Ciudad'),
 (7, '56298329', 'Carlos', '7av. 8-51, zona 1'),
 (8, '82467213', 'Pamela', '12 avenida 12-54 zona 1'),
 (9, '49237682', 'Joel', '5ta. Av. Zona 12'),
-(10, '78623671', 'Elena', '19-30 Zona 10');
+(10, '78623671', 'Elena', '19-30 Zona 10'),
+(11, '78623671', 'David', 'Ciudad'),
+(12, '78623671', 'Oscar', 'Ciudad'),
+(13, '78623671', 'Rocio', 'Ciudad'),
+(14, '78623671', 'Marlen', '19-30 Zona 10'),
+(15, '78623671', 'Sofia', 'Ciudad');
 
 -- --------------------------------------------------------
 
@@ -108,7 +137,12 @@ INSERT INTO `contacto_cliente` (`CODIGO_CONTACTO_C`, `CODIGO_CLIENTE`, `TELEFONO
 (7, 7, 54621931),
 (8, 8, 41638954),
 (9, 9, 55335402),
-(10, 10, 42615606);
+(10, 10, 42615606),
+(11, 11, 12345678),
+(12, 12, 58354849),
+(13, 13, 53981043),
+(14, 14, 58112845),
+(15, 15, 74125896);
 
 -- --------------------------------------------------------
 
@@ -146,6 +180,28 @@ CREATE TABLE `oferta` (
   `FECHA_FIN` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+
+INSERT INTO `oferta` (`CODIGO_OFERTA`, `CODIGO_ASIGNACION`, `DESCUENTO`, `FECHA_INICIO` , `FECHA_FIN`) VALUES
+(1, 1, 10, '2021-9-1', '2021-9-20' ),
+(2, 2, 15, '2021-9-2', '2021-9-21' ),
+(3, 3, 5, '2021-9-3', '2021-9-22' ),
+(4, 4, 10, '2021-9-4', '2021-9-23' ),
+(5, 5, 10, '2021-9-5', '2021-9-24' ),
+(6, 6, 10, '2021-9-6', '2021-9-25' ),
+(7, 7, 18, '2021-9-7', '2021-9-26' ),
+(8, 8, 15, '2021-9-8', '2021-9-27' ),
+(9, 9, 12, '2021-9-9', '2021-9-28' ),
+(10, 10, 20, '2021-9-10', '2021-9-29' ),
+(11, 11, 5, '2021-9-11', '2021-9-30' ),
+(12, 12, 5, '2021-9-12', '2021-10-1' ),
+(13, 13, 10, '2021-9-13', '2021-10-20' ),
+(14, 14, 10, '2021-9-14', '2021-10-20' ),
+(15, 15, 10, '2021-9-15', '2021-10-20' );
+
+
+
+
+
 -- --------------------------------------------------------
 
 --
@@ -160,6 +216,28 @@ CREATE TABLE `pedido` (
   `CANTIDAD` int(10) NOT NULL,
   `PRECIO` double(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+INSERT INTO `pedido` (`NO_ORDEN`, `CODIGO_PROVEEDOR`, `FECHA_PEDIDO`, `FECHA_ESTIMADA` , `CANTIDAD`, `PRECIO`,) VALUES
+(1, 1, '2021-9-1', '2021-9-20', 10, '150' ),
+(2, 2, '2021-9-1', '2021-9-20', 10, '100' ),
+(3, 3, '2021-9-1', '2021-9-20', 10, '200' ),
+(4, 4, '2021-9-1', '2021-9-20', 10, '150' ),
+(5, 5, '2021-9-1', '2021-9-20', 10, '100' ),
+(6, 6, '2021-9-1', '2021-9-20', 10, '150' ),
+(7, 7, '2021-9-1', '2021-9-20', 10, '150' ),
+(8, 8, '2021-9-1', '2021-9-20', 10, '200' ),
+(9, 9, '2021-9-1', '2021-9-20', 10, '75' ),
+(10, 10, '2021-9-1', '2021-9-20', 10, '150' ),
+(11, 11, '2021-9-1', '2021-9-20', 10, '150' ),
+(12, 12, '2021-9-1', '2021-9-20', 10, '300' ),
+(13, 13, '2021-9-1', '2021-9-20', 10, '150' ),
+(14, 14, '2021-9-1', '2021-9-20', 10, '150' ),
+(15, 15, '2021-9-1', '2021-9-20', 10, '150' );
+
+
+
+
 
 -- --------------------------------------------------------
 
@@ -192,7 +270,8 @@ CREATE TABLE `permiso` (
 
 CREATE TABLE `presentacion` (
   `CODIGO_PRESENTACION` int(11) NOT NULL,
-  `PRESENTACION` varchar(25) COLLATE utf8_spanish_ci NOT NULL
+  `PRESENTACION` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
+  `VISIBLE` int(1) COLLATE utf8_spanish_ci NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -213,8 +292,28 @@ CREATE TABLE `producto` (
   `NOMBRE_GENERICO` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `NOMBRE_COMERCIAL` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `STOCK_MIN` int(10) NOT NULL,
-  `STOCK_MAX` int(10) NOT NULL
+  `STOCK_MAX` int(10) NOT NULL,
+  `VISIBLE` int(1) COLLATE utf8_spanish_ci NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+INSERT INTO `producto` (`CODIGO_PRODUCTO`, `NOMBRE_GENERICO`, `NOMBRE_COMERCIAL`, `STOCK_MIN`,`STOCK_MAX`) VALUES
+(1, 'Aspirina', 'Aspirina', 5, 10),
+(2, 'Aspirina Forte', 'Aspirina Forte', 5, 10),
+(3, 'Vicks', 'Vicks', 5, 10),
+(4, 'Mentol', 'Mentol', 5, 10),
+(5, 'Benzan', 'Benzan', 5, 10),
+(6, 'Penetracina', 'Penetracina', 5, 10),
+(7, 'Dorival', 'Dorival', 5, 10),
+(8, 'Nauseol', 'Nauseol', 5, 10),
+(9, 'Instaprin', 'Instaprin', 5, 10),
+(10, 'Neurobion', 'Neurobion', 5, 10),
+(11, 'Neurofortan', 'Neurofortan', 5, 10),
+(12, 'AlkD', 'AlkD', 5, 10),
+(13, 'Diclofenaco', 'Diclofenaco', 5, 10),
+(14, 'Acetaminofen', 'Acetaminofen', 5, 10),
+(15, 'Suero', 'Suero', 5, 10);
+
 
 -- --------------------------------------------------------
 
@@ -306,7 +405,8 @@ CREATE TABLE `rol_permiso` (
 
 CREATE TABLE `tipo_producto` (
   `CODIGO_TIPO` int(11) NOT NULL,
-  `TIPO_PRODUCTO` varchar(25) COLLATE utf8_spanish_ci NOT NULL
+  `TIPO_PRODUCTO` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
+  `VISIBLE` int(1) COLLATE utf8_spanish_ci NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------

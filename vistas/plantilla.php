@@ -146,17 +146,22 @@ CUERPO DOCUMENTO
          $_GET["ruta"] == "tipoproducto" ||
          $_GET["ruta"] == "productosofertas" ||
          $_GET["ruta"] == "oferta" ||
+
+         $_GET["ruta"] == "producto" ||
+         $_GET["ruta"] == "cliente" ||
+
          $_GET["ruta"] == "productos" ||
          $_GET["ruta"] == "clientes" ||
          $_GET["ruta"] == "inventario15776" ||
          $_GET["ruta"] == "ingreso-inventario15776" ||
          $_GET["ruta"] == "ingreso-inventario-producto" ||
+
          $_GET["ruta"] == "proveedores" ||
-         $_GET["ruta"] == "ofertas" ||
          $_GET["ruta"] == "ventas" ||
          $_GET["ruta"] == "crear-ventas" ||
          $_GET["ruta"] == "editar-venta" ||
          $_GET["ruta"] == "reportes" ||
+         $_GET["ruta"] == "cliente1" ||
          $_GET["ruta"] == "salir"){
 
         include "./vistas/modulos/".$_GET["ruta"].".php";
@@ -188,8 +193,6 @@ CUERPO DOCUMENTO
   }
 
   ?>
-
-
     <script src="vistas/js/plantilla.js"></script>
     <script src="vistas/js/usuarios.js"></script>
     <script src="vistas/js/clasificacion.js"></script>
@@ -201,6 +204,7 @@ CUERPO DOCUMENTO
     <script src="vistas/js/ventas.js"></script>
     <script src="vistas/js/reportes.js"></script>
     <script src="vistas/js/oferta.js"></script>
+
 
 </body>
 
