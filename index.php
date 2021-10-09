@@ -8,6 +8,7 @@ require_once "controladores/proveedores.controlador.php";
 require_once "controladores/productos.controlador.php";
 require_once "controladores/clientes.controlador.php";
 require_once "controladores/ventas.controlador.php";
+require_once "controladores/inventario.controlador.php";
 
 require_once "modelos/usuarios.modelo.php";
 require_once "modelos/clasificacion.modelo.php";
@@ -16,6 +17,8 @@ require_once "modelos/proveedores.modelo.php";
 require_once "modelos/productos.modelo.php";
 require_once "modelos/clientes.modelo.php";
 require_once "modelos/ventas.modelo.php";
+require_once "modelos/inventario.modelo.php";
+
 require_once "extensiones/vendor/autoload.php";
 
 $plantilla = new ControladorPlantilla();
@@ -24,5 +27,5 @@ $plantilla -> ctrPlantilla();
 /* <prueba></prueba>
     COMENTARIO DE PRUEBA
     comentario 
-    oscar
+    oscar V
 */
