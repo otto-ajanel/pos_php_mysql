@@ -9,8 +9,12 @@ require_once "controladores/proveedores.controlador.php";
 require_once "controladores/producto.controlador.php";
 require_once "controladores/cliente.controlador.php";
 require_once "controladores/ventas.controlador.php";
+
+require_once "controladores/inventario.controlador.php";
+
 require_once "controladores/oferta.controlador.php";
 require_once "controladores/productosofertas.controlador.php";
+
 
 require_once "modelos/usuarios.modelo.php";
 require_once "modelos/clasificacion.modelo.php";
@@ -20,6 +24,11 @@ require_once "modelos/proveedores.modelo.php";
 require_once "modelos/producto.modelo.php";
 require_once "modelos/cliente.modelo.php";
 require_once "modelos/ventas.modelo.php";
+
+require_once "modelos/inventario.modelo.php";
+
+require_once "extensiones/vendor/autoload.php";
+
 require_once "modelos/productosofertas.modelo.php";
 require_once "modelos/oferta.modelo.php";
 require_once "extensiones/vendor/autoload.php";
