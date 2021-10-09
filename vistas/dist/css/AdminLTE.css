@@ -12,7 +12,22 @@
 html,
 body {
   height: 100%;
+  overflow: auto ;
+  scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+  scrollbar-width: thin;
 }
+html::-webkit-scrollbar{
+  width: 10px;     /* Tamaño del scroll en vertical */
+  height: 10px;    /* Tamaño del scroll en horizontal */
+}
+html::-webkit-scrollbar-thumb{
+  background: rgba(64, 132, 219, 0.664);
+  border-radius: 3px;
+}
+html::-webkit-scrollbar-thumb:active {
+  background-color: hsl(157, 66%, 60%);
+}
+
 .layout-boxed html,
 .layout-boxed body {
   height: 100%;
@@ -209,6 +224,7 @@ a:focus {
   margin-bottom: 0;
   margin-left: 0px;
   border: none;
+  max-height: 60px;
   min-height: 50px;
   border-radius: 0;
 }
@@ -1192,11 +1208,11 @@ a:focus {
 }
 .navbar-nav > .user-menu .user-image {
   float: left;
-  width: 30px;
-  height: 30px;
+  width: 45px !important;
+  height: 45px !important;
   border-radius: 50%;
   margin-right: 15px;
-  margin-top: -2px;
+  margin-top: -12px;
 }
 @media (max-width: 767px) {
   .navbar-nav > .user-menu .user-image {
@@ -1285,7 +1301,7 @@ a:focus {
  * ---------------
  */
  .form-group{
-   margin-bottom: 15px;
+   margin-bottom: 5px;
    width: 100%;
  }
 .form-control {
@@ -1617,9 +1633,9 @@ a:focus {
   border-radius: 3px;
   background: #ffffff;
   border-top: 3px solid #d2d6de;
-  margin-bottom: 2px;
+  margin-bottom: 0px;
   width: 100%;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow:0 1px 1px rgba(139, 41, 41, 0.1);
 }
 .box.box-primary {
   border-top-color: #3c8dbc;
@@ -1634,7 +1650,7 @@ a:focus {
   border-top-color: #f39c12;
 }
 .box.box-success {
-  border-top-color: #00a65a;
+  border-top-color: #3c8dbc;
 }
 .box.box-default {
   border-top-color: #d2d6de;
@@ -1820,7 +1836,7 @@ a:focus {
 .box-header {
   color: #444;
   display: block;
-  padding: 10px;
+  padding: 5px;
   position: relative;
 }
 .box-header.with-border {
@@ -5893,12 +5909,14 @@ background-image: url("../img/iconos/Reportes.PNG");
   padding-left: 25px;
 }
 .header-info img{
-height: 80px;
+height: 59px;
 }
 .header-info h3{
-  padding-left: 25px;
+  padding-left: 50px;
   color: #fff;
-  font-weight: 400;
+  font-weight: 500;
+  letter-spacing: 5px;
+  font-size: 28px;
 }
 .grow1{
   flex-grow: 1;
@@ -5951,4 +5969,10 @@ height: 80px;
 
 .btn-primary a{
   color: #fff !important; 
+}
+
+.input-group-addon button{
+  height: 20px;
+  margin: 0;
+
 }
