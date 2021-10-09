@@ -118,7 +118,7 @@ MODAL AGREGAR OFERTA
                    $valor = null;
                    $productos = ControladorProductosOfertas::ctrMostrarProductosOfertas();
                    foreach ($productos as $key => $value) {
-                     echo '<option>'.$value["NOMBRE_GENERICO"].'</option>';
+                     echo '<option value="'.$value["CODIGO_ASIGNACION"].'">'.$value["NOMBRE_GENERICO"].'</option>';
                    }
                  ?>
                </select>
@@ -199,13 +199,14 @@ MODAL EDITAR OFERTA
             <div class="form-group">
              <div class="input-group">
                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+               <input type="hidden"  name="idOferta" id="idOferta" required>
                <select type="text" class="form-control input-lg" name="editarCodigoOferta" id="editarCodigoOferta" required>
                  <?php
                    $item = null;
                    $valor = null;
                    $productos = ControladorProductosOfertas::ctrMostrarProductosOfertas();
                    foreach ($productos as $key => $value) {
-                     echo '<option>'.$value["NOMBRE_GENERICO"].'</option>';
+                     echo '<option value="'.$value["CODIGO_ASIGNACION"].'">'.$value["NOMBRE_GENERICO"].'</option>';
                    }
                  ?>
                </select>

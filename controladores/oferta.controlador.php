@@ -7,21 +7,23 @@ class ControladorOferta{
 	=============================================*/
 
 	static public function ctrCrearOferta(){
+		//está seteado? o tiene valor? set = asignación
+		if(isset($_POST["nuevoDescuento"]) &&
+			 isset($_POST["nuevoFechaInicio"]) &&
+			 isset($_POST["nuevoFechaFin"])
+			){
 
-		if(isset($_POST["ingresoOferta"])){
-
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["ingresoOferta"])){
+			if(preg_match('/^[0-9.]+$/', $_POST["nuevoDescuento"])){
 
 				$tabla = "OFERTA";
+				$datoCodigoAsignacion = $_POST['nuevoCodigoOferta'];
+				$datodescuento = $_POST["nuevoDescuento"];
+				$datofechainicial = $_POST["nuevoFechaInicio"];
+				$datofechafinal = $_POST["nuevoFechaFin"];
 
-				$datos = $_POST["ingresoOferta"];
-
-				$respuesta = ModeloOferta::mdlIngresarOferta($tabla, $datos);
-
+				$respuesta = ModeloOferta::mdlIngresarOferta($tabla, $datoCodigoAsignacion,$datodescuento, $datofechainicial, $datofechafinal);
 				if($respuesta == "ok"){
-
 					echo'<script>
-
 					swal({
 						  type: "success",
 						  title: "El tipo de producto ha sido guardado correctamente",
@@ -29,40 +31,26 @@ class ControladorOferta{
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 									if (result.value) {
-
 									window.location = "oferta";
-
 									}
 								})
-
 					</script>';
-
 				}
-
-
 			}else{
-
 				echo'<script>
-
 					swal({
 						  type: "error",
-						  title: "¡El tipo de producto no puede ir vacío o llevar caracteres especiales!",
+						  title: "¡Error, el porcentaje de descuento debe ser un valor numérico!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 							if (result.value) {
-
 							window.location = "oferta";
-
 							}
 						})
-
 			  	</script>';
-
 			}
-
 		}
-
 	}
 
 	/*=============================================
@@ -81,19 +69,23 @@ class ControladorOferta{
 
 	static public function ctrEditarOferta(){
 
-		if(isset($_POST["editarCodigoOferta"])){
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarCodigoOferta"])){
+		if(isset($_POST["editarDescuento"]) &&
+			 isset($_POST["editarFechaInicio"]) &&
+			 isset($_POST["editarFechaFin"])
+			){
+
+			if(preg_match('/^[0-9.]+$/', $_POST["editarDescuento"])){
 
 				$tabla = "OFERTA";
 
-			 $datos = array(
-				 						"CODIGO_ASIGNACION" => $_POST["nuevoCodigoAsignacion"],
-										"DESCUENTO" => $_POST["nuevoDescuento"],
-										"FECHA_INICIO" => $_POST["nuevoFechaInicio"],
-										"FECHA_FIN" => $_POST["nuevoFechaFin"]);
+				$datos = array(
+ 				 						"CODIGO_ASIGNACION" => $_POST["editarCodigoOferta"],
+ 										"DESCUENTO" => $_POST["editarDescuento"],
+ 										"FECHA_INICIO" => $_POST["editarFechaInicio"],
+ 										"FECHA_FIN" => $_POST["editarFechaFin"],
+										"CODIGO_OFERTA"=>$_POST["idOferta"]);
 
 				$respuesta = ModeloOferta::mdlEditarOferta($tabla, $datos);
-
 				if($respuesta == "ok"){
 
 					echo'<script>
@@ -105,21 +97,14 @@ class ControladorOferta{
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 									if (result.value) {
-
 									window.location = "oferta";
-
 									}
 								})
-
 					</script>';
-
 				}
-
-
 			}else{
 
 				echo'<script>
-
 					swal({
 						  type: "error",
 						  title: "¡El tipo de producto no puede ir vacío o llevar caracteres especiales!",
@@ -127,18 +112,12 @@ class ControladorOferta{
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 							if (result.value) {
-
 							window.location = "oferta";
-
 							}
 						})
-
 			  	</script>';
-
 			}
-
 		}
-
 	}
 
 	/*=============================================
@@ -151,14 +130,10 @@ class ControladorOferta{
 
 			$tabla ="OFERTA";
 			$datos = $_GET["idOferta"];
-
 			$respuesta = ModeloOferta::mdlBorrarOferta($tabla, $datos);
 
-
 			if($respuesta == "ok"){
-
 				echo'<script>
-
 					swal({
 						  type: "success",
 						  title: "El tipo de producto ha sido borrado correctamente",
@@ -168,10 +143,8 @@ class ControladorOferta{
 									if (result.value) {
 
 									window.location = "oferta";
-
 									}
 								})
-
 					</script>';
 			}
 		}
