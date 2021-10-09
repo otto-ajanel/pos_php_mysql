@@ -13,7 +13,7 @@ class ControladorVentas{
 
 	static public function ctrMostrarVentas($item, $valor){
 
-		$tabla = "ventas";
+		$tabla = "venta";
 
 		$respuesta = ModeloVentas::mdlMostrarVentas($tabla, $item, $valor);
 
