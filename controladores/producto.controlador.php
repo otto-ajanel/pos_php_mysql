@@ -154,4 +154,15 @@ class ControladorProducto{
 			}
 		}
 	}
+	/* Mostarr productos de inventario */
+	static public function ctrMostrarProductosVenta(){
+		$tabla="inventario";
+		$res=ModeloProducto::mdlMostrarInventario($tabla);
+		return $res;
+	}
+	static public function ctrMostrarProductoVenta($item, $valor){
+		$tabla = "inventario";
+		$respuesta = ModeloProducto::mdlMostrarProductoVenta($tabla, $item, $valor);
+		return $respuesta;
+	}
 }

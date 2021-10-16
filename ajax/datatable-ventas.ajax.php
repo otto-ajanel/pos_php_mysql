@@ -1,10 +1,11 @@
 <?php
 
-require_once "../controladores/productos.controlador.php";
-require_once "../modelos/productos.modelo.php";
+require_once "../controladores/producto.controlador.php";
+require_once "../modelos/producto.modelo.php";
 
 
 class TablaProductosVentas{
+	
 
  	/*=============================================
  	 MOSTRAR LA TABLA DE PRODUCTOS
@@ -12,12 +13,7 @@ class TablaProductosVentas{
 
 	public function mostrarTablaProductosVentas(){
 
-		$item = null;
-    	$valor = null;
-    	$orden = "id";
-
-  		$productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
- 		
+  		$productos = ControladorProducto::ctrMostrarProductosVenta();
   		if(count($productos) == 0){
 
   			echo '{"data": []}';
@@ -34,12 +30,12 @@ class TablaProductosVentas{
  	 		TRAEMOS LA IMAGEN
   			=============================================*/ 
 
-		  	$imagen = "<img src='".$productos[$i]["imagen"]."' width='40px'>";
+		  	$imagen = "<img src='".$productos[$i]["URL"]."' width='40px'>";
 
 		  	/*=============================================
  	 		STOCK
   			=============================================*/ 
-
+/*
   			if($productos[$i]["stock"] <= 10){
 
   				$stock = "<button class='btn btn-danger'>".$productos[$i]["stock"]."</button>";
@@ -50,21 +46,22 @@ class TablaProductosVentas{
 
   			}else{
 
-  				$stock = "<button class='btn btn-success'>".$productos[$i]["stock"]."</button>";
-
-  			}
-
+				  
+			}
+			*/
+			$stock = "<button class='btn btn-success'>".$productos[$i]["STOCK"]."</button>";
 		  	/*=============================================
  	 		TRAEMOS LAS ACCIONES
   			=============================================*/ 
 
-		  	$botones =  "<div class='btn-group'><button class='btn btn-primary agregarProducto recuperarBoton' idProducto='".$productos[$i]["id"]."'>Agregar</button></div>"; 
+		  	$botones =  "<div class='btn-group'><button class='btn btn-primary agregarProducto recuperarBoton' idProducto='".$productos[$i]["CODIGO_INVENTARIO"]."'>Agregar</button></div>"; 
 
 		  	$datosJson .='[
 			      "'.($i+1).'",
 			      "'.$imagen.'",
-			      "'.$productos[$i]["codigo"].'",
-			      "'.$productos[$i]["descripcion"].'",
+			      "'.$productos[$i]["CODIGO_BARRA"].'",
+			      "'.$productos[$i]["NOMBRE_GENERICO"].'",
+				  "'.$productos[$i]["PRESENTACION"].", ".$productos[$i]["TIPO_PRODUCTO"].", ".$productos[$i]["CLASIFICACION"].'",
 			      "'.$stock.'",
 			      "'.$botones.'"
 			    ],';
@@ -89,5 +86,4 @@ class TablaProductosVentas{
 ACTIVAR TABLA DE PRODUCTOS
 =============================================*/ 
 $activarProductosVentas = new TablaProductosVentas();
-$activarProductosVentas -> mostrarTablaProductosVentas();
-
+$activarProductosVentas ->mostrarTablaProductosVentas();
