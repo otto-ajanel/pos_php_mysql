@@ -199,8 +199,8 @@ CUERPO DOCUMENTO
     <script src="vistas/js/presentacion.js"></script>
     <script src="vistas/js/tipoproducto.js"></script>
     <script src="vistas/js/proveedores.js"></script>
-    <script src="vistas/js/productos.js"></script>
-    <script src="vistas/js/clientes.js"></script>
+    <script src="vistas/js/producto.js"></script>
+    <script src="vistas/js/cliente.js"></script>
     <script src="vistas/js/ventas.js"></script>
     <script src="vistas/js/reportes.js"></script>
     <script src="vistas/js/oferta.js"></script>

@@ -20,21 +20,31 @@ class ControladorVentas{
 		return $respuesta;
 
 	}
+	/*
+	obtener  La ultima Venta  en  la base de datos
+	*/
+	 static public function ctrUltimaVenta($item,$valor){
+		$tabla="venta";
+		$res=ModeloVentas::mdlUltimaVenta($tabla);
+		return $res;
+	 }
 
 	/*=============================================
 	CREAR VENTA
 	=============================================*/
 
 	static public function ctrCrearVenta(){
-
+		
 		if(isset($_POST["nuevaVenta"])){
-
+			
 			/*=============================================
 			ACTUALIZAR LAS COMPRAS DEL CLIENTE Y REDUCIR EL STOCK Y AUMENTAR LAS VENTAS DE LOS PRODUCTOS
 			=============================================*/
-
+			
+			
 			if($_POST["listaProductos"] == ""){
-
+				
+				echo $_POST["seleccionarCliente"];
 					echo'<script>
 
 				swal({
@@ -45,7 +55,7 @@ class ControladorVentas{
 					  }).then(function(result){
 								if (result.value) {
 
-								window.location = "ventas";
+								window.location = "crear-ventas";
 
 								}
 							})
@@ -59,12 +69,35 @@ class ControladorVentas{
 			$listaProductos = json_decode($_POST["listaProductos"], true);
 
 			$totalProductosComprados = array();
+			/* Obtener el numero de factura de la Venta */
+			$item =null;
+			$valor=null;
 
+			$noDatos= ControladorVentas::ctrUltimaVenta($item,$valor);
+			$noFactura=$noDatos["CODIGO_FACTURA"]+1;
+			/* OBTENIENDO DATOS DEL CLIENTE */
+			if (isset($_POST["seleccionarCliente"])) {
+				$cliente=$_POST["seleccionarCliente"];
+
+			}else{
+				$cliente=0000000;
+			}
+			/*obteniedo los datos del Vendedor */
+			$usuario=$_POST["idVendedor"];
+			$datosG= array(
+				"CODIGO_FACTURA"=>$noFactura,
+				"CODIGO_CLIENTE"=>$cliente,
+				"CODIGO_USUARIO"=>$usuario
+			);
+			$ventaGeneral=ControladorVentas::ctrVentaGeneral($datosG);
+			if ($ventaGeneral=="ok") {
+				# code...
+			
 			foreach ($listaProductos as $key => $value) {
 
 			   array_push($totalProductosComprados, $value["cantidad"]);
 				
-			   $tablaProductos = "productos";
+			   $tablaProductos = "inventario";
 
 			    $item = "id";
 			    $valor = $value["id"];
@@ -230,7 +263,7 @@ class ControladorVentas{
 
 			}
 
-		}
+		}}
 
 	}
 
@@ -680,6 +713,15 @@ class ControladorVentas{
 
 		return $respuesta;
 
+	}
+	
+	/*=============================================
+	VNETA GENERAL
+	=============================================*/
+	static  public function ctrVentaGeneral($datosG){
+		$tabla="venta";
+		$res=ModeloVentas::mdlNuevaVenta($tabla,$datosG);
+		return $res;
 	}
 
 	/*=============================================

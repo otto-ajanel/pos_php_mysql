@@ -67,6 +67,28 @@ class ModeloVentas{
 		$stmt = null;
 
 	}
+	static public function mdlNuevaVenta($tabla,$datosG){
+		$stmt =Conexion::conectar()->prepare(" INSERT INTO $tabla(CODIGO_CLIENTE,CODIGO_USUARIO,NO_FACTURA) VALUES(:CLIENTE,:USUARIO,:NO_FACTURA)");
+		$stmt->bindParam(":CLIENTE", $datosG["CODIGO_CLIENTE"], PDO::PARAM_INT);
+		$stmt->bindParam(":USUARIO", $datosG["CODIGO_USUARIO"], PDO::PARAM_INT);
+		$stmt->bindParam(":NO_FACTURA", $datosG["NO_FACTURA"], PDO::PARAM_INT);
+		if ($stmt->execute()) {
+			# code...
+			return "ok";
+		}else{
+			return "error";
+		}
+	}
+	static public function mdlNuevoDetalle($tabla,$datosD){
+		
+		if ($stmt->execute()) {
+			# code...
+			return "ok";
+		}else{
+			return "error";
+		}
+	}
+
 
 	/*=============================================
 	EDITAR VENTA
@@ -197,6 +219,15 @@ class ModeloVentas{
 		$stmt = null;
 
 	}
+			/* 	OBTENIENDO  LA ULTIMA VENTA   EN LA BASE DE dATOS */
+		static public function mdlUltimaVenta($tabla){
+			$sql=Conexion::conectar()->prepare("SELECT  NO_FACTURA,FECHA FROM $tabla  ORDER by FECHA DESC Limit 1");
+			$sql->execute();
+			return $sql->fetchAll();
 
+			$sql->close();
+			$sql=null;
+	
+		}
 	
 }
