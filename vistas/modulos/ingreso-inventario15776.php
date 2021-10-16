@@ -53,7 +53,7 @@
 
       <div class="box-body">
         
-       <table class="table table-bordered table-striped dt-responsive tablas">
+       <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
          
         <thead>
          
@@ -94,8 +94,9 @@
             <td>
             <div class="btn-group">
                   
-                  <button class="btn btn-warning" data-toggle="modal" data-target="#modalEditarStock" idInventario='.$value["codigo"].'>
-                  <i class="fa fa-pencil"></i></button>
+                  <button class="btn btn-warning btnEditarInventario" data-toggle="modal" 
+                  data-target="#modalEditarStock" 
+                  idInventario='.$value["codigo"].'> <i class="fa fa-pencil"></i></button>
   
                   <button class="btn btn-danger"><i class="fa fa-times"></i></button>
   
@@ -162,7 +163,8 @@ MODAL EDITAR STOCK INVENTARIO
               
                 <span class="input-group-addon"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i></span> 
 
-                <input type="date" class="form-control input-lg" name="fvencimiento" placeholder="fecha vencimiento" required>
+                <input type="date" class="form-control input-lg" name="fvencimiento" placeholder="fecha vencimiento" required
+                id="fvencimiento">
 
               </div>
 
@@ -176,7 +178,8 @@ MODAL EDITAR STOCK INVENTARIO
               
                 <span class="input-group-addon"><i class="fa fa-plus-circle" aria-hidden="true"></i></span> 
 
-                <input type="number" class="form-control input-lg" name="unidades" placeholder="unidades" required>
+                <input type="number" class="form-control input-lg" name="unidades" placeholder="unidades" required
+                id="unidades">
 
               </div>
 
@@ -190,7 +193,8 @@ MODAL EDITAR STOCK INVENTARIO
               
                 <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span> 
 
-                <input type="number" class="form-control input-lg" name="preciocompra" placeholder="precio de compra" required>
+                <input type="number" class="form-control input-lg" name="preciocompra" placeholder="precio de compra"
+                 required id="preciocompra">
 
               </div>
 
@@ -204,7 +208,8 @@ MODAL EDITAR STOCK INVENTARIO
               
                 <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span> 
 
-                <input type="number" class="form-control input-lg" name="precioventa" placeholder="precio de venta" required>
+                <input type="number" class="form-control input-lg" name="precioventa" placeholder="precio de venta" 
+                required id="precioventa">
 
               </div>
 
@@ -232,6 +237,15 @@ MODAL EDITAR STOCK INVENTARIO
           <button type="submit" class="btn btn-warning">Modificar Stock</button>
 
         </div>
+
+        <?php
+
+          $editarInventario = new ControladorInventario();
+          $editarInventario -> ctrEditarInventario();
+
+        ?>
+
+
 
       </form>
 

@@ -25,5 +25,68 @@ class ControladorInventario{
 
 
     }
+
+    /* controlador editar inventario */
+
+    static public function ctrEditarInventario(){
+
+        if(isset($_POST["editarInventario"])){
+
+            $tabla = "inventario_detalle";
+
+            $datos = array(
+                "caducidad" => $_POST["fvencimiento"],
+                "precio_compra" => $_POST["unidades"],
+                "precio_venta" => $_POST["preciocompra"],
+                "precioventa" => $_POST["precioventa"]
+            );
+            
+            $respuesta = ModeloInventrio::mdlEditarInventario($tabla, $datos);
+
+            if($respuesta == "ok"){
+                echo'
+                <script>
+
+					swal({
+						  type: "success",
+						  title: "El usuario ha sido editado correctamente",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result) {
+									if (result.value) {
+
+									window.location = "ingreso-inventario15776.php";
+
+									}
+								})
+
+					</script>
+                ';
+            }
+            else
+            {
+                echo'
+                <script>
+
+					swal({
+						  type: "success",
+						  title: "Error inesperado en el cambio",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result) {
+									if (result.value) {
+
+									window.location = "ingreso-inventario15776.php";
+
+									}
+								})
+
+					</script>
+                ';
+            }
+            
+
+        }
+    }
 }
 ?>

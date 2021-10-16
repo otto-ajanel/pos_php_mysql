@@ -70,6 +70,34 @@ class ModeloInventario{
         
     }
 
+
+    /* EDITAR INVENTARIO */
+
+    static public function mdlEditarInventario($tabla, $datos){
+
+        $stmt = conexion::conectar()->prepare("update $tabla set caducidad = :caducidad,
+        precio_compra = :compra, precio_venta = :venta, unidades = :unidades");
+
+        $stmt -> bindParam(":caducidad", $datos["caducidad"], PDO::PARAM_STR);
+        $stmt -> bindParam(":compra", $datos["precio_compra"], PDO::PARAM_STR);
+        $stmt -> bindParam(":venta", $datos["precio_venta"], PDO::PARAM_STR);
+        $stmt -> bindParam(":unidades", $datos["unidades"], PDO::PARAM_STR);
+
+        if($stmt -> execute()){
+
+            return "ok";
+        }
+        else
+        {
+            return "error";
+        }
+
+        $stmt -> close();
+
+        $stmt = null;
+
+    }
+
     
 
 }
