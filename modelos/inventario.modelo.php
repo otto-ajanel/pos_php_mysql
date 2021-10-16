@@ -75,7 +75,7 @@ class ModeloInventario{
 
     static public function mdlEditarInventario($tabla, $datos){
 
-        $stmt = conexion::conectar()->prepare("update $tabla set caducidad = :caducidad,
+        $stmt = Conexion::conectar()->prepare("update $tabla set caducidad = :caducidad,
         precio_compra = :compra, precio_venta = :venta, unidades = :unidades");
 
         $stmt -> bindParam(":caducidad", $datos["caducidad"], PDO::PARAM_STR);

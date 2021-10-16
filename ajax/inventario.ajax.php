@@ -25,7 +25,7 @@ class AjaxInventario{
 /*=============================================
 EDITAR INVENTARIO
 =============================================*/
-if(isset($_POST["idUsuario"])){
+if(isset($_POST["idInventario"])){
 
 	$editar = new AjaxInventario();
 	$editar -> idInventario = $_POST["idInventario"];

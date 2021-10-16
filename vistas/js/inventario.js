@@ -12,7 +12,7 @@ $(".tablas").on("click", ".btnEditarInventario", function(){
 	$.ajax({
         
 
-		url:"ajax/inventario.ajax.php",
+		url: 'ajax/inventario22.ajax.php',
 		method: "POST",
 		data: datos,
 		cache: false,
