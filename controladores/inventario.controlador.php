@@ -14,5 +14,16 @@ class ControladorInventario{
 
 
     }
+
+    static public function ctrMostrarInventarioMaster($item,$valor){
+
+        $tabla = "inventario_detalle";
+
+        $respuesta = ModeloInventario::MdlMostrarInventarioMaster ($tabla, $item, $valor);
+
+        return $respuesta;
+
+
+    }
 }
 ?>
