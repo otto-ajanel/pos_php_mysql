@@ -1,3 +1,19 @@
+<?php
+
+if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
+
+  echo '<script>
+
+    window.location = "inicio";
+
+  </script>';
+
+  return;
+
+}
+?>
+
+
 <div class="content-wrapper">
 
   <section class="content-header">
@@ -44,66 +60,45 @@
            
            <th style="width:10px">#</th>
            <th>Codigo</th>
-           <th>producto</th>
-           <th>Nombre comercial</th>
-           <th>Unidades</th>
+           <th>fecha Ingreso</th>
+           <th>Codigo barras</th>
+           <th>Caducidad</th>
            <th>precio compra</th>
            <th>precio venta</th>
-           <th>presentacion</th>
-           <th>tipo</th>
-           <th>clasificacion</th>
+           <th>Unidades</th>
 
          </tr> 
 
         </thead>
 
         <tbody>
+          <?php
+
+          $item = null;
+          $valor = null;
+
+          $inventario = ControladorInventario::ctrMostrarInventario($item, $valor);
           
-          <tr>
-            <td>1</td>
-            <td>D01</td>
-            <td>Diclofenaco</td>
-            <td>Diclofenaco</td>
-            <td>20</td>
-            <td>1.50</td>
-            <td>2</td>
-            <td>tableta</td>
-            <td>Generico</td>
-            <td>Analgesico</td>
-            
+          foreach($inventario as $key => $value){
+            echo ' 
 
-          </tr>
+            <tr>
+            <td>'.($key+1).'</td>
+            <td>'.$value["codigo"].'</td>
+            <td>'.$value["fecha_ingreso"].'</td>
+            <td>'.$value["codigo_barras"].'</td>
+            <td>'.$value["caducidad"].'</td>
+            <td>'.$value["precio_compra"].'</td>
+            <td>'.$value["precio_venta"].'</td>
+            <td>'.$value["unidades"].'</td>
 
-           <tr>
-           <td>2</td>
-            <td>A01</td>
-            <td>Aspirina forte</td>
-            <td>Aspirina forte</td>
-            <td>15</td>
-            <td>1</td>
-            <td>1.50</td>
-            <td>tableta</td>
-            <td>marca</td>
-            <td>Analgesico</td>
-            
+            </tr>';
 
-          </tr>
-
-           <tr>
-           <td>3</td>
-            <td>A02</td>
-            <td>Acetaminofen</td>
-            <td>Acetaminofen</td>
-            <td>20</td>
-            <td>2</td>
-            <td>2.50</td>
-            <td>tableta</td>
-            <td>marca</td>
-            <td>Analgesico</td>
-            
-
-
-          </tr>
+          }
+          
+          
+          ?>
+          
 
         </tbody>
 

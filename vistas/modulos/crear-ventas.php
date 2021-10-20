@@ -128,7 +128,121 @@
                                 <!--=====================================
                 ENTRADA PARA AGREGAR PRODUCTO
                 ======================================-->
+<<<<<<< HEAD
                                 <div class="form-group row nuevoProducto carrito">
+=======
+                                <div class="carrito">
+                                    <div class="form-group row nuevoProducto">
+
+                                        <!-- Descripción del producto -->
+
+                                        <div class="col-xs-6" style="padding-right:0px">
+
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><button type="button"
+                                                        class="btn btn-danger btn-xs"><i
+                                                            class="fa fa-times"></i></button></span>
+
+                                                <input type="text" class="form-control" id="agregarProducto"
+                                                    name="agregarProducto" placeholder="Descripción del producto"
+                                                    required>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <!-- Cantidad del producto -->
+
+                                        <div class="col-xs-3">
+
+                                            <input type="number" class="form-control" id="nuevaCantidadProducto"
+                                                name="nuevaCantidadProducto" min="1" placeholder="0" required>
+
+                                        </div>
+
+                                        <!-- Precio del producto -->
+
+                                        <div class="col-xs-3" style="padding-left:0px">
+
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i
+                                                        class="ion ion-social-usd"></i></span>
+
+                                                <input type="number" min="1" class="form-control"
+                                                    id="nuevoPrecioProducto" name="nuevoPrecioProducto"
+                                                    placeholder="000000" readonly required>
+
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="form-group row nuevoProducto">
+
+                                        <!-- Descripción del producto -->
+
+                                        <div class="col-xs-6" style="padding-right:0px">
+
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><button type="button"
+                                                        class="btn btn-danger btn-xs"><i
+                                                            class="fa fa-times"></i></button></span>
+
+                                                <input type="text" class="form-control" id="agregarProducto"
+                                                    name="agregarProducto" placeholder="Descripción del producto"
+                                                    required>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <!-- Cantidad del producto -->
+
+
+
+
+
+
+
+
+
+
+                                        <!-- Cantidad del producto -->
+
+                                        <div class="col-xs-3">
+
+                                            <input type="number" class="form-control" id="nuevaCantidadProducto"
+                                                name="nuevaCantidadProducto" min="1" placeholder="0" required>
+
+                                        </div>
+
+                                        <!-- Precio del producto -->
+
+                                        <div class="col-xs-3" style="padding-left:0px">
+
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i
+                                                        class="ion ion-social-usd"></i></span>
+
+                                                <input type="number" min="1" class="form-control"
+                                                    id="nuevoPrecioProducto" name="nuevoPrecioProducto"
+                                                    placeholder="000000" readonly required>
+
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="form-group row nuevoProducto">
+>>>>>>> 8bc03011a9d3d42979e4447c24f76f71abbe7805
 
                                 </div>
                                 <input type="hidden" id="listaProductos" name="listaProductos">
@@ -262,6 +376,28 @@
 
                             </thead>
 
+<<<<<<< HEAD
+=======
+                            <tbody>
+
+                                <tr>
+                                    <td>1.</td>
+                                    <td><img src="vistas/img/productos/default/anonymous.png" class="img-thumbnail"
+                                            width="40px">
+                                    </td>
+                                    <td>00123</td>
+                                    <td>Lorem ipsum dolor sit amet</td>
+                                    <td>20</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-primary">Agregar</button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+>>>>>>> 8bc03011a9d3d42979e4447c24f76f71abbe7805
                         </table>
 
                     </div>
