@@ -16,7 +16,7 @@ class AjaxInventario{
 
         $respuesta = ControladorInventario::ctrMostrarInventarioMaster($item, $valor);
 
-        echo json_decode($respuesta);
+        echo json_encode($respuesta);
     }
 
 
