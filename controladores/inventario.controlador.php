@@ -36,9 +36,9 @@ class ControladorInventario{
 
             $datos = array(
                 "caducidad" => $_POST["fvencimiento"],
-                "precio_compra" => $_POST["unidades"],
-                "precio_venta" => $_POST["preciocompra"],
-                "precioventa" => $_POST["precioventa"]
+                "unidades" => $_POST["unidades"],
+                "precio_compra" => $_POST["preciocompra"],
+                "precio_venta" => $_POST["precioventa"]
             );
             
             $respuesta = ModeloInventrio::mdlEditarInventario($tabla, $datos);
