@@ -31,6 +31,7 @@ $(".tablas").on("click", ".btnEditarInventario", function(){
 			$("#unidades").val(respuesta["unidades"]);
 			$("#preciocompra").val(respuesta["precio_compra"]);
 			$("#precioventa").val(respuesta["precio_venta"]);
+			$("#idinventario1").val(respuesta["codigo"]);
 		}
 
 	});

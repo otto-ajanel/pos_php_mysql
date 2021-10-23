@@ -30,18 +30,40 @@ class ControladorInventario{
 
     static public function ctrEditarInventario(){
 
-        if(isset($_POST["editarInventario"])){
+        if(isset($_POST["fvencimiento"])){
+
+            echo'
+
+                    <script text="javascript">
+
+                        console.log("la variable si esta ");
+
+                
+
+                        alert("SI SI esta definida la variable");
+
+                    </script>
+
+
+          
+
+            ';
 
             $tabla = "inventario_detalle";
+
+            /*$idcambio = $_GET["idInventario"];*/
 
             $datos = array(
                 "caducidad" => $_POST["fvencimiento"],
                 "unidades" => $_POST["unidades"],
                 "precio_compra" => $_POST["preciocompra"],
-                "precio_venta" => $_POST["precioventa"]
+                "precio_venta" => $_POST["precioventa"],
+                "codigo" => $_POST["idinventario1"]
             );
+
+
             
-            $respuesta = ModeloInventrio::mdlEditarInventario($tabla, $datos);
+            $respuesta = ModeloInventario::mdlEditarInventario($tabla, $datos);
 
             if($respuesta == "ok"){
                 echo'
@@ -55,7 +77,7 @@ class ControladorInventario{
 						  }).then(function(result) {
 									if (result.value) {
 
-									window.location = "ingreso-inventario15776.php";
+                                        window.location.href;
 
 									}
 								})
@@ -76,7 +98,7 @@ class ControladorInventario{
 						  }).then(function(result) {
 									if (result.value) {
 
-									window.location = "ingreso-inventario15776.php";
+									window.location.href;
 
 									}
 								})
@@ -87,6 +109,27 @@ class ControladorInventario{
             
 
         }
+        else
+        {
+            echo'
+
+                    <script text="javascript">
+
+                        console.log("la variable no esta definida");
+
+                
+
+                        alert("no esta definida la variable");
+
+                    </script>
+
+
+          
+
+            ';
+        }
+       
+        
     }
 }
 ?>

@@ -1,27 +1,3 @@
-<script text="javascript">
-
-          console.log("activaste la funcion de llamar");
-
-          function funcion1(){
-
-            alert("Hello! I am an alert box!");
-          <?php
-
-
-
-
-
-                  $editarInventario = new ControladorInventario();
-                  $editarInventario -> ctrEditarInventario();
-
-          ?>
-
-
-          }
-          
-
-</script>
-
 <div class="content-wrapper">
 
   <section class="content-header">
@@ -243,7 +219,14 @@ MODAL EDITAR STOCK INVENTARIO
              <div class="form-group">
 
               <p class="help-block">todos los campos son requeridos !!</p>
+              <br>
+              <p class="help-block">Codigo del producto :</p>
 
+              <input type="number" class="form-control input-lg" name="idinventario1" placeholder="codigo" 
+                required id="idinventario1" disabled>
+
+
+              
             </div>
 
           </div>
@@ -258,12 +241,17 @@ MODAL EDITAR STOCK INVENTARIO
 
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-          <button type="submit" class="btn btn-warning" onclick = funcion1() >Modificar Stock</button>
+          <button type="submit" class="btn btn-warning" >Modificar Stock</button>
 
         </div>
 
           
-        
+        <?php
+
+            $fvencimiento = new ControladorInventario();
+            $fvencimiento -> ctrEditarInventario();
+
+        ?>
 
 
        

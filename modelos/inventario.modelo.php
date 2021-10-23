@@ -77,13 +77,16 @@ class ModeloInventario{
 
         
 
-        $stmt = Conexion::conectar()->prepare("update $tabla set caducidad = :caducidad,
-        precio_compra = :compra, precio_venta = :venta, unidades = :unidades");
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET caducidad = :caducidad,
+        precio_compra = :compra, precio_venta = :venta, unidades = :unidades
+        WHERE codigo = :codigo");
 
         $stmt -> bindParam(":caducidad", $datos["caducidad"], PDO::PARAM_STR);
         $stmt -> bindParam(":compra", $datos["precio_compra"], PDO::PARAM_STR);
         $stmt -> bindParam(":venta", $datos["precio_venta"], PDO::PARAM_STR);
         $stmt -> bindParam(":unidades", $datos["unidades"], PDO::PARAM_STR);
+        $stmt -> bindParam(":codigo", $datos["codigo"] , PDO::PARAM_STR);
+        
 
         if($stmt -> execute()){
 
