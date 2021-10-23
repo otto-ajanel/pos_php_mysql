@@ -11,8 +11,7 @@ class ControladorCliente{
 			 isset($_POST["nuevoNit"]) &&
 		   isset($_POST["nuevaDireccion"])){
 
-			if(preg_match('/^[a-zA-Z-ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoCliente"]) &&
-			   preg_match('/^[-a-zA-Z0-9]+$/', $_POST["nuevoNit"]) &&
+			if(preg_match('/^[-a-zA-Z0-9]+$/', $_POST["nuevoNit"]) &&
 			   preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["nuevaDireccion"])){
 
 			   	$tabla = "CLIENTE";

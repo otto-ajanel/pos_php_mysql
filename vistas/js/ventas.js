@@ -449,7 +449,7 @@ $(".formularioVenta").on("change", "input.nuevaCantidadProducto", function(){
 
 	// AGREGAR IMPUESTO
 	        
-    agregarImpuesto()
+   // agregarImpuesto()
 
     // AGRUPAR PRODUCTOS EN FORMATO JSON
 
