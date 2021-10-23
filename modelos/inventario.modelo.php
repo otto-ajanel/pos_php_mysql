@@ -75,11 +75,11 @@ class ModeloInventario{
 
     static public function mdlEditarInventario($tabla, $datos){
 
+        echo '<script>alert (" id para cambiar '.$datos["codigo"].' en tabla");</script>';
         
 
         $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET caducidad = :caducidad,
-        precio_compra = :compra, precio_venta = :venta, unidades = :unidades
-        WHERE codigo = :codigo");
+        precio_compra = :compra, precio_venta = :venta, unidades = :unidades WHERE codigo = :codigo");
 
         $stmt -> bindParam(":caducidad", $datos["caducidad"], PDO::PARAM_STR);
         $stmt -> bindParam(":compra", $datos["precio_compra"], PDO::PARAM_STR);

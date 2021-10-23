@@ -223,7 +223,7 @@ MODAL EDITAR STOCK INVENTARIO
               <p class="help-block">Codigo del producto :</p>
 
               <input type="number" class="form-control input-lg" name="idinventario1" placeholder="codigo" 
-                required id="idinventario1" disabled>
+                required id="idinventario1" readonly>
 
 
               
@@ -248,8 +248,8 @@ MODAL EDITAR STOCK INVENTARIO
           
         <?php
 
-            $fvencimiento = new ControladorInventario();
-            $fvencimiento -> ctrEditarInventario();
+            $idinventario1 = new ControladorInventario();
+            $idinventario1 -> ctrEditarInventario();
 
         ?>
 

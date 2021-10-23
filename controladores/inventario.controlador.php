@@ -30,7 +30,7 @@ class ControladorInventario{
 
     static public function ctrEditarInventario(){
 
-        if(isset($_POST["fvencimiento"])){
+        if(isset($_POST["idinventario1"])){
 
             echo'
 
