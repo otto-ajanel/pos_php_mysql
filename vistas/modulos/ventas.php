@@ -136,7 +136,7 @@ if($xml){
                   $itemCliente = "id";
                   $valorCliente = $value["id_cliente"];
 
-                  $respuestaCliente = ControladorClientes::ctrMostrarClientes($itemCliente, $valorCliente);
+                  $respuestaCliente = ControladorCliente::ctrMostrarCliente($itemCliente, $valorCliente);
 
                   echo '<td>'.$respuestaCliente["nombre"].'</td>';
 

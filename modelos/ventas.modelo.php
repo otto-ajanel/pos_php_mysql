@@ -228,10 +228,12 @@ class ModeloVentas{
 			$sql=null;
 	
 		}
-	static public function mdlCrearDetalleVenta($tabla, $nVenta, $valor){
-		$stmt=Conexion::conectar()->prepare("INSERT INTO $tabla(CODIGO_VENTA,CODIGO_INVENTARIO) VALUES(:venta, :inventario)");
+	static public function mdlCrearDetalleVenta($tabla, $nVenta, $valor,$cantidad){
+		$stmt=Conexion::conectar()->prepare("INSERT INTO $tabla(CODIGO_VENTA,CODIGO_INVENTARIO,CANTIDAD) VALUES(:venta, :inventario, :cantidad)");
 		$stmt->bindParam(":venta",$nVenta,PDO::PARAM_INT);
 		$stmt->bindParam(":inventario",$valor,PDO::PARAM_INT);
+		$stmt->bindParam(":cantidad",$cantidad,PDO::PARAM_INT);
+
 		if ($stmt->execute()) {
             # code...
             return "ok";

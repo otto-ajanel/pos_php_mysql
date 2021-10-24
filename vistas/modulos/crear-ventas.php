@@ -58,7 +58,6 @@
                     $valor = null;
 
                     $ventas = ControladorVentas::ctrUltimaVenta($item, $valor);
-
                     if(!$ventas){
 
                       echo '<input type="text" class="form-control" id="nuevaVenta" name="nuevaVenta" value="00001" readonly>';

@@ -74,7 +74,6 @@ class ControladorVentas{
 			$valor=null;
 			$cliente=11111111;
 			$noDatos= ControladorVentas::ctrUltimaVenta($item,$valor);
-			$nVenta=$noDatos[0]["CODIGO_VENTA"];
 			$noFactura=$noDatos[0]["NO_FACTURA"]+1;
 			/* OBTENIENDO DATOS DEL CLIENTE */
 			if ($_POST["seleccionarCliente"]!="") {
@@ -89,9 +88,11 @@ class ControladorVentas{
 				"CODIGO_USUARIO"=>$usuario
 			);
 			$ventaGeneral=ControladorVentas::ctrVentaGeneral($datosG);
+
+			$noDatos= ControladorVentas::ctrUltimaVenta($item,$valor);
+			$nVenta=$noDatos[0]["CODIGO_VENTA"];
 			if ($ventaGeneral=="ok") {
 				# code...
-			echo var_dump($listaProductos);
 			foreach ($listaProductos as $key => $value) {
 
 				
@@ -108,9 +109,9 @@ class ControladorVentas{
 
 				/* Obteniendo la actulizacion del inventaario se puede crear el detalle de Venta  */
 			
-					$tablaProductos="detalle";
-					
-					$nuevoStock = ModeloVentas::mdlCrearDetalleVenta($tablaProductos, $nVenta, $valor);
+					$tabla="detalle";
+					$cantidad=$value["cantidad"];
+					$nuevoStock = ModeloVentas::mdlCrearDetalleVenta($tabla, $nVenta, $valor,$cantidad);
 				
 				
 
