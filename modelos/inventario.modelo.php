@@ -75,7 +75,9 @@ class ModeloInventario{
 
     static public function mdlEditarInventario($tabla, $datos){
 
+        /*
         echo '<script>alert (" id para cambiar '.$datos["codigo"].' en tabla");</script>';
+        */
         
 
         $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET caducidad = :caducidad,

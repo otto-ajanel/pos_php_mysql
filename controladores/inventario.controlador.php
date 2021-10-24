@@ -32,7 +32,7 @@ class ControladorInventario{
 
         if(isset($_POST["idinventario1"])){
 
-            echo'
+            /*echo'
 
                     <script text="javascript">
 
@@ -47,11 +47,10 @@ class ControladorInventario{
 
           
 
-            ';
+            ';*/
 
             $tabla = "inventario_detalle";
 
-            /*$idcambio = $_GET["idInventario"];*/
 
             $datos = array(
                 "caducidad" => $_POST["fvencimiento"],
@@ -77,8 +76,7 @@ class ControladorInventario{
 						  }).then(function(result) {
 									if (result.value) {
 
-                                        window.location = ingreso-inventario15776.php;
-                                        window.location.href;
+                                        window.location = "ingreso-inventario15776";
 
 									}
 								})
@@ -99,7 +97,7 @@ class ControladorInventario{
 						  }).then(function(result) {
 									if (result.value) {
 
-									window.location.href;
+                                        window.location = "ingreso-inventario15776";
 
 									}
 								})
@@ -110,8 +108,8 @@ class ControladorInventario{
             
 
         }
-        else
-        {
+        /*else
+            {
             echo'
 
                     <script text="javascript">
@@ -128,7 +126,7 @@ class ControladorInventario{
           
 
             ';
-        }
+            }*/
        
         
     }
