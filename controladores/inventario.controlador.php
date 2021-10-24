@@ -77,6 +77,7 @@ class ControladorInventario{
 						  }).then(function(result) {
 									if (result.value) {
 
+                                        window.location = ingreso-inventario15776.php;
                                         window.location.href;
 
 									}
