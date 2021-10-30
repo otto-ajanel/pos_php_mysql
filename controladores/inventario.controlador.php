@@ -130,5 +130,77 @@ class ControladorInventario{
        
         
     }
+
+    /*
+BORRAR USUARIO
+*/
+
+    static public function crtBorrarInventario(){
+
+        if(isset($_GET["idInventario"])){
+
+            echo'<script> alert("SI esta definida la variable para borrar"); </script>';
+            $tabla = "inventario_detalle";
+            $datos = $_GET["id_usuario"];
+
+            $respuesta = ModeloInventario::mdlBorrarInventario($tablas, $datos);
+
+            if($respuesta == "ok"){
+
+                echo'<script>
+
+				swal({
+					  type: "success",
+					  title: "El usuario ha sido borrado correctamente",
+					  showConfirmButton: true,
+					  confirmButtonText: "Cerrar",
+					  closeOnConfirm: false
+					  }).then(function(result) {
+								if (result.value) {
+
+								window.location = "ingreso-inventario15776";
+
+								}
+							})
+
+				</script>';
+                
+            }
+            else
+            {
+
+                echo'
+                <script>
+
+					swal({
+						  type: "success",
+						  title: "Error inesperado !! no se puede borrar",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result) {
+									if (result.value) {
+
+                                        window.location = "ingreso-inventario15776";
+
+									}
+								})
+
+					</script>
+                ';
+            }
+
+
+
+            
+        }
+        else
+        {
+            echo'<script> alert("NO esta definida la variable para borrar"); </script>';
+        }
+
+
+    }
 }
+
+
 ?>

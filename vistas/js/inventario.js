@@ -38,3 +38,37 @@ $(".tablas").on("click", ".btnEditarInventario", function(){
     
 
 })
+
+/*
+ELIMINAR REGISTRO STOCK
+*/
+
+$(".tablas").on("click", ".btnEliminarInventario", function(){
+
+	alert("evento click eliminar boton ok");
+
+	var idInventario = $(this).attr("idInventario");
+	console.log(idInventario);
+	
+
+	swal({
+		title: '¿Está seguro de borrar el usuario?',
+		text: "¡Si no lo está puede cancelar la accíón!",
+		type: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		  cancelButtonColor: '#d33',
+		  cancelButtonText: 'Cancelar',
+		  confirmButtonText: 'Si, borrar usuario!'
+	  }).then(function(result){
+	
+		if(result.value){
+			
+	
+		  window.location = "index.php?ruta=ingreso-inventario15776&idInventario="+idInventario ;
+	
+		}
+	
+	  })
+
+})

@@ -1,3 +1,14 @@
+<script text="JavaScript">
+
+  function funcion1(){
+    alert("evento click eliminar cuerpo ok");
+    var idInventario = $(this).attr("idInventario");
+	  console.log(idInventario);
+  }
+</script>
+
+
+
 <div class="content-wrapper">
 
   <section class="content-header">
@@ -91,17 +102,20 @@
             <td>'.$value["precio_compra"].'</td>
             <td>'.$value["precio_venta"].'</td>
             <td>'.$value["unidades"].'</td>
+
             <td>
-            <div class="btn-group">
+              <div class="btn-group">
                   
                   <button class="btn btn-warning btnEditarInventario" data-toggle="modal" 
                   data-target="#modalEditarStock" 
                   idInventario='.$value["codigo"].'> <i class="fa fa-pencil"></i></button>
   
-                  <button class="btn btn-danger btnEliminarInventario" idInventario='.$value["codigo"].'>
+                  <button class="btn btn-danger btnEliminarInventario" onclick="funcion1()"
+                  idInventario='.$value["codigo"].'>
                   <i class="fa fa-times"></i></button>
   
-                </div> 
+              </div> 
+
             </td>
 
             </tr>';
@@ -255,9 +269,6 @@ MODAL EDITAR STOCK INVENTARIO
         ?>
 
 
-       
-
-
 
       </form>
 
@@ -266,3 +277,10 @@ MODAL EDITAR STOCK INVENTARIO
   </div>
 
 </div>
+
+<?php
+
+          $borrarInventario = new ControladorInventario();
+          $borrarInventario -> crtBorrarInventario();
+
+?>

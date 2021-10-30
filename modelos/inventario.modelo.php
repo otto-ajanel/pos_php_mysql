@@ -105,6 +105,26 @@ class ModeloInventario{
 
     }
 
+    static public function mdlBorrarInventario($tabla, $datos){
+
+        $stmt = Conexion::conectar()-> prepare ("DELETE FROM $tabla WHERE codigo = :id");
+
+        $stmt -> bindParam(":id", $datos, PDO::PARAM_INT);
+
+        if($stmt -> execute()){
+            return "ok";
+        }
+        else
+        {
+            return "error";
+        }
+
+        $stmt -> close();
+
+        $stmt = null;
+
+    }
+
     
 
 }
