@@ -12,7 +12,7 @@
 
             <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
 
-            <button id="ver-ventas" class="ver-ventas">Ver Ventas</button>
+            <button id="ver-ventas" class="ver-ventas"class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalMostrarVentasHoy" data-dismiss="modal">Ver Ventas</button>
 
         </ol>
 
@@ -341,6 +341,52 @@ MODAL AGREGAR CLIENTE
         $crearCliente = new ControladorCliente();
         $crearCliente -> ctrCrearCliente();
       ?>
+
+    </div>
+  </div>
+</div>
+
+
+<!--=====================================
+MODAL AGREGAR CLIENTE
+======================================-->
+<div id="modalMostrarVentasHoy" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+     
+    
+    <div class="modal-header" style="background:#3c8dbc; color:white">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Agregar cliente</h4>
+        </div>
+
+        <!--=====================================
+        CUERPO DEL MODAL
+        ======================================-->
+        <table class="table table-bordered table-striped dt-responsive tablaVentasHoy" style="width: 100%;">
+
+<thead>
+
+    <tr>
+        <th style="width: 10px">#No.</th>
+        <th>No. Factura</th>
+        <th>Vendedor</th>
+        <th>Nombre del cliente</th>
+        <th>Total de Venta</th>
+    </tr>
+
+</thead>
+
+
+</table>
+            
+
+        <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
+        <div class="modal-footer">
+         
+        </div>
 
     </div>
   </div>

@@ -228,6 +228,28 @@ class ModeloVentas{
 			$sql=null;
 	
 		}
+		
+	/**Mostrar Ventas de del dia Actual */
+	static public function mdlMostrarVentaHoy($tabla){
+		$stmt =Conexion::conectar()->prepare("SELECT U.NOMBRE,V.CODIGO_VENTA, NO_FACTURA,NOMBRE_CLIENTE,sum(CANTIDAD*PRECIO_VENTA) as Total FROM $tabla V
+				INNER JOIN usuario U
+				ON U.CODIGO_USUARIO=V.CODIGO_USUARIO
+				INNER JOIN cliente C
+				ON C.CODIGO_CLIENTE=V.CODIGO_CLIENTE 
+				INNER JOIN detalle D
+				ON D.CODIGO_VENTA=V.CODIGO_VENTA 
+				INNER JOIN inventario I 
+				ON I.CODIGO_INVENTARIO=D.CODIGO_INVENTARIO
+				where DATE_FORMAT(FECHA, '%Y%c%d')=DATE_FORMAT(now(),'%Y%c%d')
+				GROUP BY D.CODIGO_VENTA
+		");
+		$stmt->execute();
+		return $stmt->fetchAll();
+		$stmt->close();
+		$stmt=null;
+	}
+
+
 	static public function mdlCrearDetalleVenta($tabla, $nVenta, $valor,$cantidad){
 		$stmt=Conexion::conectar()->prepare("INSERT INTO $tabla(CODIGO_VENTA,CODIGO_INVENTARIO,CANTIDAD) VALUES(:venta, :inventario, :cantidad)");
 		$stmt->bindParam(":venta",$nVenta,PDO::PARAM_INT);

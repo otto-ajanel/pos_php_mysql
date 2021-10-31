@@ -149,7 +149,11 @@ class ControladorVentas{
 	}
 
 	}
-
+	static public function ctrMostrarVentaHoy(){
+		$tabla="venta";
+		$res=ModeloVentas::mdlMostrarVentaHoy($tabla);
+		return $res;
+	}
 	/*=============================================
 	EDITAR VENTA
 	=============================================*/

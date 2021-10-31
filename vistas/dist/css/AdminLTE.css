@@ -1208,9 +1208,9 @@ a:focus {
 }
 .navbar-nav > .user-menu .user-image {
   float: left;
-  width: 45px !important;
-  height: 45px !important;
-  border-radius: 50%;
+  width: 41px !important;
+  height: 43px !important;
+  border-radius: 5%;
   margin-right: 15px;
   margin-top: -12px;
 }

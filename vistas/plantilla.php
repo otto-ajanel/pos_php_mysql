@@ -196,7 +196,6 @@ CUERPO DOCUMENTO
     <script src="vistas/js/clasificacion.js"></script>
     <script src="vistas/js/presentacion.js"></script>
     <script src="vistas/js/tipoproducto.js"></script>
-    <script src="vistas/js/proveedores.js"></script>
 
     <script src="vistas/js/proveedor.js"></script>
     <script src="vistas/js/producto.js"></script>
