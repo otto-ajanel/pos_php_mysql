@@ -109,7 +109,7 @@ class ModeloInventario{
 
         $stmt = Conexion::conectar()-> prepare ("DELETE FROM $tabla WHERE codigo = :id");
 
-        $stmt -> bindParam(":id", $datos, PDO::PARAM_INT);
+        $stmt -> bindParam(":id", $datos, PDO::PARAM_STR);
 
         if($stmt -> execute()){
             return "ok";

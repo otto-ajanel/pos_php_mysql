@@ -141,9 +141,9 @@ BORRAR USUARIO
 
             echo'<script> alert("SI esta definida la variable para borrar"); </script>';
             $tabla = "inventario_detalle";
-            $datos = $_GET["id_usuario"];
+            $datos = $_GET["idInventario"];
 
-            $respuesta = ModeloInventario::mdlBorrarInventario($tablas, $datos);
+            $respuesta = ModeloInventario::mdlBorrarInventario($tabla, $datos);
 
             if($respuesta == "ok"){
 
