@@ -86,7 +86,38 @@ class ModeloProducto{
 		}else{
 			return "error";
 		}
-		$stmt -> close();
+		$stmt ->close();
 		$stmt = null;
+	}
+	/* Mostar inventario*/
+	static public function mdlMostrarInventario($tabla){
+		$stmt=Conexion::conectar()->prepare("SELECT CODIGO_INVENTARIO,CODIGO_BARRA,STOCK,NOMBRE_GENERICO,URL,CLASIFICACION,TIPO_PRODUCTO,PRESENTACION FROM $tabla I
+		INNER JOIN asignacion_producto A_S ON I.CODIGO_ASIGNACION=A_S.CODIGO_ASIGNACION
+		INNER JOIN clasificacion C
+		ON A_S.CODIGO_CLASIFICACION=C.CODIGO_CLASIFICACION
+		INNER JOIN presentacion PRE
+		on A_S.CODIGO_PRESENTACION=PRE.CODIGO_PRESENTACION
+		INNER JOIN tipo_producto T
+		on A_S.CODIGO_TIPO = T.CODIGO_TIPO
+		INNER JOIN producto P
+		ON A_S.CODIGO_PRODUCTO=P.CODIGO_PRODUCTO");
+		$stmt->execute();
+		return $stmt->fetchAll();
+		$stmt->close();
+		$stmt=null;
+	}
+	/* Traer informacion de un producto en la tabla de inventario */
+	static public function mdlMostrarProductoVenta($tabla,$item,$valor){
+		$stmt=Conexion::conectar()->prepare("SELECT CODIGO_INVENTARIO,PRECIO_VENTA,STOCK,NOMBRE_GENERICO FROM $tabla I
+		INNER JOIN asignacion_producto A_S 
+		ON I.CODIGO_ASIGNACION=A_S.CODIGO_ASIGNACION
+		INNER JOIN producto P
+		on A_S.CODIGO_PRODUCTO= P.CODIGO_PRODUCTO
+		WHERE $item=$valor
+		");
+		$stmt->execute();
+		return $stmt->fetch();
+		$stmt->close();
+		$stmt=NULL;
 	}
 }

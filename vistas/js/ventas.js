@@ -47,6 +47,39 @@ $('.tablaVentas').DataTable( {
 
 } );
 
+$('.tablaVentasHoy').DataTable( {
+    "ajax": "ajax/datatable-ventasHoy.ajax.php",
+    "deferRender": true,
+	"retrieve": true,
+	"processing": true,
+	 "language": {
+
+			"sProcessing":     "Procesando...",
+			"sLengthMenu":     "Mostrar _MENU_ registros",
+			"sZeroRecords":    "No se encontraron resultados",
+			"sEmptyTable":     "Ningún dato disponible en esta tabla",
+			"sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_",
+			"sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0",
+			"sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+			"sInfoPostFix":    "",
+			"sSearch":         "Buscar:",
+			"sUrl":            "",
+			"sInfoThousands":  ",",
+			"sLoadingRecords": "Cargando...",
+			"oPaginate": {
+			"sFirst":    "Primero",
+			"sLast":     "Último",
+			"sNext":     "Siguiente",
+			"sPrevious": "Anterior"
+			},
+			"oAria": {
+				"sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+				"sSortDescending": ": Activar para ordenar la columna de manera descendente"
+			}
+
+	}
+
+} );
 /*=============================================
 AGREGANDO PRODUCTOS A LA VENTA DESDE LA TABLA
 =============================================*/
@@ -59,12 +92,13 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 	$(this).addClass("btn-default");
 
+
 	var datos = new FormData();
     datos.append("idProducto", idProducto);
 
      $.ajax({
 
-     	url:"ajax/productos.ajax.php",
+     	url:"ajax/carrito_venta.ajax.php",
       	method: "POST",
       	data: datos,
       	cache: false,
@@ -72,11 +106,11 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
       	processData: false,
       	dataType:"json",
       	success:function(respuesta){
-
-      	    var descripcion = respuesta["descripcion"];
-          	var stock = respuesta["stock"];
-          	var precio = respuesta["precio_venta"];
-
+		
+      	    var descripcion = respuesta["NOMBRE_GENERICO"];
+          	var stock = respuesta["STOCK"];
+          	var precio = respuesta["PRECIO_VENTA"];
+		
           	/*=============================================
           	EVITAR AGREGAR PRODUTO CUANDO EL STOCK ESTÁ EN CERO
           	=============================================*/
@@ -127,7 +161,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 	            '<div class="input-group">'+
 
-	              '<span class="input-group-addon"><i class="ion ion-social-usd"></i></span>'+
+	              '<span class="input-group-addon"><i>Q</i></span>'+
 	                 
 	              '<input type="text" class="form-control nuevoPrecioProducto" precioReal="'+precio+'" name="nuevoPrecioProducto" value="'+precio+'" readonly required>'+
 	 
@@ -142,8 +176,8 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 	        sumarTotalPrecios()
 
 	        // AGREGAR IMPUESTO
-
-	        agregarImpuesto()
+/*
+	        agregarImpuesto()*/
 
 	        // AGRUPAR PRODUCTOS EN FORMATO JSON
 
@@ -236,8 +270,8 @@ $(".formularioVenta").on("click", "button.quitarProducto", function(){
     	sumarTotalPrecios()
 
     	// AGREGAR IMPUESTO
-	        
-        agregarImpuesto()
+	        /*
+        agregarImpuesto()*/
 
         // AGRUPAR PRODUCTOS EN FORMATO JSON
 
@@ -360,7 +394,7 @@ SELECCIONAR PRODUCTO
 =============================================*/
 
 $(".formularioVenta").on("change", "select.nuevaDescripcionProducto", function(){
-
+	console.log("chingando");
 	var nombreProducto = $(this).val();
 
 	var nuevaDescripcionProducto = $(this).parent().parent().parent().children().children().children(".nuevaDescripcionProducto");
@@ -448,7 +482,7 @@ $(".formularioVenta").on("change", "input.nuevaCantidadProducto", function(){
 
 	// AGREGAR IMPUESTO
 	        
-    agregarImpuesto()
+   // agregarImpuesto()
 
     // AGRUPAR PRODUCTOS EN FORMATO JSON
 
@@ -480,7 +514,6 @@ function sumarTotalPrecios(){
 	}
 
 	var sumaTotalPrecio = arraySumaPrecio.reduce(sumaArrayPrecios);
-	
 	$("#nuevoTotalVenta").val(sumaTotalPrecio);
 	$("#totalVenta").val(sumaTotalPrecio);
 	$("#nuevoTotalVenta").attr("total",sumaTotalPrecio);
@@ -488,42 +521,6 @@ function sumarTotalPrecios(){
 
 }
 
-/*=============================================
-FUNCIÓN AGREGAR IMPUESTO
-=============================================*/
-
-function agregarImpuesto(){
-
-	var impuesto = $("#nuevoImpuestoVenta").val();
-	var precioTotal = $("#nuevoTotalVenta").attr("total");
-
-	var precioImpuesto = Number(precioTotal * impuesto/100);
-
-	var totalConImpuesto = Number(precioImpuesto) + Number(precioTotal);
-	
-	$("#nuevoTotalVenta").val(totalConImpuesto);
-
-	$("#totalVenta").val(totalConImpuesto);
-
-	$("#nuevoPrecioImpuesto").val(precioImpuesto);
-
-	$("#nuevoPrecioNeto").val(precioTotal);
-
-}
-
-/*=============================================
-CUANDO CAMBIA EL IMPUESTO
-=============================================*/
-
-$("#nuevoImpuestoVenta").change(function(){
-
-	agregarImpuesto();
-
-});
-
-/*=============================================
-FORMATO AL PRECIO FINAL
-=============================================*/
 
 $("#nuevoTotalVenta").number(true, 2);
 
@@ -547,7 +544,7 @@ $("#nuevoMetodoPago").change(function(){
 
 			 	'<div class="input-group">'+ 
 
-			 		'<span class="input-group-addon"><i class="ion ion-social-usd"></i></span>'+ 
+			 		'<span class="input-group-addon"><i class="">Q</i></span>'+ 
 
 			 		'<input type="text" class="form-control" id="nuevoValorEfectivo" placeholder="000000" required>'+
 
@@ -559,7 +556,7 @@ $("#nuevoMetodoPago").change(function(){
 
 			 	'<div class="input-group">'+
 
-			 		'<span class="input-group-addon"><i class="ion ion-social-usd"></i></span>'+
+			 		'<span class="input-group-addon"><i class="">Q</i></span>'+
 
 			 		'<input type="text" class="form-control" id="nuevoCambioEfectivo" placeholder="000000" readonly required>'+
 
@@ -655,7 +652,6 @@ function listarProductos(){
 							  "total" : $(precio[i]).val()})
 
 	}
-
 	$("#listaProductos").val(JSON.stringify(listaProductos)); 
 
 }

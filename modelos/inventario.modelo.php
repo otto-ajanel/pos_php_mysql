@@ -34,6 +34,21 @@ class ModeloInventario{
 
         $stmt = null;
     }
+    static public function MdlActualizarInventario($tabla, $item,$item1, $valor, $valor1){
+        $stmt=Conexion::conectar()->prepare("UPDATE $tabla SET $item1=:valor1 WHERE $item=:valor");
+        $stmt->bindParam(":valor",$valor,PDO::PARAM_INT);
+        $stmt->bindParam(":valor1",$valor1,PDO::PARAM_INT);
+        if ($stmt->execute()) {
+            # code...
+            return "ok";
+        }else {
+            # code...
+            return "error";
+        }
+            
+        $stmt->close();
+        $stmt=null;
+    }
 
 
     /* MOSTRAR INVENTARIO  MASTER*/
