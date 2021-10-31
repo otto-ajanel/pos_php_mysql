@@ -196,22 +196,13 @@ CUERPO DOCUMENTO
     <script src="vistas/js/clasificacion.js"></script>
     <script src="vistas/js/presentacion.js"></script>
     <script src="vistas/js/tipoproducto.js"></script>
-<<<<<<< HEAD
     <script src="vistas/js/proveedores.js"></script>
-=======
-
-    <script src="vistas/js/proveedor.js"></script>
->>>>>>> origin/master
     <script src="vistas/js/producto.js"></script>
     <script src="vistas/js/cliente.js"></script>
     <script src="vistas/js/ventas.js"></script>
     <script src="vistas/js/reportes.js"></script>
     <script src="vistas/js/oferta.js"></script>
-<<<<<<< HEAD
     <script src="vistas/js/inventario.js"></script>
-=======
-    <script src="vistas/js/pedido.js"></script>
->>>>>>> origin/master
 
 
 </body>
