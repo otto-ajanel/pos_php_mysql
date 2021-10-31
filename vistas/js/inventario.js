@@ -37,7 +37,7 @@ $(".tablas").on("click", ".btnEditarInventario", function(){
 	});
     
 
-})
+});
 
 /*
 ELIMINAR REGISTRO STOCK
@@ -46,7 +46,7 @@ ELIMINAR REGISTRO STOCK
 $(".tablas").on("click", ".btnEliminarInventario", function(){
 
 	alert("evento click eliminar boton ok");
-
+	/*
 	var idInventario = $(this).attr("idInventario");
 	console.log(idInventario);
 	
@@ -70,5 +70,6 @@ $(".tablas").on("click", ".btnEliminarInventario", function(){
 		}
 	
 	  })
+	  */
 
 })

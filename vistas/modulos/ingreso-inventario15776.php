@@ -110,7 +110,7 @@
                   data-target="#modalEditarStock" 
                   idInventario='.$value["codigo"].'> <i class="fa fa-pencil"></i></button>
   
-                  <button class="btn btn-danger btnEliminarInventario" onclick="funcion1()"
+                  <button class="btn btn-danger btnEliminarInventario" 
                   idInventario='.$value["codigo"].'>
                   <i class="fa fa-times"></i></button>
   
