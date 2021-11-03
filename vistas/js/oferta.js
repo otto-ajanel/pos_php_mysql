@@ -34,14 +34,14 @@ $(".tablas").on("click", ".btnEliminarOferta", function () {
 	var idOferta = $(this).attr("idOferta");
 	console.log(idOferta);
 	swal({
-		title: '¿Está seguro de borrar el tipo de producto?',
+		title: '¿Está seguro de borrar la oferta?',
 		text: "¡Si no lo está puede cancelar la acción!",
 		type: 'warning',
 		showCancelButton: true,
 		confirmButtonColor: '#3085d6',
 		cancelButtonColor: '#d33',
 		cancelButtonText: 'Cancelar',
-		confirmButtonText: 'Si, borrar tipo'
+		confirmButtonText: 'Si, borrar oferta'
 	}).then(function (result) {
 
 		if (result.value) {

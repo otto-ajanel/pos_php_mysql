@@ -10,7 +10,7 @@ if ($_SESSION["perfil"]=="Vendedor") {
 <div class="content-wrapper">
      <section class="content-header">
                <h1>
-                    ADMINISTRAR TIPO DE PRODUCTO
+                    Administrar tipo de producto
                </h1>
                <ol class="breadcrumb">
                <li>

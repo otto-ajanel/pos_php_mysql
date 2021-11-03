@@ -96,7 +96,7 @@ MODAL AGREGAR PRODUCTO
             <!-- ENTRADA PARA EL NOMBRE GENERICO -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <span class="input-group-addon"><i class="fa fa-th"></i></i></i></span>
                 <input type="text" class="form-control input-lg" name="nuevoNombreGenerico" placeholder="Ingresar nombre genérico" required>
               </div>
             </div>
@@ -104,7 +104,7 @@ MODAL AGREGAR PRODUCTO
             <!-- ENTRADA PARA EL NOMBRE COMERCIAL -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
                 <input type="text" class="form-control input-lg" name="nuevoNombreComercial" placeholder="Ingresar nombre comercial" required>
               </div>
             </div>
@@ -112,7 +112,7 @@ MODAL AGREGAR PRODUCTO
             <!-- ENTRADA PARA EL STOCK MINIMO -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <span class="input-group-addon"><i class="fa fa-arrow-circle-down"></i></span>
                 <input type="number" min="0" class="form-control input-lg" name="nuevoStockMinimo" placeholder="Ingresar el stock minimo" required>
               </div>
             </div>
@@ -120,7 +120,7 @@ MODAL AGREGAR PRODUCTO
             <!-- ENTRADA PARA EL STOCK MAXIMO -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <span class="input-group-addon"><i class="fa fa-arrow-circle-up"></i></span>
                 <input type="number" min="0" class="form-control input-lg" name="nuevoStockMaximo" placeholder="Ingresar el stock maximo" required>
               </div>
             </div>
@@ -170,7 +170,7 @@ MODAL EDITAR PRODUCTO
             <!-- ENTRADA PARA EL NOMBRE GENERICO -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
                 <input type="text" class="form-control input-lg" name="editarNombreGenerico" id="editarNombreGenerico" placeholder="Ingresar nombre genérico" required>
                 <input type="hidden" id="idProducto" name="idProducto">
               </div>
@@ -179,7 +179,7 @@ MODAL EDITAR PRODUCTO
             <!-- ENTRADA PARA EL NOMBRE COMERCIAL -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
                 <input type="text" class="form-control input-lg" name="editarNombreComercial" id="editarNombreComercial" placeholder="Ingresar nombre comercial" required>
               </div>
             </div>
@@ -187,7 +187,7 @@ MODAL EDITAR PRODUCTO
             <!-- ENTRADA PARA EL STOCK MINIMO -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <span class="input-group-addon"><i class="fa fa-arrow-circle-down"></i></span>
                 <input type="number" min="0" class="form-control input-lg" name="editarStockMinimo" id="editarStockMinimo" placeholder="Ingresar el stock minimo" required>
               </div>
             </div>
@@ -195,7 +195,7 @@ MODAL EDITAR PRODUCTO
             <!-- ENTRADA PARA EL STOCK MAXIMO -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <span class="input-group-addon"><i class="fa fa-arrow-circle-up"></i></span>
                 <input type="number" min="0" class="form-control input-lg" name="editarStockMaximo" id="editarStockMaximo" placeholder="Ingresar el stock maximo" required>
               </div>
             </div>

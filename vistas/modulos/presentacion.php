@@ -1,4 +1,4 @@
-<?php 
+<?php
 #Validando el perfil de l usuario
 if ($_SESSION["perfil"]=="Vendedor") {
      echo '<script>
@@ -10,7 +10,7 @@ if ($_SESSION["perfil"]=="Vendedor") {
 <div class="content-wrapper">
      <section class="content-header">
                <h1>
-                    ADMINISTRAR PRESENTACIÓN    
+                    Administrar presentación    
                </h1>
                <ol class="breadcrumb">
                <li>
@@ -57,7 +57,7 @@ if ($_SESSION["perfil"]=="Vendedor") {
                                    <td>
 
                                         <div class="btn-group">
-                          
+
                                          <button class="btn btn-warning btnEditarPresentacion" idPresentacion="'.$value["CODIGO_PRESENTACION"].'" data-toggle="modal" data-target="#modalEditarPresentacion"><i class="fa fa-pencil"></i></button>';
 
                                    if($_SESSION["perfil"] == "Administrador"){
@@ -66,7 +66,7 @@ if ($_SESSION["perfil"]=="Vendedor") {
 
                                     }
 
-                              echo '</div>  
+                              echo '</div>
 
                                </td>
                               </tr>
@@ -80,11 +80,11 @@ if ($_SESSION["perfil"]=="Vendedor") {
      </section>
 </div>
 <!--=====================================
-MODAL AGREGAR PRESENTACION 
+MODAL AGREGAR PRESENTACION
 ======================================-->
 
 <div id="modalAgregarPresentacion" class="modal fade" role="dialog">
-  
+
   <div class="modal-dialog">
 
     <div class="modal-content">
@@ -112,19 +112,19 @@ MODAL AGREGAR PRESENTACION
           <div class="box-body">
 
             <!-- ENTRADA PARA EL NOMBRE -->
-            
+
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
                 <input type="text" class="form-control input-lg" name="nuevaPresentacion" placeholder="Ingresar Presentación" required>
 
               </div>
 
             </div>
-  
+
           </div>
 
         </div>
@@ -161,7 +161,7 @@ MODAL EDITAR Presentacion
 ======================================-->
 
 <div id="modalEditarPresentacion" class="modal fade" role="dialog">
-  
+
   <div class="modal-dialog">
 
     <div class="modal-content">
@@ -189,12 +189,12 @@ MODAL EDITAR Presentacion
           <div class="box-body">
 
             <!-- ENTRADA PARA EL NOMBRE -->
-            
+
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
                 <input type="text" class="form-control input-lg" name="editarPresentacion" id="editarPresentacion" required>
 
@@ -203,7 +203,7 @@ MODAL EDITAR Presentacion
               </div>
 
             </div>
-  
+
           </div>
 
         </div>
@@ -225,7 +225,7 @@ MODAL EDITAR Presentacion
           $editarPresentacion = new ControladorPresentacion();
           $editarPresentacion -> ctrEditarPresentacion();
 
-        ?> 
+        ?>
 
       </form>
 

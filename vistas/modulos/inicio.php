@@ -35,11 +35,6 @@
             <li class="menu-item">
                 <a  href="producto"><i class="iconos icon5"></i>PRODUCTO</a>
                 <ul  class="sub-menu">
-                    <!--<li class="menu-item">
-                        <a href="producto"><i></i>VER PRODUCTOS</a>
-                    </li>-->
-
-
                     <li class="menu-item">
                          <a href="clasificacion"><i></i>CLASIFICACIÓN</a>
                     </li>
@@ -52,8 +47,15 @@
                 </ul>
             </li>
             <li class="menu-item">
-               <a  href="#">
-                   <i class="iconos icon6"></i>BUSCAR PRODUCTO</a>
+               <a  href="#"><i class="iconos icon6"></i>--- CONTROL DE PRODUCTOS</a>
+                 <ul  class="sub-menu">
+                   <li class="menu-item">
+                        <a href="caducidad"><i></i>CONTROL FECHA DE CADUCIDAD</a>
+                   </li>
+                   <li  class="menu-item">
+                        <a href="stock"><i></i>CONTROL DE STOCK</a>
+                   </li>
+                 </ul>
             </li>
 
             <li class="menu-item">

@@ -149,6 +149,8 @@ CUERPO DOCUMENTO
 
          $_GET["ruta"] == "producto" ||
          $_GET["ruta"] == "cliente" ||
+         $_GET["ruta"] == "stock" ||
+         $_GET["ruta"] == "caducidad"  ||
 
          $_GET["ruta"] == "pedido" ||
          $_GET["ruta"] == "inventario15776" ||
