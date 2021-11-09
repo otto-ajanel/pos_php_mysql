@@ -11,6 +11,9 @@ require_once "controladores/cliente.controlador.php";
 require_once "controladores/ventas.controlador.php";
 require_once "controladores/pedido.controlador.php";
 
+require_once "controladores/stock.controlador.php";
+require_once "controladores/caducidad.controlador.php";
+
 require_once "controladores/inventario.controlador.php";
 
 require_once "controladores/oferta.controlador.php";
@@ -26,6 +29,9 @@ require_once "modelos/producto.modelo.php";
 require_once "modelos/cliente.modelo.php";
 require_once "modelos/ventas.modelo.php";
 require_once "modelos/pedido.modelo.php";
+
+require_once "modelos/stock.modelo.php";
+require_once "modelos/caducidad.modelo.php";
 
 require_once "modelos/inventario.modelo.php";
 

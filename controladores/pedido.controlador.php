@@ -124,7 +124,7 @@ class ControladorPedido{
 
 			   	$tabla = "DETALLE_PEDIDO";
 			   	$datos = array("NO_ORDEN"=>$_POST["idDetallePedidoEval"],
-							           "CODIGO_ASIGNACION"=>$_POST["editarCodigoAsignacionDetalle"],
+							           "CODIGO_PRODUCTO"=>$_POST["editarCodigoAsignacionDetalle"],
 												 "CANTIDAD"=>$_POST["editarCantidadDetallePedido"],
 												 "PRECIO_UNITARIO"=>$_POST["editarPrecioDetallePedido"]
 											 );

@@ -17,19 +17,27 @@ if($_SESSION["perfil"] == "Vendedor"){
 <div class="content-wrapper">
 
   <section class="content-header">
-    
+
     <h1>
-      
-      ADMINISTRAR CLASIFICACIONES
-    
+
+<<<<<<< Updated upstream
+      Administrar clasificación
+=======
+      Administrar Clasificación
+>>>>>>> Stashed changes
+
     </h1>
 
     <ol class="breadcrumb">
-      
+<<<<<<< Updated upstream
+
       <li><a href="inicio"><i class="ion-navicon-round" ></i> Inicio</a></li>
-      
-      
-    
+
+
+
+=======
+      <li><a href="inicio"><i class="ion-navicon-round"></i>Inicio</a></li>
+>>>>>>> Stashed changes
     </ol>
 
   </section>
@@ -39,28 +47,31 @@ if($_SESSION["perfil"] == "Vendedor"){
     <div class="box">
 
       <div class="box-header with-border">
-  
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCategoria">
-          
-          Agregar Clasificacion
+<<<<<<< Updated upstream
 
-        </button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCategoria">
+
+          Agregar Clasificacion
+=======
+>>>>>>> Stashed changes
+
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCategoria">Agregar Clasificacion</button>
 
       </div>
 
       <div class="box-body">
-        
+
        <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
-         
+
         <thead>
-         
+
          <tr>
-           
+
            <th style="width:10px">#</th>
-           <th>CLASIFICACIÓN</th>
+           <th>Clasificación</th>
            <th>Acciones</th>
 
-         </tr> 
+         </tr>
 
         </thead>
 
@@ -74,7 +85,7 @@ if($_SESSION["perfil"] == "Vendedor"){
           $clasificacion = ControladorClasificacion::ctrMostrarClasificacion($item, $valor);
 
           foreach ($clasificacion as $key => $value) {
-           
+
             echo ' <tr>
 
                     <td>'.($key+1).'</td>
@@ -84,7 +95,7 @@ if($_SESSION["perfil"] == "Vendedor"){
                     <td>
 
                       <div class="btn-group">
-                          
+
                         <button class="btn btn-warning btnEditarCategoria" idCategoria="'.$value["CODIGO_CLASIFICACION"].'" data-toggle="modal" data-target="#modalEditarCategoria"><i class="fa fa-pencil"></i></button>';
 
                         if($_SESSION["perfil"] == "Administrador"){
@@ -93,7 +104,7 @@ if($_SESSION["perfil"] == "Vendedor"){
 
                         }
 
-                      echo '</div>  
+                      echo '</div>
 
                     </td>
 
@@ -119,7 +130,7 @@ MODAL AGREGAR CATEGORÍA
 ======================================-->
 
 <div id="modalAgregarCategoria" class="modal fade" role="dialog">
-  
+
   <div class="modal-dialog">
 
     <div class="modal-content">
@@ -130,11 +141,11 @@ MODAL AGREGAR CATEGORÍA
         CABEZA DEL MODAL
         ======================================-->
 
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+          <div class="modal-header" style="background:#387ec7; color:white; border:3px solid #fff; border-radius:8px;">
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Agregar Clasificacion</h4>
+          <h4 class="modal-title">Agregar Clasificación</h4>
 
         </div>
 
@@ -147,19 +158,19 @@ MODAL AGREGAR CATEGORÍA
           <div class="box-body">
 
             <!-- ENTRADA PARA EL NOMBRE -->
-            
+
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
                 <input type="text" class="form-control input-lg" name="nuevaCategoria" placeholder="Ingresar categoría" required>
 
               </div>
 
             </div>
-  
+
           </div>
 
         </div>
@@ -170,7 +181,7 @@ MODAL AGREGAR CATEGORÍA
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
 
           <button type="submit" class="btn btn-primary">Guardar Clasificación</button>
 
@@ -196,7 +207,7 @@ MODAL EDITAR CATEGORÍA
 ======================================-->
 
 <div id="modalEditarCategoria" class="modal fade" role="dialog">
-  
+
   <div class="modal-dialog">
 
     <div class="modal-content">
@@ -207,11 +218,11 @@ MODAL EDITAR CATEGORÍA
         CABEZA DEL MODAL
         ======================================-->
 
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#fca903; color:white; border:3px solid #fff; border-radius:8px;">
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Editar CLASIFICACION</h4>
+          <h4 class="modal-title">Editar Clasificación</h4>
 
         </div>
 
@@ -224,12 +235,12 @@ MODAL EDITAR CATEGORÍA
           <div class="box-body">
 
             <!-- ENTRADA PARA EL NOMBRE -->
-            
+
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
                 <input type="text" class="form-control input-lg" name="editarCategoria" id="editarCategoria" required>
 
@@ -238,7 +249,7 @@ MODAL EDITAR CATEGORÍA
               </div>
 
             </div>
-  
+
           </div>
 
         </div>
@@ -249,9 +260,9 @@ MODAL EDITAR CATEGORÍA
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
 
-          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+          <button type="submit" class="btn btn-primary-editar">Guardar cambios</button>
 
         </div>
 
@@ -260,7 +271,7 @@ MODAL EDITAR CATEGORÍA
           $editarClasificacion = new ControladorClasificacion();
           $editarClasificacion -> ctrEditarClasificacion();
 
-        ?> 
+        ?>
 
       </form>
 
@@ -276,5 +287,3 @@ MODAL EDITAR CATEGORÍA
   $borrarClasificacion -> ctrBorrarClasificacion();
 
 ?>
-
-

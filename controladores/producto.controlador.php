@@ -20,6 +20,9 @@ class ControladorProducto{
 			   	$tabla = "PRODUCTO";
 			   	$datos = array("NOMBRE_GENERICO"=>$_POST["nuevoNombreGenerico"],
 							           "NOMBRE_COMERCIAL"=>$_POST["nuevoNombreComercial"],
+												 "CODIGO_PRESENTACION"=>$_POST["presentacionProducto"],
+												 "CODIGO_CLASIFICACION"=>$_POST["clasificacionProducto"],
+												 "CODIGO_TIPO"=>$_POST["tipoproductoProducto"],
 												 "STOCK_MIN"=>$_POST["nuevoStockMinimo"],
 							           "STOCK_MAX"=>$_POST["nuevoStockMaximo"]);
 
@@ -89,6 +92,9 @@ class ControladorProducto{
 				$datos = array("CODIGO_PRODUCTO"=>$_POST["idProducto"],
 											 "NOMBRE_GENERICO"=>$_POST["editarNombreGenerico"],
 											 "NOMBRE_COMERCIAL"=>$_POST["editarNombreComercial"],
+											 "CODIGO_PRESENTACION"=>$_POST["editarpresentacionProducto"],
+											 "CODIGO_CLASIFICACION"=>$_POST["editarclasificacionProducto"],
+											 "CODIGO_TIPO"=>$_POST["editartipoproductoProducto"],
 											 "STOCK_MIN"=>$_POST["editarStockMinimo"],
 											 "STOCK_MAX"=>$_POST["editarStockMaximo"]);
 
@@ -132,7 +138,6 @@ class ControladorProducto{
 	static public function ctrEliminarProducto(){
 
 		if(isset($_GET["idProducto"])){
-
 			$tabla ="PRODUCTO";
 			$datos = $_GET["idProducto"];
 			$respuesta = ModeloProducto::mdlEliminarProducto($tabla, $datos);
@@ -165,4 +170,24 @@ class ControladorProducto{
 		$respuesta = ModeloProducto::mdlMostrarProductoVenta($tabla, $item, $valor);
 		return $respuesta;
 	}
+
+ /*PARA MOSTRAR LA PRESENTACION*/
+	static public function ctrMostrarPresentacionProducto(){
+		$respuesta = ModeloProducto::mdlMostrarPresentacionProducto();
+		return $respuesta;
+	}
+
+	/*PARA MOSTRAR LA CLASIFICACION*/
+ 	static public function ctrMostrarClasificacionProducto(){
+ 		$respuesta = ModeloProducto::mdlMostrarClasificacionProducto();
+ 		return $respuesta;
+ 	}
+
+	/*PARA MOSTRAR LA TIPO DE PRODUCTO*/
+ 	static public function ctrMostrarTipoProducto(){
+ 		$respuesta = ModeloProducto::mdlMostrarTipoProducto();
+ 		return $respuesta;
+ 	}
+
+
 }

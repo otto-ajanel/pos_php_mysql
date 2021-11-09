@@ -11,10 +11,10 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
 <div class="content-wrapper">
   <section class="content-header">
     <h1>
-       OFERTA
+       Administración de ofertas
     </h1>
     <ol class="breadcrumb">
-      <li><a href="inicio"><i class="ion-navicon-round" ></i> INICIO</a></li>
+      <li><a href="inicio"><i class="ion-navicon-round" ></i>Inicio</a></li>
     </ol>
 
   </section>
@@ -53,7 +53,7 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
 
           echo ' <tr>
                   <td>'.($key+1).'</td>
-                  <td>'.$value["CODIGO_ASIGNACION"].'</td>
+                  <td>'.$value["CODIGO_PRODUCTO"].'</td>
                   <td>'.$value["DESCUENTO"].'</td>
                   <td>'.$value["FECHA_INICIO"].'</td>
                   <td>'.$value["FECHA_FIN"].'</td>';
@@ -96,7 +96,7 @@ MODAL AGREGAR OFERTA
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
-        <div class="modal-header" style="background:#53b5ed; color:white; border:3px solid #fff; border-radius:8px;">
+        <div class="modal-header" style="background:#387ec7; color:white; border:3px solid #fff; border-radius:8px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Agregar Oferta</h4>
         </div>
@@ -111,14 +111,14 @@ MODAL AGREGAR OFERTA
             <!-- ENTRADA PARA EL PRODUCTO -->
             <div class="form-group">
              <div class="input-group">
-               <span class="input-group-addon"><i class="fa fa-key"></i></span>
+               <span class="input-group-addon"><i class="fa fa-th"></i></span>
                <select type="text" class="form-control input-lg" name="nuevoCodigoOferta" id="nuevoCodigoOferta" required>
                  <?php
                    $item = null;
                    $valor = null;
                    $productos = ControladorProductosOfertas::ctrMostrarProductosOfertas();
                    foreach ($productos as $key => $value) {
-                     echo '<option value="'.$value["CODIGO_ASIGNACION"].'">'.$value["NOMBRE_GENERICO"].'</option>';
+                     echo '<option value="'.$value["CODIGO_PRODUCTO"].'">'.$value["NOMBRE_GENERICO"].'</option>';
                    }
                  ?>
                </select>
@@ -128,7 +128,7 @@ MODAL AGREGAR OFERTA
             <!-- ENTRADA PARA EL DESCUENTO -->
              <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <span class="input-group-addon"><i class="fa fa-percent"></i></span>
                 <input type="number" class="form-control input-lg" name="nuevoDescuento" placeholder="Ingresar porcentaje de descuento" id="nuevoDescuento" required>
               </div>
             </div>
@@ -136,7 +136,7 @@ MODAL AGREGAR OFERTA
             <!-- ENTRADA PARA LA FECHA DE INICIO -->
              <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                 <input type="date" class="form-control input-lg" name="nuevoFechaInicio" id="nuevoFechaInicio" placeholder="Ingresar fecha de inicio" required>
               </div>
             </div>
@@ -144,7 +144,7 @@ MODAL AGREGAR OFERTA
             <!-- ENTRADA PARA LA FECHA DE FIN -->
             <div class="form-group">
              <div class="input-group">
-               <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+               <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                <input type="date" class="form-control input-lg" name="nuevoFechaFin" id="nuevoFechaFin" placeholder="Ingresar fecha fin" required>
              </div>
            </div>
@@ -157,7 +157,7 @@ MODAL AGREGAR OFERTA
         ======================================-->
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
           <button type="submit" class="btn btn-primary">Guardar oferta</button>
         </div>
 
@@ -184,7 +184,7 @@ MODAL EDITAR OFERTA
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
-        <div class="modal-header" style="background:#f39c12; color:white">
+        <div class="modal-header" style="background:#fca903; color:white; border:3px solid #fff; border-radius:8px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Editar Oferta</h4>
         </div>
@@ -198,7 +198,7 @@ MODAL EDITAR OFERTA
             <!-- ENTRADA PARA EL PRODUCTO -->
             <div class="form-group">
              <div class="input-group">
-               <span class="input-group-addon"><i class="fa fa-key"></i></span>
+               <span class="input-group-addon"><i class="fa fa-th"></i></span>
                <input type="hidden"  name="idOferta" id="idOferta" required>
                <select type="text" class="form-control input-lg" name="editarCodigoOferta" id="editarCodigoOferta" required>
                  <?php
@@ -206,7 +206,7 @@ MODAL EDITAR OFERTA
                    $valor = null;
                    $productos = ControladorProductosOfertas::ctrMostrarProductosOfertas();
                    foreach ($productos as $key => $value) {
-                     echo '<option value="'.$value["CODIGO_ASIGNACION"].'">'.$value["NOMBRE_GENERICO"].'</option>';
+                     echo '<option value="'.$value["CODIGO_PRODUCTO"].'">'.$value["NOMBRE_GENERICO"].'</option>';
                    }
                  ?>
                </select>
@@ -216,7 +216,7 @@ MODAL EDITAR OFERTA
             <!-- ENTRADA PARA EL DESCUENTO -->
              <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <span class="input-group-addon"><i class="fa fa-percent"></i></span>
                 <input type="number" class="form-control input-lg" name="editarDescuento" id="editarDescuento" placeholder="Ingresar porcentaje de descuento" required>
               </div>
             </div>
@@ -224,7 +224,7 @@ MODAL EDITAR OFERTA
             <!-- ENTRADA PARA LA FECHA DE INICIO -->
              <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                 <input type="date" class="form-control input-lg" name="editarFechaInicio" id="editarFechaInicio" placeholder="Ingresar fecha de inicio" required>
               </div>
             </div>
@@ -232,7 +232,7 @@ MODAL EDITAR OFERTA
             <!-- ENTRADA PARA LA FECHA DE FIN -->
             <div class="form-group">
              <div class="input-group">
-               <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+               <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                <input type="date" class="form-control input-lg" name="editarFechaFin" id="editarFechaFin" placeholder="Ingresar fecha fin" required>
              </div>
            </div>
@@ -244,8 +244,8 @@ MODAL EDITAR OFERTA
         PIE DEL MODAL
         ======================================-->
         <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-          <button type="submit" class="btn btn-warning">Modificar Oferta</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
+          <button type="submit" class="btn btn-primary-editar">Guardar cambios</button>
         </div>
 
      <?php
