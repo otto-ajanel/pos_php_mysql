@@ -10,7 +10,11 @@ class ModeloInventario{
 
         if($item != null){
 
-            $stmt = Conexion::conectar()-> prepare ("SELECT * FROM $tabla WHERE $item = :$item");
+            $stmt = Conexion::conectar()-> prepare ("SELECT T1.nombre_comercial, T0.stock, T0.caducidad, T0.precio_venta
+                                                        FROM inventario T0
+                                                        INNER JOIN producto T1 ON T0.CODIGO_PRODUCTO = T1.CODIGO_PRODUCTO
+                                                        WHERE T1.VISIBLE = 1
+                                                        AND $item = :$item");
 
             $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
@@ -20,11 +24,11 @@ class ModeloInventario{
         }
         else
         {
-            $stmt = Conexion::conectar()-> prepare("SELECT nombre_comercial, unidades, caducidad, precio_venta
-            FROM $tabla
-            INNER JOIN producto
-            WHERE inventario_detalle.codigo_producto = producto.codigo_producto");
-
+            $stmt = Conexion::conectar()-> prepare("SELECT T1.nombre_comercial, T0.stock, T0.caducidad, T0.precio_venta
+                                                        FROM inventario T0
+                                                        INNER JOIN producto T1 ON T0.CODIGO_PRODUCTO = T1.CODIGO_PRODUCTO
+                                                        WHERE T1.VISIBLE = 1");
+ 
             $stmt->execute();
 
             return $stmt -> fetchAll();
@@ -67,11 +71,17 @@ class ModeloInventario{
         }
         else
         {
-            $stmt = Conexion::conectar()-> prepare("SELECT codigo, fecha_ingreso, nombre_comercial, caducidad, precio_compra, precio_venta, unidades
+
+            $stmt = Conexion::conectar()-> prepare("SELECT T1.nombre_comercial, T0.stock, T0.caducidad, T0.precio_venta, T0.fecha_ingreso, T0.precio_compra, T0.codigo_inventario 
+            FROM inventario T0
+            INNER JOIN producto T1 ON T0.CODIGO_PRODUCTO = T1.CODIGO_PRODUCTO
+            WHERE T1.VISIBLE = 1");
+
+            /*$stmt = Conexion::conectar()-> prepare("SELECT codigo, fecha_ingreso, nombre_comercial, caducidad, precio_compra, precio_venta, unidades
             FROM $tabla
             INNER JOIN producto
             WHERE inventario_detalle.codigo_producto = producto.codigo_producto
-            LIMIT 0 , 30");
+            LIMIT 0 , 30");*/
 
             $stmt->execute();
 

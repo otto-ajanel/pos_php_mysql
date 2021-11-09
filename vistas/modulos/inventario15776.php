@@ -82,7 +82,7 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
             <tr>
             <td>'.($key+1).'</td>
             <td>'.$value["nombre_comercial"].'</td>
-            <td>'.$value["unidades"].'</td>
+            <td>'.$value["stock"].'</td>
             <td>'.$value["caducidad"].'</td>
             <td>'.$value["precio_venta"].'</td>
 

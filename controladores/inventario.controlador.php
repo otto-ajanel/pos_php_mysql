@@ -6,7 +6,7 @@ class ControladorInventario{
 
     static public function ctrMostrarInventario($item,$valor){
 
-        $tabla = "inventario_detalle";
+        $tabla = "inventario";
 
         $respuesta = ModeloInventario::MdlMostrarInventario ($tabla, $item, $valor);
 
@@ -17,7 +17,7 @@ class ControladorInventario{
 
     static public function ctrMostrarInventarioMaster($item,$valor){
 
-        $tabla = "inventario_detalle";
+        $tabla = "inventario";
 
         $respuesta = ModeloInventario::MdlMostrarInventarioMaster ($tabla, $item, $valor);
 
@@ -49,12 +49,12 @@ class ControladorInventario{
 
             ';*/
 
-            $tabla = "inventario_detalle";
+            $tabla = "inventario";
 
 
             $datos = array(
                 "caducidad" => $_POST["fvencimiento"],
-                "unidades" => $_POST["unidades"],
+                "stock" => $_POST["unidades"],
                 "precio_compra" => $_POST["preciocompra"],
                 "precio_venta" => $_POST["precioventa"],
                 "codigo" => $_POST["idinventario1"]
@@ -140,7 +140,7 @@ BORRAR USUARIO
         if(isset($_GET["idInventario"])){
 
             echo'<script> alert("SI esta definida la variable para borrar"); </script>';
-            $tabla = "inventario_detalle";
+            $tabla = "inventario";
             $datos = $_GET["idInventario"];
 
             $respuesta = ModeloInventario::mdlBorrarInventario($tabla, $datos);

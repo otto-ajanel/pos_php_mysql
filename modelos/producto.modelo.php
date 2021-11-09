@@ -34,22 +34,22 @@ class ModeloProducto{
 	static public function mdlMostrarProducto($tabla, $item, $valor){
 		if($item != null){
 			$stmt = Conexion::conectar()->prepare("SELECT t0.CODIGO_PRODUCTO, t0.NOMBRE_GENERICO, t0.NOMBRE_COMERCIAL, t1.PRESENTACION, t2.CLASIFICACION, t3.TIPO_PRODUCTO, t0.STOCK_MIN, t0.STOCK_MAX
-																								FROM producto t0
-																								JOIN presentacion t1 ON t1.CODIGO_PRESENTACION = t0.CODIGO_PRESENTACION
-																								JOIN clasificacion t2 ON t2.CODIGO_CLASIFICACION = t0.CODIGO_CLASIFICACION
-																								JOIN tipo_producto t3 ON t3.CODIGO_TIPO = t0.CODIGO_TIPO
-																								WHERE T0.VISIBLE = 1
-																								AND $item = :$item");
+														FROM producto t0
+														JOIN presentacion t1 ON t1.CODIGO_PRESENTACION = t0.CODIGO_PRESENTACION
+														JOIN clasificacion t2 ON t2.CODIGO_CLASIFICACION = t0.CODIGO_CLASIFICACION
+														JOIN tipo_producto t3 ON t3.CODIGO_TIPO = t0.CODIGO_TIPO
+														WHERE T0.VISIBLE = 1
+														AND $item = :$item");
 			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 			$stmt -> execute();
 			return $stmt -> fetch();
 		}else{
 			$stmt = Conexion::conectar()->prepare("SELECT t0.CODIGO_PRODUCTO, t0.NOMBRE_GENERICO, t0.NOMBRE_COMERCIAL, t1.PRESENTACION, t2.CLASIFICACION, t3.TIPO_PRODUCTO, t0.STOCK_MIN, t0.STOCK_MAX
-																								FROM producto t0
-																								JOIN presentacion t1 ON t1.CODIGO_PRESENTACION = t0.CODIGO_PRESENTACION
-																								JOIN clasificacion t2 ON t2.CODIGO_CLASIFICACION = t0.CODIGO_CLASIFICACION
-																								JOIN tipo_producto t3 ON t3.CODIGO_TIPO = t0.CODIGO_TIPO
-																								WHERE T0.VISIBLE = 1");
+														FROM producto t0
+														JOIN presentacion t1 ON t1.CODIGO_PRESENTACION = t0.CODIGO_PRESENTACION
+														JOIN clasificacion t2 ON t2.CODIGO_CLASIFICACION = t0.CODIGO_CLASIFICACION
+														JOIN tipo_producto t3 ON t3.CODIGO_TIPO = t0.CODIGO_TIPO
+														WHERE T0.VISIBLE = 1");
 			$stmt -> execute();
 			return $stmt -> fetchAll();
 		}

@@ -101,17 +101,17 @@
             <td>'.$value["caducidad"].'</td>
             <td>'.$value["precio_compra"].'</td>
             <td>'.$value["precio_venta"].'</td>
-            <td>'.$value["unidades"].'</td>
+            <td>'.$value["stock"].'</td>
 
             <td>
               <div class="btn-group">
                   
                   <button class="btn btn-warning btnEditarInventario" data-toggle="modal" 
                   data-target="#modalEditarStock" 
-                  idInventario='.$value["codigo"].'> <i class="fa fa-pencil"></i></button>
+                  idInventario='.$value["codigo_inventario"].'> <i class="fa fa-pencil"></i></button>
   
                   <button class="btn btn-danger btnEliminarInventario" 
-                  idInventario='.$value["codigo"].'>
+                  idInventario='.$value["codigo_inventario"].'>
                   <i class="fa fa-times"></i></button>
   
               </div> 

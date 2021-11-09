@@ -28,7 +28,7 @@ $(".tablas").on("click", ".btnEditarInventario", function(){
 			
 
 			$("#fvencimiento").val(respuesta["caducidad"]);
-			$("#unidades").val(respuesta["unidades"]);
+			$("#unidades").val(respuesta["stock"]);
 			$("#preciocompra").val(respuesta["precio_compra"]);
 			$("#precioventa").val(respuesta["precio_venta"]);
 			$("#idinventario1").val(respuesta["codigo"]);
