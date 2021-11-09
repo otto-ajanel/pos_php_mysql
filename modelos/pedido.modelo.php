@@ -28,7 +28,7 @@ class ModeloPedido{
 																						FROM pedido t0
 																							JOIN proveedor t1 ON t1.CODIGO_PROVEEDOR = t0.CODIGO_PROVEEDOR
 																						WHERE T0.VISIBLE = 1;
-																						AND $item = $valor");
+																						AND $item = :$item");
 			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 			$stmt -> execute();
 			return $stmt -> fetch();
@@ -36,7 +36,7 @@ class ModeloPedido{
 			$stmt = Conexion::conectar()->prepare("SELECT t0.NO_ORDEN, t1.NOMBRE_PROVEEDOR, t0.FECHA_PEDIDO, t0.FECHA_ESTIMADA
 																						FROM pedido t0
 																							JOIN proveedor t1 ON t1.CODIGO_PROVEEDOR = t0.CODIGO_PROVEEDOR
-																						WHERE T0.VISIBLE = 1;");
+																						WHERE T0.VISIBLE = 1");
 			$stmt -> execute();
 			return $stmt -> fetchAll();
 		}
@@ -50,12 +50,11 @@ class ModeloPedido{
 
 	static public function mdlMostrarListaProducto($tabla, $item, $valor){
 		$stmt = Conexion::conectar()->prepare("
-		select t1.CODIGO_DETALLE_PEDIDO, concat(t3.NOMBRE_GENERICO, ' - ', t4.PRESENTACION) as nombre,
+		select t1.CODIGO_DETALLE_PEDIDO, concat(t2.NOMBRE_GENERICO, ' - ', t3.PRESENTACION) as nombre,
 					t1.CANTIDAD, t1.PRECIO_UNITARIO, (t1.CANTIDAD * t1.PRECIO_UNITARIO) as subtotal
 		from detalle_pedido t1
-			join asignacion_producto t2 on t2.CODIGO_ASIGNACION = t1.CODIGO_ASIGNACION
-			join producto t3 on t3.CODIGO_PRODUCTO = t2.CODIGO_PRODUCTO
-			join presentacion t4 on t4.CODIGO_PRESENTACION = t2.CODIGO_PRESENTACION
+			join producto t2 on t2.CODIGO_PRODUCTO = t1.CODIGO_PRODUCTO
+			join presentacion t3 on t3.CODIGO_PRESENTACION = t2.CODIGO_PRESENTACION
 		where t1.NO_ORDEN = :NO_ORDEN;
 			");
 
@@ -100,10 +99,10 @@ class ModeloPedido{
 	static public function mdlIngresarDetallePedido($tabla, $datos){
 
 		$stmt = Conexion::conectar()->prepare(
-		"INSERT INTO $tabla(NO_ORDEN, CODIGO_ASIGNACION, CANTIDAD, PRECIO_UNITARIO)VALUES(:idDetallePedido, :editarCodigoAsignacionDetalle, :editarCantidadDetallePedido, :editarPrecioDetallePedido)");
+		"INSERT INTO $tabla(NO_ORDEN, CODIGO_PRODUCTO, CANTIDAD, PRECIO_UNITARIO)VALUES(:idDetallePedido, :editarCodigoAsignacionDetalle, :editarCantidadDetallePedido, :editarPrecioDetallePedido)");
 
 		$stmt->bindParam(":idDetallePedido", $datos["NO_ORDEN"], PDO::PARAM_INT);
-		$stmt->bindParam(":editarCodigoAsignacionDetalle", $datos["CODIGO_ASIGNACION"], PDO::PARAM_STR);
+		$stmt->bindParam(":editarCodigoAsignacionDetalle", $datos["CODIGO_PRODUCTO"], PDO::PARAM_STR);
 		$stmt->bindParam(":editarCantidadDetallePedido", $datos["CANTIDAD"], PDO::PARAM_INT);
 		$stmt->bindParam(":editarPrecioDetallePedido", $datos["PRECIO_UNITARIO"], PDO::PARAM_STR);
 
@@ -143,10 +142,9 @@ class ModeloPedido{
 	/*PARA DESPLEGAR LOS PRODUCTO QUE ESTEN VISIBLES*/
 	static public function mdlMostrarProductoPedido(){
 		$stmt = Conexion::conectar()->prepare(
-		"select t0.CODIGO_ASIGNACION, concat(t1.NOMBRE_GENERICO, ' - ', t2.PRESENTACION) NOMBRE_GENERICO
-			from asignacion_producto t0
-				join producto t1 on t1.CODIGO_PRODUCTO = t0.CODIGO_PRODUCTO
-					join presentacion t2 on t2.CODIGO_PRESENTACION = t0.CODIGO_PRESENTACION
+		"select t0.CODIGO_PRODUCTO, concat(t0.NOMBRE_GENERICO, ' - ', t1.PRESENTACION) NOMBRE_GENERICO
+			from producto t0
+					join presentacion t1 on t1.CODIGO_PRESENTACION = t0.CODIGO_PRESENTACION
 			where t1.visible = 1;");
 		$stmt -> execute();
 		return $stmt -> fetchAll();

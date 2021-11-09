@@ -20,16 +20,24 @@ if($_SESSION["perfil"] == "Vendedor"){
 
     <h1>
 
+<<<<<<< Updated upstream
       Administrar clasificación
+=======
+      Administrar Clasificación
+>>>>>>> Stashed changes
 
     </h1>
 
     <ol class="breadcrumb">
+<<<<<<< Updated upstream
 
       <li><a href="inicio"><i class="ion-navicon-round" ></i> Inicio</a></li>
 
 
 
+=======
+      <li><a href="inicio"><i class="ion-navicon-round"></i>Inicio</a></li>
+>>>>>>> Stashed changes
     </ol>
 
   </section>
@@ -39,12 +47,15 @@ if($_SESSION["perfil"] == "Vendedor"){
     <div class="box">
 
       <div class="box-header with-border">
+<<<<<<< Updated upstream
 
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCategoria">
 
           Agregar Clasificacion
+=======
+>>>>>>> Stashed changes
 
-        </button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCategoria">Agregar Clasificacion</button>
 
       </div>
 
@@ -57,7 +68,7 @@ if($_SESSION["perfil"] == "Vendedor"){
          <tr>
 
            <th style="width:10px">#</th>
-           <th>CLASIFICACIÓN</th>
+           <th>Clasificación</th>
            <th>Acciones</th>
 
          </tr>
@@ -130,11 +141,11 @@ MODAL AGREGAR CATEGORÍA
         CABEZA DEL MODAL
         ======================================-->
 
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+          <div class="modal-header" style="background:#387ec7; color:white; border:3px solid #fff; border-radius:8px;">
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Agregar Clasificacion</h4>
+          <h4 class="modal-title">Agregar Clasificación</h4>
 
         </div>
 
@@ -170,7 +181,7 @@ MODAL AGREGAR CATEGORÍA
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
 
           <button type="submit" class="btn btn-primary">Guardar Clasificación</button>
 
@@ -207,11 +218,11 @@ MODAL EDITAR CATEGORÍA
         CABEZA DEL MODAL
         ======================================-->
 
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#fca903; color:white; border:3px solid #fff; border-radius:8px;">
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Editar CLASIFICACION</h4>
+          <h4 class="modal-title">Editar Clasificación</h4>
 
         </div>
 
@@ -249,9 +260,9 @@ MODAL EDITAR CATEGORÍA
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
 
-          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+          <button type="submit" class="btn btn-primary-editar">Guardar cambios</button>
 
         </div>
 

@@ -47,6 +47,7 @@
                 </ul>
             </li>
             <li class="menu-item">
+<<<<<<< Updated upstream
                <a  href="#"><i class="iconos icon6"></i>--- CONTROL DE PRODUCTOS</a>
                  <ul  class="sub-menu">
                    <li class="menu-item">
@@ -56,6 +57,17 @@
                         <a href="stock"><i></i>CONTROL DE STOCK</a>
                    </li>
                  </ul>
+=======
+               <a  href="#"><i class="iconos icon6"></i>..CONTROL DE PRODUCTO</a>
+               <ul  class="sub-menu">
+                   <li class="menu-item">
+                        <a href="controlcaducidad"><i></i>CONTROL FECHA DE CADUCIDAD</a>
+                   </li>
+                   <li  class="menu-item">
+                        <a href="controlstock"><i></i>CONTORL POR STOCK</a>
+                   </li>
+               </ul>
+>>>>>>> Stashed changes
             </li>
 
             <li class="menu-item">

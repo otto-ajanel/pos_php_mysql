@@ -8,6 +8,7 @@ if ($_SESSION["perfil"]=="Vendedor") {
 }
 ?>
 <div class="content-wrapper">
+<<<<<<< Updated upstream
      <section class="content-header">
                <h1>
                     Administrar presentación    
@@ -22,23 +23,27 @@ if ($_SESSION["perfil"]=="Vendedor") {
                </li>
           </ol>
      </section>
+=======
+ <section class="content-header">
+  <h1>Administrar presentación</h1>
+  <ol class="breadcrumb">
+     <li><a href="inicio"><i class="ion-navicon-round"></i>Inicio</a></li>
+  </ol>
+ </section>
+>>>>>>> Stashed changes
      <section class="content">
           <div class="box">
                <div class="box-header with-border">
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarPresentacion">
-                         Agregar Presentación
-                    </button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarPresentacion">Agregar Presentación</button>
                </div>
           </div>
           <div class="box-body">
-               <table class="table table-bordered table-striped dt-responsive tablas">
+               <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
                     <thead>
                          <tr>
-                              <th style="width:10px">
-                                   #
-                              </th>
-                              <th>PRESENTACIÓN</th>
-                              <th>ACCIONES</th>
+                              <th style="width:10px">#</th>
+                              <th>Presentación</th>
+                              <th>Acción</th>
                          </tr>
                     </thead>
                     <tbody>
@@ -95,7 +100,7 @@ MODAL AGREGAR PRESENTACION
         CABEZA DEL MODAL
         ======================================-->
 
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#387ec7; color:white; border:3px solid #fff; border-radius:8px;">
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -135,7 +140,7 @@ MODAL AGREGAR PRESENTACION
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
 
           <button type="submit" class="btn btn-primary">Guardar Presentación</button>
 
@@ -172,7 +177,7 @@ MODAL EDITAR Presentacion
         CABEZA DEL MODAL
         ======================================-->
 
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#fca903; color:white; border:3px solid #fff; border-radius:8px;">
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -216,7 +221,7 @@ MODAL EDITAR Presentacion
 
           <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
 
-          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+          <button type="submit" class="btn btn-primary-editar">Guardar cambios</button>
 
         </div>
 

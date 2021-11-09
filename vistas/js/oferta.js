@@ -17,7 +17,7 @@ $(".tablas").on("click", ".btnEditarOferta", function () {
 		dataType: "json",
 		success: function (respuesta) {
 
-			$('#editarCodigoOferta option[value="' + respuesta["CODIGO_ASIGNACION"] + '"]').prop('selected', true);
+			$('#editarCodigoOferta option[value="' + respuesta["CODIGO_PRODUCTO"] + '"]').prop('selected', true);
 			$("#editarDescuento").val(respuesta["DESCUENTO"]);
 			$("#editarFechaInicio").val(respuesta["FECHA_INICIO"]);
 			$("#editarFechaFin").val(respuesta["FECHA_FIN"]);

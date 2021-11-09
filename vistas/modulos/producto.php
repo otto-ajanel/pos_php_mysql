@@ -13,8 +13,7 @@ if($_SESSION["perfil"] == "Especial"){
       Catalogo de producto
     </h1>
     <ol class="breadcrumb">
-      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
-      <li class="active">Administrar producto</li>
+      <li><a href="inicio"><i class="ion-navicon-round"></i>Inicio</a></li>
     </ol>
   </section>
 
@@ -32,6 +31,9 @@ if($_SESSION["perfil"] == "Especial"){
            <th style="width:10px">#</th>
            <th>Nombre genérico</th>
            <th>Nombre comercial</th>
+           <th>Presentación</th>
+           <th>Clasificación</th>
+           <th>Tipo producto</th>
            <th>Stock mínimo</th>
            <th>Stock máximo</th>
            <th>Acciones</th>
@@ -49,6 +51,9 @@ if($_SESSION["perfil"] == "Especial"){
                     <td>'.($key+1).'</td>
                     <td>'.$value["NOMBRE_GENERICO"].'</td>
                     <td>'.$value["NOMBRE_COMERCIAL"].'</td>
+                    <td>'.$value["PRESENTACION"].'</td>
+                    <td>'.$value["CLASIFICACION"].'</td>
+                    <td>'.$value["TIPO_PRODUCTO"].'</td>
                     <td>'.$value["STOCK_MIN"].'</td>
                     <td>'.$value["STOCK_MAX"].'</td>
                     <td>
@@ -82,7 +87,7 @@ MODAL AGREGAR PRODUCTO
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#387ec7; color:white; border:3px solid #fff; border-radius:8px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Agregar producto</h4>
         </div>
@@ -96,7 +101,11 @@ MODAL AGREGAR PRODUCTO
             <!-- ENTRADA PARA EL NOMBRE GENERICO -->
             <div class="form-group">
               <div class="input-group">
+<<<<<<< Updated upstream
                 <span class="input-group-addon"><i class="fa fa-th"></i></i></i></span>
+=======
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+>>>>>>> Stashed changes
                 <input type="text" class="form-control input-lg" name="nuevoNombreGenerico" placeholder="Ingresar nombre genérico" required>
               </div>
             </div>
@@ -107,6 +116,57 @@ MODAL AGREGAR PRODUCTO
                 <span class="input-group-addon"><i class="fa fa-th"></i></span>
                 <input type="text" class="form-control input-lg" name="nuevoNombreComercial" placeholder="Ingresar nombre comercial" required>
               </div>
+            </div>
+
+            <!-- ENTRADA PARA LA PRESENTACION -->
+            <div class="form-group">
+             <div class="input-group">
+               <span class="input-group-addon"><i class="fa fa-capsules"></i></span>
+               <select type="text" class="form-control input-lg" name="presentacionProducto" id="presentacionProducto" required>
+                 <?php
+                   $item = null;
+                   $valor = null;
+                   $producto = ControladorProducto::ctrMostrarPresentacionProducto();
+                   foreach ($producto as $key => $value) {
+                     echo '<option value="'.$value["CODIGO_PRESENTACION"].'">'.$value["PRESENTACION"].'</option>';
+                   }
+                 ?>
+               </select>
+             </div>
+            </div>
+
+            <!-- ENTRADA PARA LA CLASIFICACION -->
+            <div class="form-group">
+             <div class="input-group">
+               <span class="input-group-addon"><i class="fa fa-key"></i></span>
+               <select type="text" class="form-control input-lg" name="clasificacionProducto" id="clasificacionProducto" required>
+                 <?php
+                   $item = null;
+                   $valor = null;
+                   $producto = ControladorProducto::ctrMostrarClasificacionProducto();
+                   foreach ($producto as $key => $value) {
+                     echo '<option value="'.$value["CODIGO_CLASIFICACION"].'">'.$value["CLASIFICACION"].'</option>';
+                   }
+                 ?>
+               </select>
+             </div>
+            </div>
+
+            <!-- ENTRADA PARA LA TIPO DE PRODUCTO -->
+            <div class="form-group">
+             <div class="input-group">
+               <span class="input-group-addon"><i class="fa fa-key"></i></span>
+               <select type="text" class="form-control input-lg" name="tipoproductoProducto" id="tipoproductoProducto" required>
+                 <?php
+                   $item = null;
+                   $valor = null;
+                   $producto = ControladorProducto::ctrMostrarTipoProducto();
+                   foreach ($producto as $key => $value) {
+                     echo '<option value="'.$value["CODIGO_TIPO"].'">'.$value["TIPO_PRODUCTO"].'</option>';
+                   }
+                 ?>
+               </select>
+             </div>
             </div>
 
             <!-- ENTRADA PARA EL STOCK MINIMO -->
@@ -131,7 +191,7 @@ MODAL AGREGAR PRODUCTO
         PIE DEL MODAL
         ======================================-->
         <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
           <button type="submit" class="btn btn-primary">Guardar producto</button>
         </div>
       </form>
@@ -156,7 +216,7 @@ MODAL EDITAR PRODUCTO
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+          <div class="modal-header" style="background:#fca903; color:white; border:3px solid #fff; border-radius:8px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Editar producto</h4>
         </div>
@@ -184,6 +244,57 @@ MODAL EDITAR PRODUCTO
               </div>
             </div>
 
+            <!-- ENTRADA PARA LA PRESENTACION -->
+            <div class="form-group">
+             <div class="input-group">
+               <span class="input-group-addon"><i class="fa fa-key"></i></span>
+               <select type="text" class="form-control input-lg" name="editarpresentacionProducto" id="editarpresentacionProducto" required>
+                 <?php
+                   $item = null;
+                   $valor = null;
+                   $producto = ControladorProducto::ctrMostrarPresentacionProducto();
+                   foreach ($producto as $key => $value) {
+                     echo '<option value="'.$value["CODIGO_PRESENTACION"].'">'.$value["PRESENTACION"].'</option>';
+                   }
+                 ?>
+               </select>
+             </div>
+            </div>
+
+            <!-- ENTRADA PARA LA CLASIFICACION -->
+            <div class="form-group">
+             <div class="input-group">
+               <span class="input-group-addon"><i class="fa fa-key"></i></span>
+               <select type="text" class="form-control input-lg" name="editarclasificacionProducto" id="editarclasificacionProducto" required>
+                 <?php
+                   $item = null;
+                   $valor = null;
+                   $producto = ControladorProducto::ctrMostrarClasificacionProducto();
+                   foreach ($producto as $key => $value) {
+                     echo '<option value="'.$value["CODIGO_CLASIFICACION"].'">'.$value["CLASIFICACION"].'</option>';
+                   }
+                 ?>
+               </select>
+             </div>
+            </div>
+
+            <!-- ENTRADA PARA LA TIPO DE PRODUCTO -->
+            <div class="form-group">
+             <div class="input-group">
+               <span class="input-group-addon"><i class="fa fa-key"></i></span>
+               <select type="text" class="form-control input-lg" name="editartipoproductoProducto" id="editartipoproductoProducto" required>
+                 <?php
+                   $item = null;
+                   $valor = null;
+                   $producto = ControladorProducto::ctrMostrarTipoProducto();
+                   foreach ($producto as $key => $value) {
+                     echo '<option value="'.$value["CODIGO_TIPO"].'">'.$value["TIPO_PRODUCTO"].'</option>';
+                   }
+                 ?>
+               </select>
+             </div>
+            </div>
+
             <!-- ENTRADA PARA EL STOCK MINIMO -->
             <div class="form-group">
               <div class="input-group">
@@ -205,8 +316,8 @@ MODAL EDITAR PRODUCTO
         PIE DEL MODAL
         ======================================-->
         <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
+            <button type="submit" class="btn btn-primary-editar">Guardar cambios</button>
         </div>
 
       <?php

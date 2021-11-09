@@ -44,7 +44,7 @@ body {
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
- 
+
 }
 .wrapper:before,
 .wrapper:after {
@@ -82,8 +82,8 @@ body {
   -o-transition: -o-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
   margin-left: 0px;
-  
-  
+
+
 
   z-index: 820;
 }
@@ -2377,15 +2377,34 @@ a:focus {
 .btn-default.hover {
   background-color: #e7e7e7;
 }
+
 .btn-primary {
-  background-color: #3c8dbc;
-  border-color: #367fa9;
+  /*background-color: #3c8dbc;
+  border-color: #367fa9;*/
+
+  background-color: #387ec7;
+  border-color: #387ec7;
 }
+
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary.hover {
-  background-color: #367fa9;
+  /*background-color: #3c5991;*/
+  /*background-color: #114880;*/
+  background-color: #1e4b8f;
 }
+
+.btn-primary-editar {
+  background-color: #fca903;
+  border-color: #fca903;
+}
+
+.btn-primary-editar:hover,
+.btn-primary-editar:active,
+.btn-primary-editar.hover {
+  background-color: #ff8800;
+}
+
 .btn-success {
   background-color: #00a65a;
   border-color: #008d4c;
@@ -3439,10 +3458,10 @@ align-items: center;
 }
 .login-box-body img{
   height: 100px;
-  
+
 }
 .login-header{
-  
+
   display: flex;
   height: 100px;
   width: 100%;
@@ -3486,7 +3505,7 @@ align-items: center;
 .register-box-body {
   background: #fff;
   padding: 20px;
-  
+
   color: #666;
 }
 .login-box-body .form-control-feedback,
@@ -5802,7 +5821,7 @@ Menu
   transform-origin: top;
   transform: rotateX(-90deg);
   transition: transform 0.3s linear;
-  
+
   z-index: 200;
 }
 .menu-item .sub-menu .menu-item {
@@ -5811,7 +5830,7 @@ Menu
   background-color: #3571cb;
   opacity: 0.98;
 
- 
+
 }
 
 .menu-item .sub-menu .menu-item:first-child {
@@ -5897,7 +5916,7 @@ background-image: url("../img/iconos/Reportes.PNG");
 .header-all{
   width: 100%;
   display: flex;
-  
+
   justify-items: self-end;
   align-items: center;
   background-color: #000000 !important;
@@ -5926,9 +5945,10 @@ height: 59px;
 }
 .breadcrumb li a{
   font-size: 30px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  /*text-transform: uppercase;*/
   color: #147dd9 !important;
+
 }
 
 .modalagregarcliente{
@@ -5938,12 +5958,12 @@ height: 59px;
   height: 300px;
   margin: 0;
   padding: 0;
-  max-height: 450px; 
+  max-height: 450px;
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
   scrollbar-width: thin;
-  
+
 }
 .carrito::-webkit-scrollbar{
   width: 8px;     /* Tamaño del scroll en vertical */
@@ -5969,7 +5989,11 @@ height: 59px;
 }
 
 .btn-primary a{
-  color: #fff !important; 
+  color: #fff !important;
+}
+
+.btn-primary-editar{
+  color: #fff !important;
 }
 
 .input-group-addon button{
