@@ -12,7 +12,7 @@
 
             <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
 
-            <button id="ver-ventas" class="ver-ventas">Ver Ventas</button>
+            <button id="ver-ventas" class="ver-ventas"class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalMostrarVentasHoy" data-dismiss="modal">Ver Ventas</button>
 
         </ol>
 
@@ -58,7 +58,6 @@
                     $valor = null;
 
                     $ventas = ControladorVentas::ctrUltimaVenta($item, $valor);
-
                     if(!$ventas){
 
                       echo '<input type="text" class="form-control" id="nuevaVenta" name="nuevaVenta" value="00001" readonly>';
@@ -128,121 +127,10 @@
                                 <!--=====================================
                 ENTRADA PARA AGREGAR PRODUCTO
                 ======================================-->
-<<<<<<< HEAD
+
+
                                 <div class="form-group row nuevoProducto carrito">
-=======
-                                <div class="carrito">
-                                    <div class="form-group row nuevoProducto">
 
-                                        <!-- Descripción del producto -->
-
-                                        <div class="col-xs-6" style="padding-right:0px">
-
-                                            <div class="input-group">
-
-                                                <span class="input-group-addon"><button type="button"
-                                                        class="btn btn-danger btn-xs"><i
-                                                            class="fa fa-times"></i></button></span>
-
-                                                <input type="text" class="form-control" id="agregarProducto"
-                                                    name="agregarProducto" placeholder="Descripción del producto"
-                                                    required>
-
-                                            </div>
-
-                                        </div>
-
-
-                                        <!-- Cantidad del producto -->
-
-                                        <div class="col-xs-3">
-
-                                            <input type="number" class="form-control" id="nuevaCantidadProducto"
-                                                name="nuevaCantidadProducto" min="1" placeholder="0" required>
-
-                                        </div>
-
-                                        <!-- Precio del producto -->
-
-                                        <div class="col-xs-3" style="padding-left:0px">
-
-                                            <div class="input-group">
-
-                                                <span class="input-group-addon"><i
-                                                        class="ion ion-social-usd"></i></span>
-
-                                                <input type="number" min="1" class="form-control"
-                                                    id="nuevoPrecioProducto" name="nuevoPrecioProducto"
-                                                    placeholder="000000" readonly required>
-
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>
-                                    <div class="form-group row nuevoProducto">
-
-                                        <!-- Descripción del producto -->
-
-                                        <div class="col-xs-6" style="padding-right:0px">
-
-                                            <div class="input-group">
-
-                                                <span class="input-group-addon"><button type="button"
-                                                        class="btn btn-danger btn-xs"><i
-                                                            class="fa fa-times"></i></button></span>
-
-                                                <input type="text" class="form-control" id="agregarProducto"
-                                                    name="agregarProducto" placeholder="Descripción del producto"
-                                                    required>
-
-                                            </div>
-
-                                        </div>
-
-
-                                        <!-- Cantidad del producto -->
-
-
-
-
-
-
-
-
-
-
-                                        <!-- Cantidad del producto -->
-
-                                        <div class="col-xs-3">
-
-                                            <input type="number" class="form-control" id="nuevaCantidadProducto"
-                                                name="nuevaCantidadProducto" min="1" placeholder="0" required>
-
-                                        </div>
-
-                                        <!-- Precio del producto -->
-
-                                        <div class="col-xs-3" style="padding-left:0px">
-
-                                            <div class="input-group">
-
-                                                <span class="input-group-addon"><i
-                                                        class="ion ion-social-usd"></i></span>
-
-                                                <input type="number" min="1" class="form-control"
-                                                    id="nuevoPrecioProducto" name="nuevoPrecioProducto"
-                                                    placeholder="000000" readonly required>
-
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>
-                                    <div class="form-group row nuevoProducto">
->>>>>>> 8bc03011a9d3d42979e4447c24f76f71abbe7805
 
                                 </div>
                                 <input type="hidden" id="listaProductos" name="listaProductos">
@@ -376,28 +264,7 @@
 
                             </thead>
 
-<<<<<<< HEAD
-=======
-                            <tbody>
 
-                                <tr>
-                                    <td>1.</td>
-                                    <td><img src="vistas/img/productos/default/anonymous.png" class="img-thumbnail"
-                                            width="40px">
-                                    </td>
-                                    <td>00123</td>
-                                    <td>Lorem ipsum dolor sit amet</td>
-                                    <td>20</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-primary">Agregar</button>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-
->>>>>>> 8bc03011a9d3d42979e4447c24f76f71abbe7805
                         </table>
 
                     </div>
@@ -478,8 +345,7 @@ MODAL AGREGAR CLIENTE
     </div>
   </div>
 </div>
-<<<<<<< Updated upstream
-=======
+
 
 
 <!--=====================================
@@ -488,7 +354,6 @@ MODAL AGREGAR CLIENTE
 <div id="modalMostrarVentasHoy" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-
 
     <div class="modal-header" style="background:#3c8dbc; color:white">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -515,7 +380,6 @@ MODAL AGREGAR CLIENTE
 
 </table>
 
-
         <!--=====================================
         PIE DEL MODAL
         ======================================-->
@@ -526,4 +390,4 @@ MODAL AGREGAR CLIENTE
     </div>
   </div>
 </div>
->>>>>>> Stashed changes
+

@@ -203,11 +203,8 @@ CUERPO DOCUMENTO
     <script src="vistas/js/clasificacion.js"></script>
     <script src="vistas/js/presentacion.js"></script>
     <script src="vistas/js/tipoproducto.js"></script>
-<<<<<<< HEAD
-    <script src="vistas/js/proveedores.js"></script>
-=======
+
     <script src="vistas/js/proveedor.js"></script>
->>>>>>> 8bc03011a9d3d42979e4447c24f76f71abbe7805
     <script src="vistas/js/producto.js"></script>
     <script src="vistas/js/cliente.js"></script>
     <script src="vistas/js/ventas.js"></script>
