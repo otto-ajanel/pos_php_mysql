@@ -28,6 +28,7 @@ session_start();
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="vistas/bower_components/font-awesome/css/font-awesome.min.css">
+
     <!-- Ionicons -->
     <link rel="stylesheet" href="vistas/bower_components/Ionicons/css/ionicons.min.css">
 
@@ -149,6 +150,12 @@ CUERPO DOCUMENTO
 
          $_GET["ruta"] == "producto" ||
          $_GET["ruta"] == "cliente" ||
+         $_GET["ruta"] == "stock" ||
+         $_GET["ruta"] == "caducidad"  ||
+
+         $_GET["ruta"] == "controlcaducidad" ||
+         $_GET["ruta"] == "controlstock" ||
+
 
          $_GET["ruta"] == "pedido" ||
          $_GET["ruta"] == "inventario15776" ||

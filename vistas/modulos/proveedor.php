@@ -13,8 +13,7 @@ if($_SESSION["perfil"] == "Especial"){
       Administrar proveedores
     </h1>
     <ol class="breadcrumb">
-      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
-      <li class="active">Administrar proveedores</li>
+      <li><a href="inicio"><i class="ion-navicon-round"></i> Inicio</a></li>
     </ol>
   </section>
 
@@ -84,7 +83,7 @@ MODAL AGREGAR PROVEEDOR
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#387ec7; color:white; border:3px solid #fff; border-radius:8px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Agregar proveedor</h4>
         </div>
@@ -125,7 +124,7 @@ MODAL AGREGAR PROVEEDOR
         PIE DEL MODAL
         ======================================-->
         <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
           <button type="submit" class="btn btn-primary">Guardar proveedor</button>
         </div>
       </form>
@@ -150,7 +149,7 @@ MODAL EDITAR PROVEEDOR
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#fca903; color:white; border:3px solid #fff; border-radius:8px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Editar proveedor</h4>
         </div>
@@ -192,8 +191,8 @@ MODAL EDITAR PROVEEDOR
         PIE DEL MODAL
         ======================================-->
         <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
+          <button type="submit" class="btn btn-primary-editar">Guardar cambios</button>
         </div>
 
       <?php
@@ -221,7 +220,7 @@ MODAL EDITAR CONTACTO PROVEEDOR
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#387ec7; color:white; border:3px solid #fff; border-radius:8px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Agregar contacto de proveedor</h4>
         </div>
@@ -256,7 +255,7 @@ MODAL EDITAR CONTACTO PROVEEDOR
         PIE DEL MODAL
         ======================================-->
         <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
           <button type="submit" class="btn btn-primary">Guardar cambios</button>
         </div>
 
@@ -280,7 +279,7 @@ MODAL LISTAR CONTACTO PROVEEDOR
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#387ec7; color:white; border:3px solid #fff; border-radius:8px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Contactos del proveedor</h4>
         </div>

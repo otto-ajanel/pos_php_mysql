@@ -61,7 +61,7 @@
                     if(!$ventas){
 
                       echo '<input type="text" class="form-control" id="nuevaVenta" name="nuevaVenta" value="00001" readonly>';
-                  
+
 
                     }else{
 
@@ -74,7 +74,7 @@
 
 
                       echo '<input type="text" class="form-control" id="nuevaVenta" name="nuevaVenta" value="'."No. 0000".$codigo.'" readonly>';
-                  
+
 
                     }
 
@@ -111,7 +111,7 @@
                                                  <option value="'.$value["CODIGO_CLIENTE"].'">'.$value["NOMBRE_CLIENTE"]."--".$value["NIT"].'</option>
                                                  ';
                                              }
-                                             
+
                                              ?>
                                         </select>
 
@@ -332,7 +332,7 @@ MODAL AGREGAR CLIENTE
         PIE DEL MODAL
         ======================================-->
         <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
           <button type="submit" class="btn btn-primary">Guardar cliente</button>
         </div>
       </form>
@@ -347,14 +347,14 @@ MODAL AGREGAR CLIENTE
 </div>
 
 
+
 <!--=====================================
 MODAL AGREGAR CLIENTE
 ======================================-->
 <div id="modalMostrarVentasHoy" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-     
-    
+
     <div class="modal-header" style="background:#3c8dbc; color:white">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Agregar cliente</h4>
@@ -379,15 +379,15 @@ MODAL AGREGAR CLIENTE
 
 
 </table>
-            
 
         <!--=====================================
         PIE DEL MODAL
         ======================================-->
         <div class="modal-footer">
-         
+
         </div>
 
     </div>
   </div>
 </div>
+

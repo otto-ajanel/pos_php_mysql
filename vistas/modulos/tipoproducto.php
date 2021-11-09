@@ -8,9 +8,10 @@ if ($_SESSION["perfil"]=="Vendedor") {
 }
 ?>
 <div class="content-wrapper">
+<<<<<<< Updated upstream
      <section class="content-header">
                <h1>
-                    ADMINISTRAR TIPO DE PRODUCTO
+                    Administrar tipo de producto
                </h1>
                <ol class="breadcrumb">
                <li>
@@ -22,6 +23,14 @@ if ($_SESSION["perfil"]=="Vendedor") {
                </li>
           </ol>
      </section>
+=======
+  <section class="content-header">
+    <h1>Administrar tipo de producto</h1>
+    <ol class="breadcrumb">
+      <li><a href="inicio"><i class="ion-navicon-round"></i>Inicio</a></li>
+    </ol>
+  </section>
+>>>>>>> Stashed changes
      <section class="content">
           <div class="box">
                <div class="box-header with-border">
@@ -37,8 +46,8 @@ if ($_SESSION["perfil"]=="Vendedor") {
                               <th style="width:10px">
                                    #
                               </th>
-                              <th>TIPO DE PRODUCTO</th>
-                              <th>ACCIONES</th>
+                              <th>Tipo de producto</th>
+                              <th>acciones</th>
                          </tr>
                     </thead>
                     <tbody>
@@ -95,7 +104,7 @@ MODAL AGREGAR TIPO PRODUCTO
         CABEZA DEL MODAL
         ======================================-->
 
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#387ec7; color:white; border:3px solid #fff; border-radius:8px;">
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -135,7 +144,7 @@ MODAL AGREGAR TIPO PRODUCTO
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
 
           <button type="submit" class="btn btn-primary">Guardar Tipo de producto</button>
 
@@ -172,7 +181,7 @@ MODAL EDITAR TIPO DE PRODUCTO
         CABEZA DEL MODAL
         ======================================-->
 
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#fca903; color:white; border:3px solid #fff; border-radius:8px;">
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -215,8 +224,7 @@ MODAL EDITAR TIPO DE PRODUCTO
         <div class="modal-footer">
 
           <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
-
-          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+          <button type="submit" class="btn btn-primary-editar">Guardar cambios</button>
 
         </div>
 
