@@ -140,7 +140,7 @@ CREATE TABLE `PRODUCTO` (
   `NOMBRE_GENERICO` VARCHAR(50) COLLATE UTF8_SPANISH_CI NOT NULL COMMENT 'Nombre genérico del producto ingresado',
   `NOMBRE_COMERCIAL` VARCHAR(50) COLLATE UTF8_SPANISH_CI NOT NULL COMMENT 'Nombre comercial del producto ingresado',
   `CODIGO_PRESENTACION` INT(11) NOT NULL COMMENT 'Clave secundaria para la identificación de la presentación del producto',
-  `CODIGO_CLASIFICACION` INT(11) NOT NULL COMMENT 'Clave secundaria para la identificación de la clasificación del producto',  
+  `CODIGO_CLASIFICACION` INT(11) NOT NULL COMMENT 'Clave secundaria para la identificación de la clasificación del producto',
   `CODIGO_TIPO` INT(11) NOT NULL COMMENT 'Clave secundaria para la identifación del tipo de producto',
   `STOCK_MIN` INT(10) NOT NULL COMMENT 'Indicador de la cantidad mínima que debe de haber de producto',
   `STOCK_MAX` INT(10) NOT NULL COMMENT 'Indicador de la cantidad máxima que debe de haber de producto',
@@ -190,7 +190,7 @@ CREATE TABLE `PEDIDO` (
   `FECHA_PEDIDO` DATE NOT NULL COMMENT 'Fecha en la que se está haciendo el pedido',
   `FECHA_ESTIMADA` DATE NOT NULL COMMENT 'Fecha que se estima que llegará el producto',
   `VISIBLE` INT(1) NOT NULL DEFAULT '1' COMMENT 'Estado del pedido, activo = 1, desactivo = 0',
-  PRIMARY KEY (`NO_ORDEN`), 
+  PRIMARY KEY (`NO_ORDEN`),
   FOREIGN KEY (`CODIGO_PROVEEDOR`) REFERENCES `PROVEEDOR` (`CODIGO_PROVEEDOR`)
 ) ENGINE=INNODB DEFAULT CHARSET=UTF8 COLLATE=UTF8_SPANISH_CI;
 
@@ -281,12 +281,12 @@ INSERT INTO `venta` (`CODIGO_VENTA`, `CODIGO_CLIENTE`, `CODIGO_USUARIO`, `NO_FAC
 
 CREATE TABLE `INVENTARIO`(
 	`CODIGO_INVENTARIO` INT (11) NOT NULL AUTO_INCREMENT COMMENT 'Clave primaria para identificar el inventario, identificador único',
-	`CODIGO_BARRAS` INT (11) NOT NULL COMMENT 'Codigo de barra para identificar el producto', 
-	`FECHA_INGRESO` DATE NOT NULL COMMENT 'Fecha de ingreso del producto a la farmacia', 
-	`CADUCIDAD` DATE NOT NULL COMMENT 'Fecha de vencimiento del producto', 
+	`CODIGO_BARRAS` INT (11) NOT NULL COMMENT 'Codigo de barra para identificar el producto',
+	`FECHA_INGRESO` DATE NOT NULL COMMENT 'Fecha de ingreso del producto a la farmacia',
+	`CADUCIDAD` DATE NOT NULL COMMENT 'Fecha de vencimiento del producto',
 	`PRECIO_COMPRA` FLOAT(10,2) NOT NULL COMMENT 'Precio a como se compró el producto',
-	`PRECIO_VENTA` FLOAT(10,2) NOT NULL COMMENT 'Precio a como se venderá el producto', 
-	`CANTIDAD_PRODUCTO` INT(11) NOT NULL COMMENT 'Cantidad total de producto disponible', 
+	`PRECIO_VENTA` FLOAT(10,2) NOT NULL COMMENT 'Precio a como se venderá el producto',
+	`CANTIDAD_PRODUCTO` INT(11) NOT NULL COMMENT 'Cantidad total de producto disponible',
 	`CODIGO_PRODUCTO` INT(11) NOT NULL COMMENT 'Clave primaria del producto, identificador único',
 	`CODIGO_PROVEEDOR` INT(11) NOT NULL COMMENT 'Clave secundaria para identificar al proveedor',
 	PRIMARY KEY (`CODIGO_INVENTARIO`),
@@ -296,9 +296,9 @@ CREATE TABLE `INVENTARIO`(
 
 /*-------------------------------------------------------------------------------------------------------------------------*/
 
-CREATE TABLE DETALLE_INVENTARIO (
+CREATE TABLE DETALLE (
 	`CODIGO_DETALLE` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'Clave primaria para identificar el detalle de inventario, identificador único',
-	`CODIGO_VENTA` INT(11) NOT NULL COMMENT 'Clave secundaria para identificar la venta que se está realizando', 
+	`CODIGO_VENTA` INT(11) NOT NULL COMMENT 'Clave secundaria para identificar la venta que se está realizando',
 	`CODIGO_INVENTARIO` INT(11) NOT NULL COMMENT 'Clave secundaria para identificar el producto que se encuentra en inventario y póder descontarlo del inventario al hacer la venta',
 	PRIMARY KEY (`CODIGO_DETALLE`),
 	FOREIGN KEY (`CODIGO_VENTA`) REFERENCES `VENTA` (`CODIGO_VENTA`),
