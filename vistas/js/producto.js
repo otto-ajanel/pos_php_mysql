@@ -20,7 +20,10 @@ $(".tablas").on("click", ".btnEditarProducto", function(){
       	 $("#idProducto").val(respuesta["CODIGO_PRODUCTO"]);
 	       $("#editarNombreGenerico").val(respuesta["NOMBRE_GENERICO"]);
 	       $("#editarNombreComercial").val(respuesta["NOMBRE_COMERCIAL"]);
-         $("#editarStockMinimo").val(respuesta["STOCK_MIN"]);
+		 		 $('#editarpresentacionProducto option[value="' + respuesta["CODIGO_PRESENTACION"] + '"]').prop('selected', true);
+				 $('#editarclasificacionProducto option[value="' + respuesta["CODIGO_CLASIFICACION"] + '"]').prop('selected', true);
+				 $('#editartipoproductoProducto option[value="' + respuesta["CODIGO_CLASIFICACION"] + '"]').prop('selected', true);
+				 $("#editarStockMinimo").val(respuesta["STOCK_MIN"]);
 	       $("#editarStockMaximo").val(respuesta["STOCK_MAX"]);
 	  }
   	})

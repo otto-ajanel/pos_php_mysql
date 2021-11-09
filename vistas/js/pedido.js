@@ -18,7 +18,7 @@ $(".tablas").on("click", ".btnEditarPedido", function(){
       dataType:"json",
       success:function(respuesta){
       	 $("#idPedido").val(respuesta["NO_ORDEN"]);
-	       $("#editarProveedorPedido").val(respuesta["CODIGO_PROVEEDOR"]);
+	       $('#editarProveedorPedido option[value="' + respuesta["CODIGO_PROVEEDOR"] +'"]').prop('selected', true);
 	       $("#editarFechaPedido").val(respuesta["FECHA_PEDIDO"]);
 	       $("#editarFechaEstimada").val(respuesta["FECHA_ESTIMADA"]);
 	  }

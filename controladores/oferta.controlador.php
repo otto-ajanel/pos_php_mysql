@@ -79,7 +79,7 @@ class ControladorOferta{
 				$tabla = "OFERTA";
 
 				$datos = array(
- 				 						"CODIGO_ASIGNACION" => $_POST["editarCodigoOferta"],
+ 				 						"CODIGO_PRODUCTO" => $_POST["editarCodigoOferta"],
  										"DESCUENTO" => $_POST["editarDescuento"],
  										"FECHA_INICIO" => $_POST["editarFechaInicio"],
  										"FECHA_FIN" => $_POST["editarFechaFin"],

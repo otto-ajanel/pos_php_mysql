@@ -10,11 +10,10 @@ if($_SESSION["perfil"] == "Especial"){
 <div class="content-wrapper">
   <section class="content-header">
     <h1>
-      Lista de Pedidos
+      Lista de pedidos
     </h1>
     <ol class="breadcrumb">
-      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
-      <li class="active">Pedidos</li>
+      <li><a href="inicio"><i class="ion-navicon-round"></i>Inicio</a></li>
     </ol>
   </section>
 
@@ -59,7 +58,7 @@ if($_SESSION["perfil"] == "Especial"){
 
                       if($_SESSION["perfil"] == "Administrador"){
                         echo '<button class="btn btn-danger btnEliminarPedido" idPedido="'.$value["NO_ORDEN"].'"><i class="fa fa-times"></i></button>';
-                        echo '<button class="btn btn-primary btnDetallePedido" idDetallePedido="'.$value["NO_ORDEN"].'" data-toggle="modal" data-target="#modalEditarDetallePedido"><i class="fa fa-phone""></i></button>';
+                        echo '<button class="btn btn-primary btnDetallePedido" idDetallePedido="'.$value["NO_ORDEN"].'" data-toggle="modal" data-target="#modalEditarDetallePedido"><i class="fa fa-th""></i></button>';
                         echo '<button class="btn btn-default btnListarDetallePedido" idListarDetallePedido="'.$value["NO_ORDEN"].'" data-toggle="modal" data-target="#modalListaDetallePedido"><i class="fa fa-list""></i></button>';
                       }
 
@@ -87,7 +86,7 @@ MODAL AGREGAR PEDIDO
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#387ec7; color:white; border:3px solid #fff; border-radius:8px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Agregar pedido</h4>
         </div>
@@ -101,7 +100,7 @@ MODAL AGREGAR PEDIDO
             <!-- ENTRADA PARA EL PRODUCTO -->
             <div class="form-group">
              <div class="input-group">
-               <span class="input-group-addon"><i class="fa fa-key"></i></span>
+               <span class="input-group-addon"><i class="fa fa-th"></i></span>
                <select type="text" class="form-control input-lg" name="nuevoProveedorPedido" id="nuevoProveedorPedido" required>
                  <?php
                    $item = null;
@@ -118,7 +117,7 @@ MODAL AGREGAR PEDIDO
             <!-- ENTRADA PARA LA FECHA DEL PEDIDO -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                 <input type="date" min="0" class="form-control input-lg" name="nuevaFechaPedido" placeholder="Ingresar NIT" required>
               </div>
             </div>
@@ -126,7 +125,7 @@ MODAL AGREGAR PEDIDO
             <!-- ENTRADA PARA LA FECHA ESTIMADA -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                 <input type="date" class="form-control input-lg" name="nuevaFechaEstimada" placeholder="Ingresar dirección" required>
               </div>
             </div>
@@ -137,7 +136,7 @@ MODAL AGREGAR PEDIDO
         PIE DEL MODAL
         ======================================-->
         <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
           <button type="submit" class="btn btn-primary">Guardar Pedido</button>
         </div>
       </form>
@@ -162,7 +161,7 @@ MODAL EDITAR PEDIDO
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#fca903; color:white; border:3px solid #fff; border-radius:8px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Editar pedido</h4>
         </div>
@@ -176,7 +175,7 @@ MODAL EDITAR PEDIDO
             <!-- ENTRADA PARA EL PRODUCTO -->
             <div class="form-group">
              <div class="input-group">
-               <span class="input-group-addon"><i class="fa fa-key"></i></span>
+               <span class="input-group-addon"><i class="fa fa-th"></i></span>
                <input type="hidden"  name="idPedido" id="idPedido" required>
                <select type="text" class="form-control input-lg" name="editarProveedorPedido" id="editarProveedorPedido" required>
                  <?php
@@ -194,7 +193,7 @@ MODAL EDITAR PEDIDO
             <!-- ENTRADA PARA LA FECHA DEL PEDIDO -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                 <input type="date" min="0" class="form-control input-lg" name="editarFechaPedido" id="editarFechaPedido" placeholder="Ingresar NIT" required>
               </div>
             </div>
@@ -202,7 +201,7 @@ MODAL EDITAR PEDIDO
             <!-- ENTRADA PARA LA FECHA ESTIMADA -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                 <input type="date" class="form-control input-lg" name="editarFechaEstimada" id="editarFechaEstimada" placeholder="Ingresar dirección" required>
               </div>
             </div>
@@ -213,8 +212,8 @@ MODAL EDITAR PEDIDO
         PIE DEL MODAL
         ======================================-->
         <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
+          <button type="submit" class="btn btn-primary-editar">Guardar cambios</button>
         </div>
 
       <?php
@@ -244,7 +243,7 @@ MODAL AGREGAR DETALLE PEDIDO
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#387ec7; color:white; border:3px solid #fff; border-radius:8px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Agregar productos al pedido</h4>
         </div>
@@ -258,7 +257,7 @@ MODAL AGREGAR DETALLE PEDIDO
             <!-- ENTRADA PARA EL NUMERO DE ORDEN -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
                 <input type="name" class="form-control input-lg" name="detallePedidoNoOrdenEval" id="detallePedidoNoOrdenEval" disabled>
                 <input type="hidden" id="idDetallePedidoEval" name="idDetallePedidoEval">
               </div>
@@ -267,14 +266,14 @@ MODAL AGREGAR DETALLE PEDIDO
             <!-- ENTRADA PARA EL PRODUCTO -->
             <div class="form-group">
              <div class="input-group">
-               <span class="input-group-addon"><i class="fa fa-key"></i></span>
+               <span class="input-group-addon"><i class="fa fa-th"></i></span>
                <select type="text" class="form-control input-lg" name="editarCodigoAsignacionDetalle" id="editarCodigoAsignacionDetalle" required>
                  <?php
                    $item = null;
                    $valor = null;
                    $pedido = ControladorPedido::ctrMostrarProductosPedido();
                    foreach ($pedido as $key => $value) {
-                     echo '<option value="'.$value["CODIGO_ASIGNACION"].'">'.$value["NOMBRE_GENERICO"].'</option>';
+                     echo '<option value="'.$value["CODIGO_PRODUCTO"].'">'.$value["NOMBRE_GENERICO"].'</option>';
                    }
                  ?>
                </select>
@@ -284,7 +283,7 @@ MODAL AGREGAR DETALLE PEDIDO
             <!-- ENTRADA PARA PARA LA CANTIDAD -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                <span class="input-group-addon"><i class="fa fa-hashtag"></i></span>
                 <input type="number" class="form-control input-lg" name="editarCantidadDetallePedido" id="editarCantidadDetallePedido" placeholder="Ingrese la cantidad de producto" required>
               </div>
             </div>
@@ -292,7 +291,7 @@ MODAL AGREGAR DETALLE PEDIDO
             <!-- ENTRADA PARA EL PRECIO -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                <span class="input-group-addon"><i class="fa fa-money"></i></span>
                 <input type="text" class="form-control input-lg" name="editarPrecioDetallePedido" id="editarPrecioDetallePedido" placeholder="Ingrese el precio unitario" required>
               </div>
             </div>
@@ -303,7 +302,7 @@ MODAL AGREGAR DETALLE PEDIDO
         PIE DEL MODAL
         ======================================-->
         <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
           <button type="submit" class="btn btn-primary">Guardar cambios</button>
         </div>
 
@@ -330,7 +329,7 @@ MODAL LISTAR PRODUCTOS DEL PEDIDO
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#387ec7; color:white; border:3px solid #fff; border-radius:8px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Productos del pedido</h4>
         </div>
@@ -343,7 +342,7 @@ MODAL LISTAR PRODUCTOS DEL PEDIDO
 
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
                 <input type="name" class="form-control input-lg" name="listarNoOrden" id="listarNoOrden" disabled>
                 <input type="hidden" id="idListarDetallePedido" name="idListarDetallePedido">
               </div>
@@ -362,7 +361,7 @@ MODAL LISTAR PRODUCTOS DEL PEDIDO
               <tbody name="ListaProductosPedido" id="ListaProductosPedido">
               </tbody>
              </table>
-             <input id="totalOrden" disabled> 
+             <input id="totalOrden" disabled>
             </div>
           </section>
 

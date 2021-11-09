@@ -13,8 +13,7 @@ if($_SESSION["perfil"] == "Especial"){
       Administrar clientes
     </h1>
     <ol class="breadcrumb">
-      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
-      <li class="active">Administrar clientes</li>
+      <li><a href="inicio"><i class="ion-navicon-round"></i>Inicio</a></li>
     </ol>
   </section>
 
@@ -84,7 +83,7 @@ MODAL AGREGAR CLIENTE
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#387ec7; color:white; border:3px solid #fff; border-radius:8px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Agregar cliente</h4>
         </div>
@@ -125,7 +124,7 @@ MODAL AGREGAR CLIENTE
         PIE DEL MODAL
         ======================================-->
         <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
           <button type="submit" class="btn btn-primary">Guardar cliente</button>
         </div>
       </form>
@@ -150,7 +149,7 @@ MODAL EDITAR CLIENTE
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#fca903; color:white; border:3px solid #fff; border-radius:8px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Editar cliente</h4>
         </div>
@@ -192,8 +191,8 @@ MODAL EDITAR CLIENTE
         PIE DEL MODAL
         ======================================-->
         <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
+          <button type="submit" class="btn btn-primary-editar">Guardar cambios</button>
         </div>
 
       <?php
@@ -223,7 +222,7 @@ MODAL EDITAR CONTACTO CLIENTE
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#387ec7; color:white; border:3px solid #fff; border-radius:8px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Agregar contacto de cliente</h4>
         </div>
@@ -258,7 +257,7 @@ MODAL EDITAR CONTACTO CLIENTE
         PIE DEL MODAL
         ======================================-->
         <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
           <button type="submit" class="btn btn-primary">Guardar cambios</button>
         </div>
 
@@ -271,11 +270,6 @@ MODAL EDITAR CONTACTO CLIENTE
   </div>
 </div>
 
-
-
-
-
-
 <!--=====================================
 MODAL LISTAR CONTACTO CLIENTE
 ======================================-->
@@ -287,7 +281,7 @@ MODAL LISTAR CONTACTO CLIENTE
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#387ec7; color:white; border:3px solid #fff; border-radius:8px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Contactos del cliente</h4>
         </div>

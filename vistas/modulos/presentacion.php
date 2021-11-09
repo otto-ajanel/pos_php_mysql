@@ -1,4 +1,4 @@
-<?php 
+<?php
 #Validando el perfil de l usuario
 if ($_SESSION["perfil"]=="Vendedor") {
      echo '<script>
@@ -8,9 +8,10 @@ if ($_SESSION["perfil"]=="Vendedor") {
 }
 ?>
 <div class="content-wrapper">
+<<<<<<< Updated upstream
      <section class="content-header">
                <h1>
-                    ADMINISTRAR PRESENTACIÓN    
+                    Administrar presentación    
                </h1>
                <ol class="breadcrumb">
                <li>
@@ -22,23 +23,27 @@ if ($_SESSION["perfil"]=="Vendedor") {
                </li>
           </ol>
      </section>
+=======
+ <section class="content-header">
+  <h1>Administrar presentación</h1>
+  <ol class="breadcrumb">
+     <li><a href="inicio"><i class="ion-navicon-round"></i>Inicio</a></li>
+  </ol>
+ </section>
+>>>>>>> Stashed changes
      <section class="content">
           <div class="box">
                <div class="box-header with-border">
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarPresentacion">
-                         Agregar Presentación
-                    </button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarPresentacion">Agregar Presentación</button>
                </div>
           </div>
           <div class="box-body">
-               <table class="table table-bordered table-striped dt-responsive tablas">
+               <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
                     <thead>
                          <tr>
-                              <th style="width:10px">
-                                   #
-                              </th>
-                              <th>PRESENTACIÓN</th>
-                              <th>ACCIONES</th>
+                              <th style="width:10px">#</th>
+                              <th>Presentación</th>
+                              <th>Acción</th>
                          </tr>
                     </thead>
                     <tbody>
@@ -57,7 +62,7 @@ if ($_SESSION["perfil"]=="Vendedor") {
                                    <td>
 
                                         <div class="btn-group">
-                          
+
                                          <button class="btn btn-warning btnEditarPresentacion" idPresentacion="'.$value["CODIGO_PRESENTACION"].'" data-toggle="modal" data-target="#modalEditarPresentacion"><i class="fa fa-pencil"></i></button>';
 
                                    if($_SESSION["perfil"] == "Administrador"){
@@ -66,7 +71,7 @@ if ($_SESSION["perfil"]=="Vendedor") {
 
                                     }
 
-                              echo '</div>  
+                              echo '</div>
 
                                </td>
                               </tr>
@@ -80,11 +85,11 @@ if ($_SESSION["perfil"]=="Vendedor") {
      </section>
 </div>
 <!--=====================================
-MODAL AGREGAR PRESENTACION 
+MODAL AGREGAR PRESENTACION
 ======================================-->
 
 <div id="modalAgregarPresentacion" class="modal fade" role="dialog">
-  
+
   <div class="modal-dialog">
 
     <div class="modal-content">
@@ -95,7 +100,7 @@ MODAL AGREGAR PRESENTACION
         CABEZA DEL MODAL
         ======================================-->
 
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#387ec7; color:white; border:3px solid #fff; border-radius:8px;">
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -112,19 +117,19 @@ MODAL AGREGAR PRESENTACION
           <div class="box-body">
 
             <!-- ENTRADA PARA EL NOMBRE -->
-            
+
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
                 <input type="text" class="form-control input-lg" name="nuevaPresentacion" placeholder="Ingresar Presentación" required>
 
               </div>
 
             </div>
-  
+
           </div>
 
         </div>
@@ -135,7 +140,7 @@ MODAL AGREGAR PRESENTACION
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
 
           <button type="submit" class="btn btn-primary">Guardar Presentación</button>
 
@@ -161,7 +166,7 @@ MODAL EDITAR Presentacion
 ======================================-->
 
 <div id="modalEditarPresentacion" class="modal fade" role="dialog">
-  
+
   <div class="modal-dialog">
 
     <div class="modal-content">
@@ -172,7 +177,7 @@ MODAL EDITAR Presentacion
         CABEZA DEL MODAL
         ======================================-->
 
-        <div class="modal-header" style="background:#3c8dbc; color:white">
+        <div class="modal-header" style="background:#fca903; color:white; border:3px solid #fff; border-radius:8px;">
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -189,12 +194,12 @@ MODAL EDITAR Presentacion
           <div class="box-body">
 
             <!-- ENTRADA PARA EL NOMBRE -->
-            
+
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
                 <input type="text" class="form-control input-lg" name="editarPresentacion" id="editarPresentacion" required>
 
@@ -203,7 +208,7 @@ MODAL EDITAR Presentacion
               </div>
 
             </div>
-  
+
           </div>
 
         </div>
@@ -216,7 +221,7 @@ MODAL EDITAR Presentacion
 
           <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
 
-          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+          <button type="submit" class="btn btn-primary-editar">Guardar cambios</button>
 
         </div>
 
@@ -225,7 +230,7 @@ MODAL EDITAR Presentacion
           $editarPresentacion = new ControladorPresentacion();
           $editarPresentacion -> ctrEditarPresentacion();
 
-        ?> 
+        ?>
 
       </form>
 
