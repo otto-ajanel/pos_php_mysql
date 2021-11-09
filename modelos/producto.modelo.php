@@ -92,7 +92,8 @@ class ModeloProducto{
 	/* Mostar inventario*/
 	static public function mdlMostrarInventario($tabla){
 		$stmt=Conexion::conectar()->prepare("SELECT CODIGO_INVENTARIO,CODIGO_BARRA,STOCK,NOMBRE_GENERICO,URL,CLASIFICACION,TIPO_PRODUCTO,PRESENTACION FROM $tabla I
-		INNER JOIN asignacion_producto A_S ON I.CODIGO_ASIGNACION=A_S.CODIGO_ASIGNACION
+		INNER JOIN asignacion_producto A_S 
+		ON I.CODIGO_ASIGNACION=A_S.CODIGO_ASIGNACION
 		INNER JOIN clasificacion C
 		ON A_S.CODIGO_CLASIFICACION=C.CODIGO_CLASIFICACION
 		INNER JOIN presentacion PRE

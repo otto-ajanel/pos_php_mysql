@@ -3418,7 +3418,8 @@ table.text-center th {
 }
 .login-page,
 .register-page {
-  background: linear-gradient(-5deg, rgb(238, 233, 233), rgb(255, 255, 255));
+  
+  background:#fff;
 }
 
 .login-content{
@@ -3431,14 +3432,16 @@ align-items: center;
  margin: 45px;
 }
 .login-box-body{
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 3px solid #000;
-  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  border-radius: 10px;
 }
 .login-box-body img{
-  height: 100px;
+  height: 90px;
   
 }
 .login-header{
@@ -3485,7 +3488,7 @@ align-items: center;
 .login-box-body,
 .register-box-body {
   background: #fff;
-  padding: 20px;
+  padding: 5px;
   
   color: #666;
 }
@@ -3498,6 +3501,10 @@ align-items: center;
   margin: 0;
   text-align: center;
   padding: 0 20px 20px 20px;
+  color: #0073b7;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 .social-auth-links {
   margin: 10px 0;
@@ -5976,4 +5983,15 @@ height: 59px;
   height: 20px;
   margin: 0;
 
+}
+.img img{
+  border-radius: 15px;
+}
+.login-body{
+  
+  border-radius: 8px !important ;
+  width: 350px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-top: 15px !important;
 }
