@@ -100,7 +100,7 @@ MODAL AGREGAR PEDIDO
             <!-- ENTRADA PARA EL PRODUCTO -->
             <div class="form-group">
              <div class="input-group">
-               <span class="input-group-addon"><i class="fa fa-th"></i></span>
+               <span class="input-group-addon"><i class="fa fas fa-cube"></i></span>
                <select type="text" class="form-control input-lg" name="nuevoProveedorPedido" id="nuevoProveedorPedido" required>
                  <?php
                    $item = null;
@@ -175,7 +175,7 @@ MODAL EDITAR PEDIDO
             <!-- ENTRADA PARA EL PRODUCTO -->
             <div class="form-group">
              <div class="input-group">
-               <span class="input-group-addon"><i class="fa fa-th"></i></span>
+               <span class="input-group-addon"><i class="fa fas fa-cube"></i></span>
                <input type="hidden"  name="idPedido" id="idPedido" required>
                <select type="text" class="form-control input-lg" name="editarProveedorPedido" id="editarProveedorPedido" required>
                  <?php

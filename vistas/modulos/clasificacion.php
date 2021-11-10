@@ -18,26 +18,10 @@ if($_SESSION["perfil"] == "Vendedor"){
 
   <section class="content-header">
 
-    <h1>
-
-<<<<<<< Updated upstream
-      Administrar clasificación
-=======
-      Administrar Clasificación
->>>>>>> Stashed changes
-
-    </h1>
+    <h1>Administrar Clasificación</h1>
 
     <ol class="breadcrumb">
-<<<<<<< Updated upstream
-
-      <li><a href="inicio"><i class="ion-navicon-round" ></i> Inicio</a></li>
-
-
-
-=======
       <li><a href="inicio"><i class="ion-navicon-round"></i>Inicio</a></li>
->>>>>>> Stashed changes
     </ol>
 
   </section>
@@ -47,16 +31,7 @@ if($_SESSION["perfil"] == "Vendedor"){
     <div class="box">
 
       <div class="box-header with-border">
-<<<<<<< Updated upstream
-
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCategoria">
-
-          Agregar Clasificacion
-=======
->>>>>>> Stashed changes
-
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCategoria">Agregar Clasificacion</button>
-
       </div>
 
       <div class="box-body">
@@ -163,7 +138,7 @@ MODAL AGREGAR CATEGORÍA
 
               <div class="input-group">
 
-                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                <span class="input-group-addon"><i class="fa fab fa-empire"></i></span>
 
                 <input type="text" class="form-control input-lg" name="nuevaCategoria" placeholder="Ingresar categoría" required>
 
@@ -240,7 +215,7 @@ MODAL EDITAR CATEGORÍA
 
               <div class="input-group">
 
-                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                <span class="input-group-addon"><i class="fa fab fa-empire"></i></span>
 
                 <input type="text" class="form-control input-lg" name="editarCategoria" id="editarCategoria" required>
 

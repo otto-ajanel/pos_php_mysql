@@ -7,24 +7,27 @@ class ControladorProducto{
 
 	static public function ctrCrearProducto(){
 
-		if(isset($_POST["nuevoNombreGenerico"]) &&
-			 isset($_POST["nuevoNombreComercial"]) &&
-			  isset($_POST["nuevoStockMinimo"]) &&
-		   isset($_POST["nuevoStockMaximo"])){
+		if( isset($_POST["nuevoNombreGenerico"]) &&
+			isset($_POST["nuevoNombreComercial"]) &&
+			isset($_POST["nuevoStockMinimo"]) &&
+		    isset($_POST["nuevoStockMaximo"]) &&
+			isset($_POST["nuevoCodigoBarras"])){
 
-			if(preg_match('/^[a-zA-Z-ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoNombreGenerico"]) &&
-				 preg_match('/^[a-zA-Z-ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoNombreComercial"]) &&
-			   preg_match('/^[0-9.]+$/', $_POST["nuevoStockMinimo"]) &&
-			   preg_match('/^[0-9. ]+$/', $_POST["nuevoStockMaximo"])){
+			if( preg_match('/^[a-zA-Z-ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoNombreGenerico"]) &&
+				preg_match('/^[a-zA-Z-ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoNombreComercial"]) &&
+			    preg_match('/^[0-9.]+$/', $_POST["nuevoStockMinimo"]) &&
+			    preg_match('/^[0-9. ]+$/', $_POST["nuevoStockMaximo"]) &&
+				preg_match('/^[0-9. ]+$/', $_POST["nuevoCodigoBarras"])){
 
 			   	$tabla = "PRODUCTO";
-			   	$datos = array("NOMBRE_GENERICO"=>$_POST["nuevoNombreGenerico"],
-							           "NOMBRE_COMERCIAL"=>$_POST["nuevoNombreComercial"],
-												 "CODIGO_PRESENTACION"=>$_POST["presentacionProducto"],
-												 "CODIGO_CLASIFICACION"=>$_POST["clasificacionProducto"],
-												 "CODIGO_TIPO"=>$_POST["tipoproductoProducto"],
-												 "STOCK_MIN"=>$_POST["nuevoStockMinimo"],
-							           "STOCK_MAX"=>$_POST["nuevoStockMaximo"]);
+			   	$datos = array( "CODIGO_BARRAS"=>$_POST["nuevoCodigoBarras"],
+					   			"NOMBRE_GENERICO"=>$_POST["nuevoNombreGenerico"],
+								"NOMBRE_COMERCIAL"=>$_POST["nuevoNombreComercial"],
+								"CODIGO_PRESENTACION"=>$_POST["presentacionProducto"],
+								"CODIGO_CLASIFICACION"=>$_POST["clasificacionProducto"],
+								"CODIGO_TIPO"=>$_POST["tipoproductoProducto"],
+								"STOCK_MIN"=>$_POST["nuevoStockMinimo"],
+								"STOCK_MAX"=>$_POST["nuevoStockMaximo"]);
 
 			   	$respuesta = ModeloProducto::mdlIngresarProducto($tabla, $datos);
 
@@ -79,17 +82,19 @@ class ControladorProducto{
 		if(isset($_POST["editarNombreGenerico"]) &&
 			 isset($_POST["editarNombreComercial"]) &&
 			 isset($_POST["editarStockMinimo"]) &&
-			 isset($_POST["editarStockMaximo"])
-			){
+			 isset($_POST["editarStockMaximo"]) &&
+			 isset($_POST["editarCodigoBarras"])){
 
 				if(preg_match('/^[a-zA-Z-ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarNombreGenerico"]) &&
 			     preg_match('/^[a-zA-Z-ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarNombreComercial"]) &&
 					 preg_match('/^[0-9.]+$/', $_POST["editarStockMinimo"]) &&
-					 preg_match('/^[0-9.]+$/', $_POST["editarStockMaximo"])){
+					 preg_match('/^[0-9.]+$/', $_POST["editarStockMaximo"]) &&
+					 preg_match('/^[0-9. ]+$/', $_POST["editarCodigoBarras"])){
 
 				$tabla = "PRODUCTO";
 
 				$datos = array("CODIGO_PRODUCTO"=>$_POST["idProducto"],
+								"CODIGO_BARRAS"=>$_POST["editarCodigoBarras"],
 								"NOMBRE_GENERICO"=>$_POST["editarNombreGenerico"],
 								"NOMBRE_COMERCIAL"=>$_POST["editarNombreComercial"],
 								"CODIGO_PRESENTACION"=>$_POST["editarpresentacionProducto"],

@@ -8,7 +8,8 @@ class ModeloProducto{
 
 	static public function mdlIngresarProducto($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(NOMBRE_GENERICO, NOMBRE_COMERCIAL, CODIGO_PRESENTACION, CODIGO_CLASIFICACION, CODIGO_TIPO, STOCK_MIN, STOCK_MAX) VALUES (:nuevoNombreGenerico, :nuevoNombreComercial, :presentacionProducto, :clasificacionProducto , :tipoproductoProducto , :nuevoStockMinimo, :nuevoStockMaximo)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(CODIGO_BARRAS, NOMBRE_GENERICO, NOMBRE_COMERCIAL, CODIGO_PRESENTACION, CODIGO_CLASIFICACION, CODIGO_TIPO, STOCK_MIN, STOCK_MAX) VALUES (:nuevoCodigoBarras, :nuevoNombreGenerico, :nuevoNombreComercial, :presentacionProducto, :clasificacionProducto , :tipoproductoProducto , :nuevoStockMinimo, :nuevoStockMaximo)");
+		$stmt->bindParam(":nuevoCodigoBarras", $datos["CODIGO_BARRAS"], PDO::PARAM_INT);
 		$stmt->bindParam(":nuevoNombreGenerico", $datos["NOMBRE_GENERICO"], PDO::PARAM_STR);
 		$stmt->bindParam(":nuevoNombreComercial", $datos["NOMBRE_COMERCIAL"], PDO::PARAM_STR);
 		$stmt->bindParam(":presentacionProducto", $datos["CODIGO_PRESENTACION"], PDO::PARAM_STR);
@@ -33,7 +34,7 @@ class ModeloProducto{
 
 	static public function mdlMostrarProducto($tabla, $item, $valor){
 		if($item != null){
-			$stmt = Conexion::conectar()->prepare("SELECT t0.CODIGO_PRODUCTO, t0.NOMBRE_GENERICO, t0.NOMBRE_COMERCIAL, t1.PRESENTACION, t2.CLASIFICACION, t3.TIPO_PRODUCTO, t0.STOCK_MIN, t0.STOCK_MAX
+			$stmt = Conexion::conectar()->prepare("SELECT t0.CODIGO_PRODUCTO, t0.CODIGO_BARRAS, t0.NOMBRE_GENERICO, t0.NOMBRE_COMERCIAL, t1.PRESENTACION, t2.CLASIFICACION, t3.TIPO_PRODUCTO, t0.STOCK_MIN, t0.STOCK_MAX
 														FROM producto t0
 														JOIN presentacion t1 ON t1.CODIGO_PRESENTACION = t0.CODIGO_PRESENTACION
 														JOIN clasificacion t2 ON t2.CODIGO_CLASIFICACION = t0.CODIGO_CLASIFICACION
@@ -44,7 +45,7 @@ class ModeloProducto{
 			$stmt -> execute();
 			return $stmt -> fetch();
 		}else{
-			$stmt = Conexion::conectar()->prepare("SELECT t0.CODIGO_PRODUCTO, t0.NOMBRE_GENERICO, t0.NOMBRE_COMERCIAL, t1.PRESENTACION, t2.CLASIFICACION, t3.TIPO_PRODUCTO, t0.STOCK_MIN, t0.STOCK_MAX
+			$stmt = Conexion::conectar()->prepare("SELECT t0.CODIGO_PRODUCTO, t0.CODIGO_BARRAS, t0.NOMBRE_GENERICO, t0.NOMBRE_COMERCIAL, t1.PRESENTACION, t2.CLASIFICACION, t3.TIPO_PRODUCTO, t0.STOCK_MIN, t0.STOCK_MAX
 														FROM producto t0
 														JOIN presentacion t1 ON t1.CODIGO_PRESENTACION = t0.CODIGO_PRESENTACION
 														JOIN clasificacion t2 ON t2.CODIGO_CLASIFICACION = t0.CODIGO_CLASIFICACION
@@ -66,6 +67,7 @@ class ModeloProducto{
 		$stmt = Conexion::conectar()->prepare(
 		"UPDATE $tabla
 		SET
+			CODIGO_BARRAS = :editarCodigoBarras,
 			NOMBRE_GENERICO = :editarNombreGenerico,
 			NOMBRE_COMERCIAL = :editarNombreComercial,
 			CODIGO_PRESENTACION = :editarpresentacionProducto,
@@ -76,6 +78,7 @@ class ModeloProducto{
 		WHERE CODIGO_PRODUCTO = :idProducto");
 
 		$stmt->bindParam(":idProducto", $datos["CODIGO_PRODUCTO"], PDO::PARAM_INT);
+		$stmt->bindParam(":editarCodigoBarras", $datos["CODIGO_BARRAS"], PDO::PARAM_STR);
 		$stmt->bindParam(":editarNombreGenerico", $datos["NOMBRE_GENERICO"], PDO::PARAM_STR);
 		$stmt->bindParam(":editarNombreComercial", $datos["NOMBRE_COMERCIAL"], PDO::PARAM_STR);
 		$stmt->bindParam(":editarpresentacionProducto", $datos["CODIGO_PRESENTACION"], PDO::PARAM_STR);
@@ -107,6 +110,7 @@ class ModeloProducto{
 		$stmt ->close();
 		$stmt = null;
 	}
+	
 	/* Mostar inventario*/
 	static public function mdlMostrarInventario($tabla){
 		$stmt=Conexion::conectar()->prepare("SELECT CODIGO_INVENTARIO,CODIGO_BARRA,STOCK,NOMBRE_GENERICO,URL,CLASIFICACION,TIPO_PRODUCTO,PRESENTACION FROM $tabla I
