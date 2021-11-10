@@ -63,45 +63,51 @@
 
         <table class="table table-bordered table-striped dt-responsive tablas">
          
-                <thead>
-                
-                <tr>
-                
-                <th style="width:10px">#</th>
-                <th>Codigo de barras</th>
-                <th>producto</th>
-                <th>tipo</th>
-                <th>presentacion</th>
-                <th>clasificacion</th>
-                <th>opciones</th>
+        <thead>
+         <tr>
+           <th style="width:10px">#</th>
+           <th>Codigo barras</th>
+           <th>Nombre genérico</th>
+           <th>Nombre comercial</th>
+           <th>Presentación</th>
+           <th>Clasificación</th>
+           <th>Tipo producto</th>
+           <th>Stock mínimo</th>
+           <th>Stock máximo</th>
+           <th>Acciones</th>
+         </tr>
+        </thead>
+        <tbody>
 
-                </tr> 
+        <?php
+          $item = null;
+          $valor = null;
+          $producto = ControladorProducto::ctrMostrarProducto($item, $valor);
+          foreach ($producto as $key => $value) {
 
-                </thead>
+            echo '<tr>
+                    <td>'.($key+1).'</td>
+                    <td>'.$value["CODIGO_BARRAS"].'</td>
+                    <td>'.$value["NOMBRE_GENERICO"].'</td>
+                    <td>'.$value["NOMBRE_COMERCIAL"].'</td>
+                    <td>'.$value["PRESENTACION"].'</td>
+                    <td>'.$value["CLASIFICACION"].'</td>
+                    <td>'.$value["TIPO_PRODUCTO"].'</td>
+                    <td>'.$value["STOCK_MIN"].'</td>
+                    <td>'.$value["STOCK_MAX"].'</td>
+                    <td>
 
-                <tbody>
-                
-                <tr>
-                    <td>1</td>
-                    <td>D01</td>
-                    <td>Diclofenaco</td>
-                    <td>20</td>
-                    <td>1.50</td>
-                    <td>2</td>
-                    <th>
-                        <div class="btn-group">
+                    <div class="btn-group">
                         
                         <button class="btn btn-success" data-toggle="modal" data-target="#modalEditarStock">
                             
                         <i class="fa fa-plus"></i></button>
-        
-                        </div> 
-                    </th>
-                    
+                    </td>
+                  </tr>';
+            }
+        ?>
 
-                </tr>
-
-                </tbody>
+        </tbody>
 
        </table>
           

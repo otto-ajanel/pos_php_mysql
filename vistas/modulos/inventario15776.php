@@ -59,13 +59,10 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
          <tr>
            
            <th style="width:10px">#</th>
-           <th>Codigo</th>
-           <th>fecha Ingreso</th>
-           <th>Codigo barras</th>
-           <th>Caducidad</th>
-           <th>precio compra</th>
-           <th>precio venta</th>
-           <th>Unidades</th>
+           <th>Nombre Producto</th>
+           <th>Unidades Disponibles</th>
+           <th>Fecha Vencimiento</th>
+           <th>Precio</th>
 
          </tr> 
 
@@ -84,13 +81,10 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
 
             <tr>
             <td>'.($key+1).'</td>
-            <td>'.$value["codigo"].'</td>
-            <td>'.$value["fecha_ingreso"].'</td>
-            <td>'.$value["codigo_barras"].'</td>
+            <td>'.$value["nombre_comercial"].'</td>
+            <td>'.$value["stock"].'</td>
             <td>'.$value["caducidad"].'</td>
-            <td>'.$value["precio_compra"].'</td>
             <td>'.$value["precio_venta"].'</td>
-            <td>'.$value["unidades"].'</td>
 
             </tr>';
 

@@ -18,6 +18,7 @@ $(".tablas").on("click", ".btnEditarProducto", function(){
       dataType:"json",
       success:function(respuesta){
       	 $("#idProducto").val(respuesta["CODIGO_PRODUCTO"]);
+         $("#editarCodigoBarras").val(respuesta["CODIGO_BARRAS"]);
 	       $("#editarNombreGenerico").val(respuesta["NOMBRE_GENERICO"]);
 	       $("#editarNombreComercial").val(respuesta["NOMBRE_COMERCIAL"]);
 		 		 $('#editarpresentacionProducto option[value="' + respuesta["CODIGO_PRESENTACION"] + '"]').prop('selected', true);

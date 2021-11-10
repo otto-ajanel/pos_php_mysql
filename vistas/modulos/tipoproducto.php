@@ -8,29 +8,13 @@ if ($_SESSION["perfil"]=="Vendedor") {
 }
 ?>
 <div class="content-wrapper">
-<<<<<<< Updated upstream
-     <section class="content-header">
-               <h1>
-                    Administrar tipo de producto
-               </h1>
-               <ol class="breadcrumb">
-               <li>
-                    <a href="inicio">
-                         <i class="ion-navicon-round">
-                              </i>
-                              Inicio
-                    </a>
-               </li>
-          </ol>
-     </section>
-=======
+
   <section class="content-header">
     <h1>Administrar tipo de producto</h1>
     <ol class="breadcrumb">
       <li><a href="inicio"><i class="ion-navicon-round"></i>Inicio</a></li>
     </ol>
-  </section>
->>>>>>> Stashed changes
+
      <section class="content">
           <div class="box">
                <div class="box-header with-border">
@@ -126,7 +110,7 @@ MODAL AGREGAR TIPO PRODUCTO
 
               <div class="input-group">
 
-                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                <span class="input-group-addon"><i class="fa fab fa-modx"></i></span>
 
                 <input type="text" class="form-control input-lg" name="nuevoTipo" placeholder="Ingresar tipo de producto" required>
 
@@ -203,7 +187,7 @@ MODAL EDITAR TIPO DE PRODUCTO
 
               <div class="input-group">
 
-                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                <span class="input-group-addon"><i class="fa fab fa-modx"></i></span>
 
                 <input type="text" class="form-control input-lg" name="editarTipo" id="editarTipo" required>
 

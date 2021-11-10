@@ -111,7 +111,7 @@ MODAL AGREGAR OFERTA
             <!-- ENTRADA PARA EL PRODUCTO -->
             <div class="form-group">
              <div class="input-group">
-               <span class="input-group-addon"><i class="fa fa-th"></i></span>
+               <span class="input-group-addon"><i class="fa fas fa-cube"></i></span>
                <select type="text" class="form-control input-lg" name="nuevoCodigoOferta" id="nuevoCodigoOferta" required>
                  <?php
                    $item = null;
@@ -198,7 +198,7 @@ MODAL EDITAR OFERTA
             <!-- ENTRADA PARA EL PRODUCTO -->
             <div class="form-group">
              <div class="input-group">
-               <span class="input-group-addon"><i class="fa fa-th"></i></span>
+               <span class="input-group-addon"><i class="fa fas fa-cube"></i></span>
                <input type="hidden"  name="idOferta" id="idOferta" required>
                <select type="text" class="form-control input-lg" name="editarCodigoOferta" id="editarCodigoOferta" required>
                  <?php
