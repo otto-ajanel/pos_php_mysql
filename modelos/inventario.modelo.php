@@ -60,8 +60,20 @@ class ModeloInventario{
     static public function MdlMostrarInventarioMaster($tabla, $item, $valor){
 
         if($item != null){
+            /*
 
             $stmt = Conexion::conectar()-> prepare ("SELECT * FROM $tabla WHERE $item = :$item");
+            */
+
+            
+
+            $stmt = Conexion::conectar()-> prepare ("SELECT T1.nombre_comercial, T0.stock, T0.caducidad, T0.precio_venta, T0.fecha_ingreso, T0.precio_compra, T0.codigo_inventario 
+            FROM inventario T0
+            INNER JOIN producto T1 ON T0.CODIGO_PRODUCTO = T1.CODIGO_PRODUCTO
+            WHERE T1.VISIBLE = 1
+            AND $item = :$item
+            ");
+            
 
             $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
@@ -76,12 +88,6 @@ class ModeloInventario{
             FROM inventario T0
             INNER JOIN producto T1 ON T0.CODIGO_PRODUCTO = T1.CODIGO_PRODUCTO
             WHERE T1.VISIBLE = 1");
-
-            /*$stmt = Conexion::conectar()-> prepare("SELECT codigo, fecha_ingreso, nombre_comercial, caducidad, precio_compra, precio_venta, unidades
-            FROM $tabla
-            INNER JOIN producto
-            WHERE inventario_detalle.codigo_producto = producto.codigo_producto
-            LIMIT 0 , 30");*/
 
             $stmt->execute();
 
@@ -99,40 +105,63 @@ class ModeloInventario{
     /* EDITAR INVENTARIO */
 
     static public function mdlEditarInventario($tabla, $datos){
+        
 
         /*
-        echo '<script>alert (" id para cambiar '.$datos["codigo"].' en tabla");</script>';
-        */
+        echo '<script>alert (" id para cambiar '.$datos["codigo_inventario"].' en tabla");</script>';
+        
+        echo '<script>alert (" venta para cambiar '.$datos["precio_venta"].' en tabla");</script>';
+        
+        
+        echo '<script>alert (" compra para cambiar '.$datos["precio_compra"].' en tabla");</script>';
+        
+        echo '<script>alert (" vencimiento para cambiar '.$datos["caducidad"].' en tabla");</script>';
+
+        echo '<script>alert (" stock para cambiar '.$datos["stock"].' en tabla");</script>';*/
         
 
-        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET caducidad = :caducidad,
-        precio_compra = :compra, precio_venta = :venta, unidades = :unidades WHERE codigo = :codigo");
-
-        $stmt -> bindParam(":caducidad", $datos["caducidad"], PDO::PARAM_STR);
-        $stmt -> bindParam(":compra", $datos["precio_compra"], PDO::PARAM_STR);
-        $stmt -> bindParam(":venta", $datos["precio_venta"], PDO::PARAM_STR);
-        $stmt -> bindParam(":unidades", $datos["unidades"], PDO::PARAM_STR);
-        $stmt -> bindParam(":codigo", $datos["codigo"] , PDO::PARAM_STR);
+        
         
 
-        if($stmt -> execute()){
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET precio_venta = :precioventa, 
+        precio_compra = :preciocompra, caducidad = :caducidad, stock = :stock
+        WHERE CODIGO_INVENTARIO = :idinventario");
+    
+            $stmt->bindParam(":idinventario", $datos["codigo_inventario"], PDO::PARAM_STR);
+            $stmt->bindParam(":precioventa", $datos["precio_venta"], PDO::PARAM_STR);
+            $stmt->bindParam(":preciocompra", $datos["precio_compra"], PDO::PARAM_STR);
+            $stmt->bindParam(":caducidad", $datos["caducidad"], PDO::PARAM_STR);
+            $stmt->bindParam(":stock", $datos["stock"], PDO::PARAM_STR);
+            
+            if($stmt->execute()){
 
-            return "ok";
-        }
-        else
-        {
-            return "error";
-        }
+                echo'<script> alert("Entro a modelo editar return ok "); </script>';
 
-        $stmt -> close();
+                return "ok";
 
-        $stmt = null;
+            }
+            else
+            {
+
+                echo'<script> alert("Entro a modelo editar return error "); </script>';
+
+                return "error";
+            }
+            $stmt->close();
+
+            $stmt = null;
+            
 
     }
 
+
+
+
+
+
     static public function mdlBorrarInventario($tabla, $datos){
 
-        $stmt = Conexion::conectar()-> prepare ("DELETE FROM $tabla WHERE codigo = :id");
+        $stmt = Conexion::conectar()-> prepare ("DELETE FROM $tabla WHERE codigo_inventario = :id");
 
         $stmt -> bindParam(":id", $datos, PDO::PARAM_STR);
 

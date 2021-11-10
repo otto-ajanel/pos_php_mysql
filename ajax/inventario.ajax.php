@@ -7,12 +7,12 @@ class AjaxInventario{
 
     /* EDITAR INVENTARIO */
 
-    public $idInventario;
+    public $idinventario;
 
     public function ajaxEditarInventario(){
         
-        $item = "codigo";
-        $valor = $this -> idInventario;
+        $item = "codigo_inventario";
+        $valor = $this -> idinventario;
 
         $respuesta = ControladorInventario::ctrMostrarInventarioMaster($item, $valor);
 
@@ -25,14 +25,10 @@ class AjaxInventario{
 /*=============================================
 EDITAR INVENTARIO
 =============================================*/
-if(isset($_POST["idInventario"])){
+if(isset($_POST["idinventario"])){
 
 	$editar = new AjaxInventario();
-	$editar -> idInventario = $_POST["idInventario"];
+	$editar -> idinventario = $_POST["idinventario"];
 	$editar -> ajaxEditarInventario();
 
 }
-
-
-
-?>

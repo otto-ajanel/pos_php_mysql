@@ -3,19 +3,12 @@ EDITAR USUARIO
 =============================================*/
 $(".tablas").on("click", ".btnEditarInventario", function(){
 
-	
-    	            
-
-	var idInventario = $(this).attr("idInventario");
-	console.log(idInventario);
+	var idinventario = $(this).attr("idinventario");
+	console.log(idinventario);
 	var datos = new FormData();
-	datos.append("idInventario", idInventario);
-
-	
+	datos.append("idinventario", idinventario);
 
 	$.ajax({
-        
-
 		url: 'ajax/inventario.ajax.php',
 		method: "POST",
 		data: datos,
@@ -25,18 +18,13 @@ $(".tablas").on("click", ".btnEditarInventario", function(){
 		dataType: "json",
 		success: function(respuesta){
 
-			
-
 			$("#fvencimiento").val(respuesta["caducidad"]);
-			$("#unidades").val(respuesta["stock"]);
+			$("#stock").val(respuesta["stock"]);
 			$("#preciocompra").val(respuesta["precio_compra"]);
 			$("#precioventa").val(respuesta["precio_venta"]);
-			$("#idinventario1").val(respuesta["codigo"]);
+			$("#idinventario").val(respuesta["codigo_inventario"]);
 		}
-
 	});
-    
-
 });
 
 /*

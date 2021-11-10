@@ -108,7 +108,7 @@
                   
                   <button class="btn btn-warning btnEditarInventario" data-toggle="modal" 
                   data-target="#modalEditarStock" 
-                  idInventario='.$value["codigo_inventario"].'> <i class="fa fa-pencil"></i></button>
+                  idinventario='.$value["codigo_inventario"].'> <i class="fa fa-pencil"></i></button>
   
                   <button class="btn btn-danger btnEliminarInventario" 
                   idInventario='.$value["codigo_inventario"].'>
@@ -181,7 +181,7 @@ MODAL EDITAR STOCK INVENTARIO
                 <input type="date" class="form-control input-lg" name="fvencimiento" placeholder="fecha vencimiento" required
                 id="fvencimiento">
 
-              </div>
+                <input type="hidden" id="idinventario" name="idinventario">
 
             </div>
 
@@ -193,8 +193,8 @@ MODAL EDITAR STOCK INVENTARIO
               
                 <span class="input-group-addon"><i class="fa fa-plus-circle" aria-hidden="true"></i></span> 
 
-                <input type="number" class="form-control input-lg" name="unidades" placeholder="unidades" required
-                id="unidades">
+                <input type="number" class="form-control input-lg" name="stock" placeholder="unidades" required
+                id="stock">
 
               </div>
 
@@ -229,8 +229,9 @@ MODAL EDITAR STOCK INVENTARIO
               </div>
 
             </div>
-            <!-- TEXTO ADICIONAL -->
 
+
+            <!-- TEXTO ADICIONAL 
              <div class="form-group">
 
               <p class="help-block">todos los campos son requeridos !!</p>
@@ -238,7 +239,8 @@ MODAL EDITAR STOCK INVENTARIO
               <p class="help-block">Codigo del producto :</p>
 
               <input type="number" class="form-control input-lg" name="idinventario1" placeholder="codigo" 
-                required id="idinventario1" readonly>
+                required id="idinventario1" readonly> -->
+
 
 
               
@@ -263,8 +265,8 @@ MODAL EDITAR STOCK INVENTARIO
           
         <?php
 
-            $idinventario1 = new ControladorInventario();
-            $idinventario1 -> ctrEditarInventario();
+            $idinventario = new ControladorInventario();
+            $idinventario -> ctrEditarInventario();
 
         ?>
 

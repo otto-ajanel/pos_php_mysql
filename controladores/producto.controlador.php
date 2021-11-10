@@ -90,13 +90,13 @@ class ControladorProducto{
 				$tabla = "PRODUCTO";
 
 				$datos = array("CODIGO_PRODUCTO"=>$_POST["idProducto"],
-											 "NOMBRE_GENERICO"=>$_POST["editarNombreGenerico"],
-											 "NOMBRE_COMERCIAL"=>$_POST["editarNombreComercial"],
-											 "CODIGO_PRESENTACION"=>$_POST["editarpresentacionProducto"],
-											 "CODIGO_CLASIFICACION"=>$_POST["editarclasificacionProducto"],
-											 "CODIGO_TIPO"=>$_POST["editartipoproductoProducto"],
-											 "STOCK_MIN"=>$_POST["editarStockMinimo"],
-											 "STOCK_MAX"=>$_POST["editarStockMaximo"]);
+								"NOMBRE_GENERICO"=>$_POST["editarNombreGenerico"],
+								"NOMBRE_COMERCIAL"=>$_POST["editarNombreComercial"],
+								"CODIGO_PRESENTACION"=>$_POST["editarpresentacionProducto"],
+								"CODIGO_CLASIFICACION"=>$_POST["editarclasificacionProducto"],
+								"CODIGO_TIPO"=>$_POST["editartipoproductoProducto"],
+								"STOCK_MIN"=>$_POST["editarStockMinimo"],
+								"STOCK_MAX"=>$_POST["editarStockMaximo"]);
 
 				$respuesta = ModeloProducto::mdlEditarProducto($tabla, $datos);
 				if($respuesta == "ok"){
