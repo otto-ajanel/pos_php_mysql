@@ -29,6 +29,7 @@ if($_SESSION["perfil"] == "Especial"){
         <thead>
          <tr>
            <th style="width:10px">#</th>
+           <th>Codigo barras</th>
            <th>Nombre genérico</th>
            <th>Nombre comercial</th>
            <th>Presentación</th>
@@ -49,6 +50,7 @@ if($_SESSION["perfil"] == "Especial"){
 
             echo '<tr>
                     <td>'.($key+1).'</td>
+                    <td>'.$value["CODIGO_BARRAS"].'</td>
                     <td>'.$value["NOMBRE_GENERICO"].'</td>
                     <td>'.$value["NOMBRE_COMERCIAL"].'</td>
                     <td>'.$value["PRESENTACION"].'</td>
@@ -98,14 +100,18 @@ MODAL AGREGAR PRODUCTO
         <div class="modal-body">
           <div class="box-body">
 
-            <!-- ENTRADA PARA EL NOMBRE GENERICO -->
+            <!-- ENTRADA PARA EL CODIGO DE BARRAS  -->
             <div class="form-group">
               <div class="input-group">
-<<<<<<< Updated upstream
-                <span class="input-group-addon"><i class="fa fa-th"></i></i></i></span>
-=======
-                <span class="input-group-addon"><i class="fa fa-th"></i></span>
->>>>>>> Stashed changes
+                <span class="input-group-addon"><i class=" fa fas fa-barcode"></i></span>
+                <input type="number" class="form-control input-lg" name="nuevoCodigoBarras" placeholder="Ingresar el codigo de barras" required>
+              </div>
+            </div>
+
+          <!-- ENTRADA PARA EL NOMBRE GENERICO -->
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class=" fa fas fa-cube"></i></span>
                 <input type="text" class="form-control input-lg" name="nuevoNombreGenerico" placeholder="Ingresar nombre genérico" required>
               </div>
             </div>
@@ -113,7 +119,7 @@ MODAL AGREGAR PRODUCTO
             <!-- ENTRADA PARA EL NOMBRE COMERCIAL -->
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                <span class="input-group-addon"><i class=" fa fas fa-cube"></i></span>
                 <input type="text" class="form-control input-lg" name="nuevoNombreComercial" placeholder="Ingresar nombre comercial" required>
               </div>
             </div>
@@ -121,7 +127,7 @@ MODAL AGREGAR PRODUCTO
             <!-- ENTRADA PARA LA PRESENTACION -->
             <div class="form-group">
              <div class="input-group">
-               <span class="input-group-addon"><i class="fa fa-capsules"></i></span>
+               <span class="input-group-addon"><i class=" fa fab fa-joomla"></i></span>
                <select type="text" class="form-control input-lg" name="presentacionProducto" id="presentacionProducto" required>
                  <?php
                    $item = null;
@@ -138,7 +144,7 @@ MODAL AGREGAR PRODUCTO
             <!-- ENTRADA PARA LA CLASIFICACION -->
             <div class="form-group">
              <div class="input-group">
-               <span class="input-group-addon"><i class="fa fa-key"></i></span>
+               <span class="input-group-addon"><i class=" fa fab fa-empire"></i></span>
                <select type="text" class="form-control input-lg" name="clasificacionProducto" id="clasificacionProducto" required>
                  <?php
                    $item = null;
@@ -155,7 +161,7 @@ MODAL AGREGAR PRODUCTO
             <!-- ENTRADA PARA LA TIPO DE PRODUCTO -->
             <div class="form-group">
              <div class="input-group">
-               <span class="input-group-addon"><i class="fa fa-key"></i></span>
+               <span class="input-group-addon"><i class=" fa fab fa-modx"></i></span>
                <select type="text" class="form-control input-lg" name="tipoproductoProducto" id="tipoproductoProducto" required>
                  <?php
                    $item = null;
@@ -226,6 +232,15 @@ MODAL EDITAR PRODUCTO
         ======================================-->
         <div class="modal-body">
           <div class="box-body">
+
+            <!-- ENTRADA PARA EL CODIGO DE BARRAS  -->
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <input type="number" class="form-control input-lg" name="editarCodigoBarras" id="editarCodigoBarras" placeholder="Ingresar el codigo de barras" required>
+              </div>
+            </div>
+
 
             <!-- ENTRADA PARA EL NOMBRE GENERICO -->
             <div class="form-group">

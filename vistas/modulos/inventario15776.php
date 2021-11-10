@@ -17,19 +17,19 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
 <div class="content-wrapper">
 
   <section class="content-header">
-    
+
     <h1>
-      
+
       Inventario de productos
-    
+
     </h1>
 
     <ol class="breadcrumb">
-      
+
       <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
-      
+
       <li class="active">Administrar inventario</li>
-    
+
     </ol>
 
   </section>
@@ -39,7 +39,7 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
     <div class="box">
 
       <div class="box-header with-border">
-  
+
         <h3>
           Ingrese los criterios de busqueda en buscar:
         </h3>
@@ -51,23 +51,20 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
       </div>
 
       <div class="box-body">
-        
-       <table class="table table-bordered table-striped dt-responsive tablas">
-         
-        <thead>
-         
-         <tr>
-           
-           <th style="width:10px">#</th>
-           <th>Codigo</th>
-           <th>fecha Ingreso</th>
-           <th>Codigo barras</th>
-           <th>Caducidad</th>
-           <th>precio compra</th>
-           <th>precio venta</th>
-           <th>Unidades</th>
 
-         </tr> 
+       <table class="table table-bordered table-striped dt-responsive tablas">
+
+        <thead>
+
+         <tr>
+
+           <th style="width:10px">#</th>
+           <th>Nombre Producto</th>
+           <th>Unidades Disponibles</th>
+           <th>Fecha Vencimiento</th>
+           <th>Precio</th>
+
+         </tr>
 
         </thead>
 
@@ -78,27 +75,24 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
           $valor = null;
 
           $inventario = ControladorInventario::ctrMostrarInventario($item, $valor);
-          
+
           foreach($inventario as $key => $value){
-            echo ' 
+            echo '
 
             <tr>
             <td>'.($key+1).'</td>
-            <td>'.$value["codigo"].'</td>
-            <td>'.$value["fecha_ingreso"].'</td>
-            <td>'.$value["codigo_barras"].'</td>
+            <td>'.$value["nombre_comercial"].'</td>
+            <td>'.$value["stock"].'</td>
             <td>'.$value["caducidad"].'</td>
-            <td>'.$value["precio_compra"].'</td>
             <td>'.$value["precio_venta"].'</td>
-            <td>'.$value["unidades"].'</td>
 
             </tr>';
 
           }
-          
-          
+
+
           ?>
-          
+
 
         </tbody>
 

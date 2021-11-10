@@ -212,6 +212,8 @@ CUERPO DOCUMENTO
     <script src="vistas/js/oferta.js"></script>
     <script src="vistas/js/pedido.js"></script>
 
+    <script src="vistas/js/inventario.js"></script>
+
 
 </body>
 
