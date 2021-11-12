@@ -35,18 +35,18 @@ $(".tablas").on("click", ".btnEliminarPresentacion", function () {
 	var idPresentacion = $(this).attr("idPresentacion");
 	console.log(idPresentacion);
 	swal({
-		title: '¿Está seguro de borrar la Presentación?',
+		title: '¿Está seguro de borrar la presentación?',
 		text: "¡Si no lo está puede cancelar la acción!",
 		type: 'warning',
 		showCancelButton: true,
 		confirmButtonColor: '#3085d6',
 		cancelButtonColor: '#d33',
 		cancelButtonText: 'Cancelar',
-		confirmButtonText: 'Si, borrar Presentación'
+		confirmButtonText: 'Si, borrar presentación!'
 	}).then(function (result) {
 
 		if (result.value) {
-			
+
 			window.location = "index.php?ruta=presentacion&idPresentacion=" + idPresentacion;
 
 		}

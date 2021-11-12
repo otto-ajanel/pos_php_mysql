@@ -246,11 +246,11 @@ MODAL AGREGAR USUARIO
 
               <input type="file" class="nuevaFoto" name="nuevaFoto">
 
-              <p class="help-block">Peso máximo de la foto 2MB</p>
+              <p class="help-block">Peso máximo de la foto 8MB</p>
 
               <img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail previsualizar" width="100px">
 
-            </div>
+              </div>
 
           </div>
 

@@ -29,7 +29,11 @@ if($_SESSION["perfil"] == "Especial"){
         <thead>
          <tr>
            <th style="width:10px">#</th>
+<<<<<<< HEAD
            <th>Codigo barras</th>
+=======
+        <!--   <th>Codigo barras</th> -->
+>>>>>>> origin/rocio
            <th>Nombre genérico</th>
            <th>Nombre comercial</th>
            <th>Presentación</th>
@@ -84,7 +88,7 @@ MODAL AGREGAR PRODUCTO
 <div id="modalAgregarProducto" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form role="form" method="post">
+      <form role="form" method="post" enctype="multipart/form-data">
 
         <!--=====================================
         CABEZA DEL MODAL
@@ -100,6 +104,7 @@ MODAL AGREGAR PRODUCTO
         <div class="modal-body">
           <div class="box-body">
 
+<<<<<<< HEAD
 
             <!-- ENTRADA PARA EL CODIGO DE BARRAS -->
             <div class="form-group">
@@ -114,6 +119,20 @@ MODAL AGREGAR PRODUCTO
             <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fas fa-cube"></i></span>
+=======
+            <!-- ENTRADA PARA EL CODIGO DE BARRAS
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class=" fa fas fa-barcode"></i></span>
+                <input type="number" class="form-control input-lg" name="nuevoCodigoBarras" placeholder="Ingresar el codigo de barras" required>
+              </div>
+            </div>-->
+
+          <!-- ENTRADA PARA EL NOMBRE GENERICO -->
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class=" fa fas fa-cube"></i></span>
+>>>>>>> origin/rocio
                 <input type="text" class="form-control input-lg" name="nuevoNombreGenerico" placeholder="Ingresar nombre genérico" required>
               </div>
             </div>
@@ -121,7 +140,11 @@ MODAL AGREGAR PRODUCTO
             <!-- ENTRADA PARA EL NOMBRE COMERCIAL -->
             <div class="form-group">
               <div class="input-group">
+<<<<<<< HEAD
                 <span class="input-group-addon"><i class="fa fas fa-cube"></i></span>
+=======
+                <span class="input-group-addon"><i class=" fa fas fa-cube"></i></span>
+>>>>>>> origin/rocio
                 <input type="text" class="form-control input-lg" name="nuevoNombreComercial" placeholder="Ingresar nombre comercial" required>
               </div>
             </div>
@@ -129,7 +152,11 @@ MODAL AGREGAR PRODUCTO
             <!-- ENTRADA PARA LA PRESENTACION -->
             <div class="form-group">
              <div class="input-group">
+<<<<<<< HEAD
                <span class="input-group-addon"><i class="fa fab fa-joomla"></i></span>
+=======
+               <span class="input-group-addon"><i class=" fa fab fa-joomla"></i></span>
+>>>>>>> origin/rocio
                <select type="text" class="form-control input-lg" name="presentacionProducto" id="presentacionProducto" required>
                  <?php
                    $item = null;
@@ -146,7 +173,11 @@ MODAL AGREGAR PRODUCTO
             <!-- ENTRADA PARA LA CLASIFICACION -->
             <div class="form-group">
              <div class="input-group">
+<<<<<<< HEAD
                <span class="input-group-addon"><i class="fa fab fa-empire"></i></span>
+=======
+               <span class="input-group-addon"><i class=" fa fab fa-empire"></i></span>
+>>>>>>> origin/rocio
                <select type="text" class="form-control input-lg" name="clasificacionProducto" id="clasificacionProducto" required>
                  <?php
                    $item = null;
@@ -163,7 +194,11 @@ MODAL AGREGAR PRODUCTO
             <!-- ENTRADA PARA LA TIPO DE PRODUCTO -->
             <div class="form-group">
              <div class="input-group">
+<<<<<<< HEAD
                <span class="input-group-addon"><i class="fa fab fa-modx"></i></span>
+=======
+               <span class="input-group-addon"><i class=" fa fab fa-modx"></i></span>
+>>>>>>> origin/rocio
                <select type="text" class="form-control input-lg" name="tipoproductoProducto" id="tipoproductoProducto" required>
                  <?php
                    $item = null;
@@ -192,9 +227,21 @@ MODAL AGREGAR PRODUCTO
                 <input type="number" min="0" class="form-control input-lg" name="nuevoStockMaximo" placeholder="Ingresar el stock maximo" required>
               </div>
             </div>
+             <!-- ENTRADA PARA SUBIR FOTO -->
 
-          </div>
-        </div>
+              <div class="form-group">
+
+                <div class="panel">SUBIR FOTO</div>
+
+                <input type="file" class="nuevaImagen" name="nuevaImagen" id="nuevaImagen">
+
+                <p class="help-block">Peso máximo de la foto 20MB</p>
+
+                <img src="vistas/img/productos/default/anonymous.png" class="img-thumbnail previsualizar" width="100px">
+
+                </div>
+              </div>
+             </div>
         <!--=====================================
         PIE DEL MODAL
         ======================================-->
@@ -235,6 +282,7 @@ MODAL EDITAR PRODUCTO
         <div class="modal-body">
           <div class="box-body">
 
+<<<<<<< HEAD
 
             <!-- ENTRADA PARA EL CODIGO DE BARRAS -->
             <div class="form-group">
@@ -243,6 +291,16 @@ MODAL EDITAR PRODUCTO
                 <input type="number" class="form-control input-lg" name="editarCodigoBarras" id="editarCodigoBarras"  placeholder="Ingresar el codigo de barras" required>
               </div>
             </div>
+=======
+            <!-- ENTRADA PARA EL CODIGO DE BARRAS
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <input type="number" class="form-control input-lg" name="editarCodigoBarras" id="editarCodigoBarras" placeholder="Ingresar el codigo de barras" required>
+              </div>
+            </div>-->
+
+>>>>>>> origin/rocio
 
             <!-- ENTRADA PARA EL NOMBRE GENERICO -->
             <div class="form-group">
@@ -327,6 +385,7 @@ MODAL EDITAR PRODUCTO
                 <input type="number" min="0" class="form-control input-lg" name="editarStockMaximo" id="editarStockMaximo" placeholder="Ingresar el stock maximo" required>
               </div>
             </div>
+            
           </div>
         </div>
         <!--=====================================
@@ -345,6 +404,8 @@ MODAL EDITAR PRODUCTO
     </div>
   </div>
 </div>
+
+
 
 <?php
   $eliminarProducto = new ControladorProducto();

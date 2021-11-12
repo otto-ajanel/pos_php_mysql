@@ -46,7 +46,7 @@ class ControladorClasificacion{
 
 					swal({
 						  type: "error",
-						  title: "¡La categoría no puede ir vacía o llevar caracteres especiales!",
+						  title: "¡La clasificación no puede ir vacía o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -76,7 +76,7 @@ class ControladorClasificacion{
 		$respuesta = ModeloClasificacion::mdlMostrarClasificacion($tabla, $item, $valor);
 
 		return $respuesta;
-	
+
 	}
 
 	/*=============================================
@@ -102,7 +102,7 @@ class ControladorClasificacion{
 
 					swal({
 						  type: "success",
-						  title: "La clasificaion ha sido cambiada correctamente",
+						  title: "La clasificaión ha sido cambiada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -124,7 +124,7 @@ class ControladorClasificacion{
 
 					swal({
 						  type: "error",
-						  title: "¡La categoría no puede ir vacía o llevar caracteres especiales!",
+						  title: "¡La clasificación no puede ir vacía o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -163,7 +163,7 @@ class ControladorClasificacion{
 
 					swal({
 						  type: "success",
-						  title: "La clasificacion ha sido borrada correctamente",
+						  title: "La clasificación ha sido borrada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -177,6 +177,6 @@ class ControladorClasificacion{
 					</script>';
 			}
 		}
-		
+
 	}
 }

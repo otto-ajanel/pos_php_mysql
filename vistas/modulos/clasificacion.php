@@ -18,7 +18,11 @@ if($_SESSION["perfil"] == "Vendedor"){
 
   <section class="content-header">
 
+<<<<<<< HEAD
     <h1>Administrar Clasificación</h1>
+=======
+    <h1> Administrar clasificación </h1>
+>>>>>>> origin/rocio
 
     <ol class="breadcrumb">
       <li><a href="inicio"><i class="ion-navicon-round"></i>Inicio</a></li>
@@ -138,7 +142,11 @@ MODAL AGREGAR CATEGORÍA
 
               <div class="input-group">
 
+<<<<<<< HEAD
                 <span class="input-group-addon"><i class="fa fab fa-empire"></i></span>
+=======
+                <span class="input-group-addon"><i class=" fa fab fa-empire"></i></span>
+>>>>>>> origin/rocio
 
                 <input type="text" class="form-control input-lg" name="nuevaCategoria" placeholder="Ingresar categoría" required>
 
@@ -215,7 +223,11 @@ MODAL EDITAR CATEGORÍA
 
               <div class="input-group">
 
+<<<<<<< HEAD
                 <span class="input-group-addon"><i class="fa fab fa-empire"></i></span>
+=======
+                <span class="input-group-addon"><i class=" fa fab fa-empire"></i></span>
+>>>>>>> origin/rocio
 
                 <input type="text" class="form-control input-lg" name="editarCategoria" id="editarCategoria" required>
 

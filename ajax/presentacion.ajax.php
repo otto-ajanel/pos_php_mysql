@@ -6,8 +6,8 @@ require_once "../modelos/presentacion.modelo.php";
 class AjaxPresentacion{
 
 	/*=============================================
-	EDITAR CATEGORÍA
-	=============================================*/	
+	EDITAR PRESENTACION
+	=============================================*/
 
 	public $idPresentacion;
 
@@ -24,8 +24,8 @@ class AjaxPresentacion{
 }
 
 /*=============================================
-EDITAR Presetacion
-=============================================*/	
+EDITAR PRESENTACION
+=============================================*/
 if(isset($_POST["idPresentacion"])){
 
 	$presentacion = new AjaxPresentacion();

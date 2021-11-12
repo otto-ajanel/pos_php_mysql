@@ -22,7 +22,7 @@ class ControladorPedido{
 
 				swal({
 					  type: "success",
-					  title: "El cliente ha sido guardado correctamente",
+					  title: "El pedido ha sido guardado correctamente",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar"
 					  }).then(function(result){
@@ -55,30 +55,25 @@ class ControladorPedido{
 	}
 
 	/*=============================================
-	EDITAR CLIENTE
+	EDITAR PEDIDO
 	=============================================*/
 	static public function ctrEditarPedido(){
 
 		if(isset($_POST["editarProveedorPedido"]) &&
 			 isset($_POST["editarFechaPedido"]) &&
-			 isset($_POST["editarFechaEstimada"])
-			){
-
-			if(preg_match('/^[a-zA-Z-ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoProveedorPedido"])){
-
-				$tabla = "PEDIDO";
-
-				$datos = array("NO_ORDEN"=>$_POST["idPedido"],
-											 "CODIGO_PROVEEDOR"=>$_POST["editarProveedorPedido"],
-											 "FECHA_PEDIDO"=>$_POST["editarFechaPedido"],
-											 "FECHA_ESTIMADA"=>$_POST["editarFechaEstimada"]);
+			 isset($_POST["editarFechaEstimada"])){
+					$tabla = "PEDIDO";
+					$datos = array("NO_ORDEN"=>$_POST["idPedido"],
+												 "CODIGO_PROVEEDOR"=>$_POST["editarProveedorPedido"],
+												 "FECHA_PEDIDO"=>$_POST["editarFechaPedido"],
+												 "FECHA_ESTIMADA"=>$_POST["editarFechaEstimada"]);
 
 				$respuesta = ModeloPedido::mdlEditarPedido($tabla, $datos);
 				if($respuesta == "ok"){
 					echo'<script>
 					swal({
 						  type: "success",
-						  title: "El cliente ha sido cambiado correctamente",
+						  title: "El pedido ha sido cambiado correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -89,24 +84,8 @@ class ControladorPedido{
 								})
 					</script>';
 				}
-			}else{
-				echo'<script>
-					swal({
-						  type: "error",
-						  title: "¡El cliente no puede ir vacío o llevar caracteres especiales!",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-							if (result.value) {
-
-							window.location = "pedido";
-							}
-						})
-			  	</script>';
 			}
-		}
-	}
-
+  	}
 
 
 	/*=============================================
@@ -190,7 +169,7 @@ class ControladorPedido{
 				echo'<script>
 				swal({
 					  type: "success",
-					  title: "El cliente ha sido borrado correctamente",
+					  title: "El pedido ha sido borrado correctamente",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar",
 					  closeOnConfirm: false

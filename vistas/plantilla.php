@@ -159,7 +159,7 @@ CUERPO DOCUMENTO
 
          $_GET["ruta"] == "pedido" ||
          $_GET["ruta"] == "inventario15776" ||
-         $_GET["ruta"] == "ingreso-inventario15776" ||
+         $_GET["ruta"] == "inventario" ||
          $_GET["ruta"] == "ingreso-inventario-producto" ||
 
          $_GET["ruta"] == "proveedor" ||
@@ -209,6 +209,8 @@ CUERPO DOCUMENTO
     <script src="vistas/js/ventas.js"></script>
     <script src="vistas/js/reportes.js"></script>
     <script src="vistas/js/oferta.js"></script>
+    <script src="vistas/js/inventario.js"></script>
+
     <script src="vistas/js/inventario.js"></script>
 
 
