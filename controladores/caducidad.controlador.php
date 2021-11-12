@@ -3,7 +3,7 @@
 class ControladorCaducidad{
 
 	/*=============================================
-	MOSTRAR STOCK
+	MOSTRAR CADUCIDAD
 	=============================================*/
 	static public function ctrMostrarCaducidad($item, $valor){
 		$tabla = "INVENTARIO";

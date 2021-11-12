@@ -172,7 +172,7 @@ MODAL EDITAR PEDIDO
         <div class="modal-body">
           <div class="box-body">
 
-            <!-- ENTRADA PARA EL PRODUCTO -->
+            <!-- ENTRADA PARA EL PROVEEDOR -->
             <div class="form-group">
              <div class="input-group">
                <span class="input-group-addon"><i class=" fa fas fa-truck"></i></span>

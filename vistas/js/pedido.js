@@ -26,21 +26,21 @@ $(".tablas").on("click", ".btnEditarPedido", function(){
 })
 
 /*=============================================
-ELIMINAR CLIENTE
+ELIMINAR PEDIDO
 =============================================*/
 $(".tablas").on("click", ".btnEliminarPedido", function(){
 
 	var idPedido = $(this).attr("idPedido");
 
 	swal({
-        title: '¿Está seguro de borrar el cliente?',
+        title: '¿Está seguro de borrar el pedido?',
         text: "¡Si no lo está puede cancelar la acción!",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         cancelButtonText: 'Cancelar',
-        confirmButtonText: 'Si, borrar cliente!'
+        confirmButtonText: 'Si, borrar pedido!'
       }).then(function(result){
         if (result.value) {
 
@@ -110,6 +110,6 @@ function createRowPedidos(item) {
 	else {
 		tr = tbl.insertRow();
 		var td = tr.insertCell();
-		td.appendChild(document.createTextNode('No tiene ningún número de teléfono'));
+		td.appendChild(document.createTextNode('No tiene ningún pedido'));
 	}
 }

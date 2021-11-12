@@ -29,7 +29,7 @@ if($_SESSION["perfil"] == "Especial"){
         <thead>
          <tr>
            <th style="width:10px">#</th>
-           <th>Codigo barras</th>
+        <!--   <th>Codigo barras</th> -->
            <th>Nombre genérico</th>
            <th>Nombre comercial</th>
            <th>Presentación</th>
@@ -50,7 +50,6 @@ if($_SESSION["perfil"] == "Especial"){
 
             echo '<tr>
                     <td>'.($key+1).'</td>
-                    <td>'.$value["CODIGO_BARRAS"].'</td>
                     <td>'.$value["NOMBRE_GENERICO"].'</td>
                     <td>'.$value["NOMBRE_COMERCIAL"].'</td>
                     <td>'.$value["PRESENTACION"].'</td>
@@ -84,7 +83,7 @@ MODAL AGREGAR PRODUCTO
 <div id="modalAgregarProducto" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form role="form" method="post">
+      <form role="form" method="post" enctype="multipart/form-data">
 
         <!--=====================================
         CABEZA DEL MODAL
@@ -100,13 +99,13 @@ MODAL AGREGAR PRODUCTO
         <div class="modal-body">
           <div class="box-body">
 
-            <!-- ENTRADA PARA EL CODIGO DE BARRAS  -->
+            <!-- ENTRADA PARA EL CODIGO DE BARRAS
             <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon"><i class=" fa fas fa-barcode"></i></span>
                 <input type="number" class="form-control input-lg" name="nuevoCodigoBarras" placeholder="Ingresar el codigo de barras" required>
               </div>
-            </div>
+            </div>-->
 
           <!-- ENTRADA PARA EL NOMBRE GENERICO -->
             <div class="form-group">
@@ -190,9 +189,21 @@ MODAL AGREGAR PRODUCTO
                 <input type="number" min="0" class="form-control input-lg" name="nuevoStockMaximo" placeholder="Ingresar el stock maximo" required>
               </div>
             </div>
+             <!-- ENTRADA PARA SUBIR FOTO -->
 
-          </div>
-        </div>
+              <div class="form-group">
+
+                <div class="panel">SUBIR FOTO</div>
+
+                <input type="file" class="nuevaImagen" name="nuevaImagen" id="nuevaImagen">
+
+                <p class="help-block">Peso máximo de la foto 20MB</p>
+
+                <img src="vistas/img/productos/default/anonymous.png" class="img-thumbnail previsualizar" width="100px">
+
+                </div>
+              </div>
+             </div>
         <!--=====================================
         PIE DEL MODAL
         ======================================-->
@@ -233,13 +244,13 @@ MODAL EDITAR PRODUCTO
         <div class="modal-body">
           <div class="box-body">
 
-            <!-- ENTRADA PARA EL CODIGO DE BARRAS  -->
+            <!-- ENTRADA PARA EL CODIGO DE BARRAS
             <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
                 <input type="number" class="form-control input-lg" name="editarCodigoBarras" id="editarCodigoBarras" placeholder="Ingresar el codigo de barras" required>
               </div>
-            </div>
+            </div>-->
 
 
             <!-- ENTRADA PARA EL NOMBRE GENERICO -->
@@ -325,6 +336,7 @@ MODAL EDITAR PRODUCTO
                 <input type="number" min="0" class="form-control input-lg" name="editarStockMaximo" id="editarStockMaximo" placeholder="Ingresar el stock maximo" required>
               </div>
             </div>
+            
           </div>
         </div>
         <!--=====================================
@@ -343,6 +355,8 @@ MODAL EDITAR PRODUCTO
     </div>
   </div>
 </div>
+
+
 
 <?php
   $eliminarProducto = new ControladorProducto();

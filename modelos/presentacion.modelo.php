@@ -5,7 +5,7 @@ require_once "conexion.php";
 class ModeloPresentacion{
 
 	/*=============================================
-	CREAR Presentacion
+	CREAR PRESENTACION
 	=============================================*/
 
 	static public function mdlIngresarPresentacion($tabla, $datos){
@@ -22,7 +22,7 @@ class ModeloPresentacion{
 	}
 
 	/*=============================================
-	MOSTRAR Presentacion
+	MOSTRAR PRESENTACION
 	=============================================*/
 
 	static public function mdlMostrarPresentacion($tabla, $item, $valor){
@@ -41,7 +41,7 @@ class ModeloPresentacion{
 	}
 
 	/*=============================================
-	EDITAR Presentación
+	EDITAR PRESENTACION
 	=============================================*/
 
 	static public function mdlEditarPresentacion($tabla, $datos){
@@ -58,7 +58,7 @@ class ModeloPresentacion{
 	}
 
 	/*=============================================
-	BORRAR Presentacion
+	BORRAR PRESENTACION
 	=============================================*/
 
 	static public function mdlBorrarPresentacion($tabla, $datos){

@@ -32,7 +32,7 @@ class AjaxPedido{
 }
 
 /*=============================================
-EDITAR CLIENTE
+EDITAR PEDIDO
 =============================================*/
 if(isset($_POST["idPedido"])){
 	$pedido = new AjaxPedido();

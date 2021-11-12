@@ -3,7 +3,7 @@
 class ControladorPresentacion{
 
 	/*=============================================
-	CREAR Presentacion
+	CREAR PRESENTACION
 	=============================================*/
 
 	static public function ctrCrearPresentacion(){
@@ -24,7 +24,7 @@ class ControladorPresentacion{
 
 					swal({
 						  type: "success",
-						  title: "La Presentacion ha sido guardada correctamente",
+						  title: "La presentacion ha sido guardada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -46,7 +46,7 @@ class ControladorPresentacion{
 
 					swal({
 						  type: "error",
-						  title: "¡La categoría no puede ir vacía o llevar caracteres especiales!",
+						  title: "¡La presentación no puede ir vacía o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -66,7 +66,7 @@ class ControladorPresentacion{
 	}
 
 	/*=============================================
-	MOSTRAR Presentacion
+	MOSTRAR PRESENTACION
 	=============================================*/
 
 	static public function ctrMostrarPresentacion($item, $valor){
@@ -76,11 +76,11 @@ class ControladorPresentacion{
 		$respuesta = ModeloPresentacion::mdlMostrarPresentacion($tabla, $item, $valor);
 
 		return $respuesta;
-	
+
 	}
 
 	/*=============================================
-	EDITAR Presentacion
+	EDITAR PRESENTACION
 	=============================================*/
 
 	static public function ctrEditarPresentacion(){
@@ -102,7 +102,7 @@ class ControladorPresentacion{
 
 					swal({
 						  type: "success",
-						  title: "La clasificaion ha sido cambiada correctamente",
+						  title: "La presentación ha sido cambiada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -124,7 +124,7 @@ class ControladorPresentacion{
 
 					swal({
 						  type: "error",
-						  title: "¡La categoría no puede ir vacía o llevar caracteres especiales!",
+						  title: "¡La presentación no puede ir vacía o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -144,7 +144,7 @@ class ControladorPresentacion{
 	}
 
 	/*=============================================
-	BORRAR Presentacion
+	BORRAR PRESENTACION
 	=============================================*/
 
 	static public function ctrBorrarPresentacion(){
@@ -163,7 +163,7 @@ class ControladorPresentacion{
 
 					swal({
 						  type: "success",
-						  title: "La Presentacion ha sido borrada correctamente",
+						  title: "La presentacion ha sido borrada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -177,6 +177,6 @@ class ControladorPresentacion{
 					</script>';
 			}
 		}
-		
+
 	}
 }

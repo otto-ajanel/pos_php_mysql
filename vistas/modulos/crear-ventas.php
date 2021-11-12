@@ -10,9 +10,9 @@
 
         <ol class="breadcrumb">
 
-            <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+            <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
 
-            <button id="ver-ventas" class="ver-ventas"class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalMostrarVentasHoy" data-dismiss="modal">Ver Ventas</button>
+            <button id="ver-ventas" class="ver-ventas btn btn-primary"class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalMostrarVentasHoy" data-dismiss="modal">Ver Ventas</button>
 
         </ol>
 
@@ -255,7 +255,7 @@
                                 <tr>
                                     <th style="width: 10px">#</th>
                                     <th>Imagen</th>
-                                    <th>Codigo Barra</th>
+                                    <!-- <th>Codigo Barra</th> -->
                                     <th>Nombre</th>
                                     <th>Descripcion</th>
                                     <th>Stock</th>
@@ -390,4 +390,3 @@ MODAL AGREGAR CLIENTE
     </div>
   </div>
 </div>
-

@@ -5,11 +5,11 @@ require_once "../modelos/producto.modelo.php";
 
 
 class TablaProductosVentas{
-	
+
 
  	/*=============================================
  	 MOSTRAR LA TABLA DE PRODUCTOS
-  	=============================================*/ 
+  	=============================================*/
 
 	public function mostrarTablaProductosVentas(){
 
@@ -19,8 +19,8 @@ class TablaProductosVentas{
   			echo '{"data": []}';
 
 		  	return;
-  		}	
-		
+  		}
+
   		$datosJson = '{
 		  "data": [';
 
@@ -28,13 +28,13 @@ class TablaProductosVentas{
 
 		  	/*=============================================
  	 		TRAEMOS LA IMAGEN
-  			=============================================*/ 
+  			=============================================*/
 
 		  	$imagen = "<img src='".$productos[$i]["URL"]."' width='40px'>";
 
 		  	/*=============================================
  	 		STOCK
-  			=============================================*/ 
+  			=============================================*/
 /*
   			if($productos[$i]["stock"] <= 10){
 
@@ -46,17 +46,27 @@ class TablaProductosVentas{
 
   			}else{
 
-				  
+
 			}
 			*/
 			$stock = "<button class='btn btn-success'>".$productos[$i]["STOCK"]."</button>";
 		  	/*=============================================
  	 		TRAEMOS LAS ACCIONES
-  			=============================================*/ 
+  			=============================================*/
 
-		  	$botones =  "<div class='btn-group'><button class='btn btn-primary agregarProducto recuperarBoton' idProducto='".$productos[$i]["CODIGO_INVENTARIO"]."'>Agregar</button></div>"; 
+		  	$botones =  "<div class='btn-group'><button class='btn btn-primary agregarProducto recuperarBoton' idProducto='".$productos[$i]["CODIGO_INVENTARIO"]."'>Agregar</button></div>";
 
-		  	$datosJson .='[
+
+
+				$datosJson .='[
+						"'.($i+1).'",
+						"'.$imagen.'",
+						"'.$productos[$i]["NOMBRE_GENERICO"].'",
+					"'.$productos[$i]["PRESENTACION"].", ".$productos[$i]["TIPO_PRODUCTO"].", ".$productos[$i]["CLASIFICACION"].'",
+						"'.$stock.'",
+						"'.$botones.'"
+					],';
+		  	/*$datosJson .='[
 			      "'.($i+1).'",
 			      "'.$imagen.'",
 			      "'.$productos[$i]["CODIGO_BARRA"].'",
@@ -64,16 +74,16 @@ class TablaProductosVentas{
 				  "'.$productos[$i]["PRESENTACION"].", ".$productos[$i]["TIPO_PRODUCTO"].", ".$productos[$i]["CLASIFICACION"].'",
 			      "'.$stock.'",
 			      "'.$botones.'"
-			    ],';
+			    ],';*/
 
 		  }
 
 		  $datosJson = substr($datosJson, 0, -1);
 
-		 $datosJson .=   '] 
+		 $datosJson .=   ']
 
 		 }';
-		
+
 		echo $datosJson;
 
 
@@ -84,6 +94,6 @@ class TablaProductosVentas{
 
 /*=============================================
 ACTIVAR TABLA DE PRODUCTOS
-=============================================*/ 
+=============================================*/
 $activarProductosVentas = new TablaProductosVentas();
 $activarProductosVentas ->mostrarTablaProductosVentas();

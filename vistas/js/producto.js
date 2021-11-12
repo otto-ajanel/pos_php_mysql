@@ -18,16 +18,65 @@ $(".tablas").on("click", ".btnEditarProducto", function(){
       dataType:"json",
       success:function(respuesta){
       	 $("#idProducto").val(respuesta["CODIGO_PRODUCTO"]);
-				 $("#editarCodigoBarras").val(respuesta["CODIGO_BARRAS"]);
+			/*	 $("#editarCodigoBarras").val(respuesta["CODIGO_BARRAS"]);*/
 	       $("#editarNombreGenerico").val(respuesta["NOMBRE_GENERICO"]);
 	       $("#editarNombreComercial").val(respuesta["NOMBRE_COMERCIAL"]);
 		 		 $('#editarpresentacionProducto option[value="' + respuesta["CODIGO_PRESENTACION"] + '"]').prop('selected', true);
 				 $('#editarclasificacionProducto option[value="' + respuesta["CODIGO_CLASIFICACION"] + '"]').prop('selected', true);
-				 $('#editartipoproductoProducto option[value="' + respuesta["CODIGO_CLASIFICACION"] + '"]').prop('selected', true);
+				 $('#editartipoproductoProducto option[value="' + respuesta["CODIGO_TIPO"] + '"]').prop('selected', true);
 				 $("#editarStockMinimo").val(respuesta["STOCK_MIN"]);
 	       $("#editarStockMaximo").val(respuesta["STOCK_MAX"]);
 	  }
   	})
+})
+/*
+subir fot
+
+*/
+$(".nuevaImagen").change(function(){
+
+	var imagen = this.files[0];
+	
+	/*=============================================
+  	VALIDAMOS EL FORMATO DE LA IMAGEN SEA JPG O PNG
+  	=============================================*/
+
+  	if(imagen["type"] != "image/jpeg" && imagen["type"] != "image/png"){
+
+  		$(".nuevaImagen").val("");
+
+  		 swal({
+		      title: "Error al subir la imagen",
+		      text: "¡La imagen debe estar en formato JPG o PNG!",
+		      type: "error",
+		      confirmButtonText: "¡Cerrar!"
+		    });
+
+  	}else if(imagen["size"] > 20000000){
+
+  		$(".nuevaImagen").val("");
+
+  		 swal({
+		      title: "Error al subir la imagen",
+		      text: "¡La imagen no debe pesar más de 2MB!",
+		      type: "error",
+		      confirmButtonText: "¡Cerrar!"
+		    });
+
+  	}else{
+
+  		var datosImagen = new FileReader;
+  		datosImagen.readAsDataURL(imagen);
+
+  		$(datosImagen).on("load", function(event){
+
+  			var rutaImagen = event.target.result;
+
+  			$(".previsualizar").attr("src", rutaImagen);
+
+  		})
+
+  	}
 })
 
 /*=============================================

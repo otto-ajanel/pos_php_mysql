@@ -78,7 +78,7 @@ class ControladorUsuarios{
 				VALIDAR IMAGEN
 				=============================================*/
 
-				$ruta = "";
+				$ruta = "vistas/img/usuarios/default/anonymous.png";
 
 				if(isset($_FILES["nuevaFoto"]["tmp_name"])){
 

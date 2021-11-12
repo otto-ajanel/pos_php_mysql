@@ -22,7 +22,7 @@ $(".nuevaFoto").change(function(){
 		      confirmButtonText: "¡Cerrar!"
 		    });
 
-  	}else if(imagen["size"] > 2000000){
+  	}else if(imagen["size"] > 20000000){
 
   		$(".nuevaFoto").val("");
 

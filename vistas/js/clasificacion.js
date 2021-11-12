@@ -34,20 +34,20 @@ ELIMINAR CATEGORIA
 $(".tablas").on("click", ".btnEliminarCategoria", function () {
 
 	var idCategoria = $(this).attr("idCategoria");
-	
+
 	swal({
-		title: '¿Está seguro de borrar la Clasificacion?',
+		title: '¿Está seguro de borrar la clasificacion?',
 		text: "¡Si no lo está puede cancelar la acción!",
 		type: 'warning',
 		showCancelButton: true,
 		confirmButtonColor: '#3085d6',
 		cancelButtonColor: '#d33',
 		cancelButtonText: 'Cancelar',
-		confirmButtonText: 'Si, borrar Clasificación!'
+		confirmButtonText: 'Si, borrar clasificación!'
 	}).then(function (result) {
 
 		if (result.value) {
-			
+
 			window.location = "index.php?ruta=clasificacion&idClasificacion=" + idCategoria;
 
 		}

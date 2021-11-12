@@ -1,6 +1,5 @@
 /*=============================================
 EDITAR CLIENTE
-esto los que hace para los clientes
 =============================================*/
 
 $(".tablas").on("click", ".btnEditarCliente", function(){

@@ -3,7 +3,7 @@
 class ControladorOferta{
 
 	/*=============================================
-	CREAR TIPO DE PRODUCTO
+	CREAR OFERTA
 	=============================================*/
 
 	static public function ctrCrearOferta(){
@@ -26,7 +26,7 @@ class ControladorOferta{
 					echo'<script>
 					swal({
 						  type: "success",
-						  title: "El tipo de producto ha sido guardado correctamente",
+						  title: "La oferta ha sido guardada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -54,7 +54,7 @@ class ControladorOferta{
 	}
 
 	/*=============================================
-	MOSTRAR TIPO DE PRODUCTO
+	MOSTRAR OFERTA
 	=============================================*/
 
 	static public function ctrMostrarOferta($item, $valor){
@@ -64,7 +64,7 @@ class ControladorOferta{
 	}
 
 	/*=============================================
-	EDITAR TIPO DE PRODUCTO
+	EDITAR OFERTA
 	=============================================*/
 
 	static public function ctrEditarOferta(){
@@ -92,7 +92,7 @@ class ControladorOferta{
 
 					swal({
 						  type: "success",
-						  title: "El tipo de producto ha sido cambiado correctamente",
+						  title: "La oferta ha sido cambiada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -107,7 +107,7 @@ class ControladorOferta{
 				echo'<script>
 					swal({
 						  type: "error",
-						  title: "¡El tipo de producto no puede ir vacío o llevar caracteres especiales!",
+						  title: "¡La oferta no puede ir vacía o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -121,7 +121,7 @@ class ControladorOferta{
 	}
 
 	/*=============================================
-	BORRAR TIPO DE PRODUCTO
+	BORRAR OFERTA
 	=============================================*/
 
 	static public function ctrBorrarOferta(){
@@ -136,7 +136,7 @@ class ControladorOferta{
 				echo'<script>
 					swal({
 						  type: "success",
-						  title: "El tipo de producto ha sido borrado correctamente",
+						  title: "La oferta ha sido borrada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){

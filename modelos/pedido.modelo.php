@@ -24,19 +24,19 @@ class ModeloPedido{
 
 	static public function mdlMostrarPedido($tabla, $item, $valor){
 		if($item != null){
-			$stmt = Conexion::conectar()->prepare("SELECT t0.NO_ORDEN, t1.NOMBRE_PROVEEDOR, t0.FECHA_PEDIDO, t0.FECHA_ESTIMADA
-																						FROM pedido t0
+			$stmt = Conexion::conectar()->prepare("SELECT t0.NO_ORDEN, t0.CODIGO_PROVEEDOR, t1.NOMBRE_PROVEEDOR, t0.FECHA_PEDIDO, t0.FECHA_ESTIMADA
+																							FROM pedido t0
 																							JOIN proveedor t1 ON t1.CODIGO_PROVEEDOR = t0.CODIGO_PROVEEDOR
-																						WHERE T0.VISIBLE = 1;
+																							WHERE t0.VISIBLE = 1
 																						AND $item = :$item");
 			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 			$stmt -> execute();
 			return $stmt -> fetch();
 		}else{
 			$stmt = Conexion::conectar()->prepare("SELECT t0.NO_ORDEN, t1.NOMBRE_PROVEEDOR, t0.FECHA_PEDIDO, t0.FECHA_ESTIMADA
-																						FROM pedido t0
+																							FROM pedido t0
 																							JOIN proveedor t1 ON t1.CODIGO_PROVEEDOR = t0.CODIGO_PROVEEDOR
-																						WHERE T0.VISIBLE = 1");
+																						WHERE t0.VISIBLE = 1");
 			$stmt -> execute();
 			return $stmt -> fetchAll();
 		}
