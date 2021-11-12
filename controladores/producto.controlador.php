@@ -10,10 +10,7 @@ class ControladorProducto
 	{
 
 		if( isset($_POST["nuevoNombreGenerico"]) &&
-			isset($_POST["nuevoNombreComercial"]) &&
-			isset($_POST["nuevoStockMinimo"]) &&
-		    isset($_POST["nuevoStockMaximo"]) &&
-			isset($_POST["nuevoCodigoBarras"])){
+			isset($_POST["nuevoNombreComercial"])){
 
 			if( preg_match('/^[a-zA-Z-ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoNombreGenerico"]) &&
 				preg_match('/^[a-zA-Z-ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoNombreComercial"]) &&
@@ -45,9 +42,7 @@ class ControladorProducto
 									if (result.value) {
 
 				if(isset($_FILES["nuevaImagen"]["tmp_name"])){
-					echo '<script>
-					alert("policia");
-					</script>';
+					
 
 					list($ancho, $alto) = getimagesize($_FILES["nuevaImagen"]["tmp_name"]);
 
@@ -179,29 +174,18 @@ class ControladorProducto
 		if(isset($_POST["editarNombreGenerico"]) &&
 			 isset($_POST["editarNombreComercial"]) &&
 			 isset($_POST["editarStockMinimo"]) &&
-<<<<<<< HEAD
 			 isset($_POST["editarStockMaximo"]) &&
 			 isset($_POST["editarCodigoBarras"])){
-=======
-			 isset($_POST["editarStockMaximo"])
-		 /*isset($_POST["editarCodigoBarras"])*/){
->>>>>>> origin/rocio
 
 				if(preg_match('/^[a-zA-Z-ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarNombreGenerico"]) &&
 			     preg_match('/^[a-zA-Z-ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarNombreComercial"]) &&
 					 preg_match('/^[0-9.]+$/', $_POST["editarStockMinimo"]) &&
-<<<<<<< HEAD
 					 preg_match('/^[0-9.]+$/', $_POST["editarStockMaximo"]) &&
 					 preg_match('/^[0-9. ]+$/', $_POST["editarCodigoBarras"])){
-=======
-					 preg_match('/^[0-9.]+$/', $_POST["editarStockMaximo"])
-   			/*	 preg_match('/^[0-9. ]+$/', $_POST["editarCodigoBarras"])*/){
->>>>>>> origin/rocio
 
 				$tabla = "PRODUCTO";
 
 				$datos = array("CODIGO_PRODUCTO"=>$_POST["idProducto"],
-<<<<<<< HEAD
 								"CODIGO_BARRAS"=>$_POST["editarCodigoBarras"],
 								"NOMBRE_GENERICO"=>$_POST["editarNombreGenerico"],
 								"NOMBRE_COMERCIAL"=>$_POST["editarNombreComercial"],
@@ -210,16 +194,6 @@ class ControladorProducto
 								"CODIGO_TIPO"=>$_POST["editartipoproductoProducto"],
 								"STOCK_MIN"=>$_POST["editarStockMinimo"],
 								"STOCK_MAX"=>$_POST["editarStockMaximo"]);
-=======
-											/* "CODIGO_BARRAS"=>$_POST["editarCodigoBarras"],*/
-											 "NOMBRE_GENERICO"=>$_POST["editarNombreGenerico"],
-											 "NOMBRE_COMERCIAL"=>$_POST["editarNombreComercial"],
-											 "CODIGO_PRESENTACION"=>$_POST["editarpresentacionProducto"],
-											 "CODIGO_CLASIFICACION"=>$_POST["editarclasificacionProducto"],
-											 "CODIGO_TIPO"=>$_POST["editartipoproductoProducto"],
-											 "STOCK_MIN"=>$_POST["editarStockMinimo"],
-											 "STOCK_MAX"=>$_POST["editarStockMaximo"]);
->>>>>>> origin/rocio
 
 				$respuesta = ModeloProducto::mdlEditarProducto($tabla, $datos);
 				if($respuesta == "ok"){
